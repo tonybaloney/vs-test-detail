@@ -1,0 +1,39 @@
+{
+    "manifestVersion": 1,
+    "id": "vss-nunit",
+    "publisher": "AnthonyShaw",
+    "version": "1.0.0",
+    "name": "NUnit",
+    "description": "An extension for seeing detailed NUnit data.",
+    "public": false,
+    "categories": ["Azure Pipelines"],
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "my-hub",
+            "type": "ms.vss-web.hub",
+            "targets": [
+                "ms.vss-code-web.code-hub-group"
+            ],
+            "properties": {
+                "name": "My Hub",
+                "uri": "my-hub.html"
+            }
+        }
+    ],
+    "files": [
+        {
+            "path": "my-hub.html",
+            "addressable": true
+        },
+        {
+            "path": "node_modules/vss-web-extension-sdk/lib",
+            "addressable": true,
+            "packagePath": "lib"
+        }
+    ]
+}
