@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="lib/VSS.SDK.min.js"></script>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            margin: 10px;    
+            font-family: "Segoe UI VSS (Regular)","-apple-system",BlinkMacSystemFont,"Segoe UI",sans-serif;
+        }
+    </style>
+    <script type="text/javascript">
+        VSS.init({ usePlatformScripts: true, usePlatformStyles: true });
+        VSS.ready(function() {
+            let extensionContext = VSS.getConfiguration();
+            document.getElementById("result-id").innerText = extensionContext.resultId;
+            document.getElementById("run-id").innerText = extensionContext.runId;
+
+            VSS.require(["VSS/Service", "TFS/TestManagement/RestClient"], function (VSS_Service, TFS_Test_WebApi) {
+                var testClient = VSS_Service.getCollectionClient(TFS_Test_WebApi.TestHttpClient);
+                testClient.getTestRunById(extensionContext.viewContext.data.mainData.project.id, extensionContext.runId).then(
+                    function(run) {
+                        console.log(run);
+                    }
+                );
+
+                testClient.getTestResultById(extensionContext.viewContext.data.mainData.project.id, extensionContext.runId, extensionContext.resultId).then(
+                    function(result){ 
+                        console.log(result);
+                    }
+                )
+            });
+
+        });
+    </script>
+</head>
+<body>        
+    <h1>Result Id: <span id="result-id"></span></h1>
+    <h1>Run Id: <span id="run-id"></span></h1>
+</body>
+</html>

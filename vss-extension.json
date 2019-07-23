@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "vss-nunit",
     "publisher": "AnthonyShaw",
-    "version": "1.0.0",
+    "version": "1.0.6",
     "name": "NUnit",
     "description": "An extension for seeing detailed NUnit data.",
     "public": false,
@@ -12,22 +12,25 @@
             "id": "Microsoft.VisualStudio.Services"
         }
     ],
+    "scopes": ["vso.test"],
     "contributions": [
         {
-            "id": "my-hub",
-            "type": "ms.vss-web.hub",
+            "id": "nunit-detail-item",
+            "type": "ms.vss-web.tab",
             "targets": [
-                "ms.vss-code-web.code-hub-group"
+                "ms.vss-test-web.test-result-details-tab-items"
             ],
+            "description": "extension to show nunit test data",
             "properties": {
-                "name": "My Hub",
-                "uri": "my-hub.html"
+                "name": "NUnit Details",
+                "uri": "nunit-detail.html",
+                "order": 107
             }
         }
     ],
     "files": [
         {
-            "path": "my-hub.html",
+            "path": "nunit-detail.html",
             "addressable": true
         },
         {
