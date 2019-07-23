@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "vss-nunit",
     "publisher": "AnthonyShaw",
-    "version": "1.0.8",
+    "version": "1.0.14",
     "name": "NUnit",
     "description": "An extension for seeing detailed NUnit data.",
     "public": false,

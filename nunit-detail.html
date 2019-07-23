@@ -31,12 +31,23 @@
                     }
                 );
 
-                testClient.getTestResultAttachmentContent(extensionContext.viewContext.data.mainData.project.id, extensionContext.runId, extensionContext.resultId, 1).then(
-                    function(buf){
-                        var enc = new TextDecoder("utf-8");
-                        console.log(enc.decode(buf));
+                testClient.getTestRunAttachments(extensionContext.viewContext.data.mainData.project.id, extensionContext.runId).then(
+                    function(attachments){
+                        console.log(attachments);
+                        for (var i=0; i<attachments.length; i++){
+                            if (attachments[i].fileName.endsWith(".xml")){
+                                testClient.getTestRunAttachmentContent(extensionContext.viewContext.data.mainData.project.id, extensionContext.runId, attachments[i].id).then(
+                                    function(buf){
+                                        parser = new DOMParser();
+                                        enc = new TextDecoder();
+                                        out = enc.decode(buf);
+                                        var dom = parser.parseFromString(out, 'text/xml');
+                                        console.log(dom);
+                                    });
+                            }
+                        }
                     }
-                )
+                );
             });
 
         });
