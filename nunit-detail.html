@@ -18,7 +18,7 @@
             document.getElementById("run-id").innerText = extensionContext.runId;
 
             VSS.require(["VSS/Service", "TFS/TestManagement/RestClient"], function (VSS_Service, TFS_Test_WebApi) {
-                var testClient = VSS_Service.getCollectionClient(TFS_Test_WebApi.TestHttpClient);
+                var testClient = VSS_Service.getCollectionClient(TFS_Test_WebApi.TestHttpClient5_2);
                 testClient.getTestRunById(extensionContext.viewContext.data.mainData.project.id, extensionContext.runId).then(
                     function(run) {
                         console.log(run);
@@ -28,6 +28,13 @@
                 testClient.getTestResultById(extensionContext.viewContext.data.mainData.project.id, extensionContext.runId, extensionContext.resultId).then(
                     function(result){ 
                         console.log(result);
+                    }
+                );
+
+                testClient.getTestResultAttachmentContent(extensionContext.viewContext.data.mainData.project.id, extensionContext.runId, extensionContext.resultId, 1).then(
+                    function(buf){
+                        var enc = new TextDecoder("utf-8");
+                        console.log(enc.decode(buf));
                     }
                 )
             });
