@@ -3,8 +3,8 @@
     "id": "vss-nunit",
     "publisher": "AnthonyShaw",
     "version": "1.0.20",
-    "name": "NUnit",
-    "description": "An extension for seeing detailed NUnit data.",
+    "name": "NUnit Details",
+    "description": "An extension for seeing detailed NUnit data in the test results UI.",
     "public": false,
     "categories": ["Azure Pipelines"],
     "targets": [
@@ -31,6 +31,10 @@
     "files": [
         {
             "path": "nunit-detail.html",
+            "addressable": true
+        },
+        {
+            "path": "scripts",
             "addressable": true
         },
         {
