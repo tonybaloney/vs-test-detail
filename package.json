@@ -2,12 +2,13 @@
   "name": "vs-nunit",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.tsx",
   "scripts": {
     "test": "jest --ci --testResultsProcessor=./node_modules/jest-nunit-reporter",
-    "build": "tsc --skipLibCheck -p .",
+    "build": "tsc --skipLibCheck --jsx react -p .",
     "postbuild": "npm run package",
     "package": "tfx extension create --output-path build",
+    "gallery-publish-testing": "tfx extension publish --publisher AnthonyShaw-testing --overrides-file vss-extension-testing.json --output-path build --rev-version",
     "gallery-publish": "tfx extension publish --output-path build --rev-version",
     "clean": "rimraf ./dist && rimraf ./build/*.vsix"
   },
@@ -15,10 +16,10 @@
   "author": "Anthony Shaw",
   "license": "MIT",
   "dependencies": {
-    "azure-devops-ui": "^1.155.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "vss-web-extension-sdk": "^5.141.0"
+    "vss-web-extension-sdk": "^5.141.0",
+    "azure-devops-ui": "^1.155.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.15",
