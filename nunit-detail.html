@@ -23,42 +23,33 @@
     </script>
 </head>
 <body>
+<span id="plugin-error" style="color:red">&nbsp;</span>
 
 <!-- Test Suite -->
-<div class="accordion-root">
-    <div class="accordion-item">
-        <button aria-expanded="true" class="accordion-header bolt-button enabled subtle bolt-focus-treatment"
-                data-focuszone="" data-is-focusable="true" role="button" tabindex="0" type="button"><span
-                aria-hidden="true" class="accordion-chevron flex-noshrink fabric-icon ms-Icon--ChevronDown"></span>
-            <div class="text-ellipsis">Test Suite</div>
-        </button>
-        <div class="accordion-content">
-            <div class="error-message"></div>
-        </div>
-    </div>
+<h1>Test Suite</h1>
+<h2>Name:</h2> <span id="test-suite-name"></span>
+<h2>Seed:</h2> <span id="test-suite-seed"></span>
+<h2>Run State:</h2> <span id="test-suite-runstate"></span>
 
-    <div class="accordion-item">
-        <button aria-expanded="true" class="accordion-header bolt-button enabled subtle bolt-focus-treatment"
-                data-focuszone="" data-is-focusable="true" role="button" tabindex="0" type="button"><span
-                aria-hidden="true" class="accordion-chevron flex-noshrink fabric-icon ms-Icon--ChevronDown"></span>
-            <div class="text-ellipsis">Test Case</div>
-        </button>
-        <div class="accordion-content">
-            <h3>Properties: </h3>
-            <span id="properties"></span>
-        </div>
-    </div>
+<br/>
+<h3>Properties: </h3>
+<span id="test-suite-properties"></span>
 
-    <div class="accordion-item">
-        <button aria-expanded="true" class="accordion-header bolt-button enabled subtle bolt-focus-treatment"
-                data-focuszone="" data-is-focusable="true" role="button" tabindex="0" type="button"><span
-                aria-hidden="true" class="accordion-chevron flex-noshrink fabric-icon ms-Icon--ChevronDown"></span>
-            <div class="text-ellipsis">Output</div>
-        </button>
-        <div class="accordion-content">
-            <div class="stack-trace"><pre id="output"></pre></div>
-        </div>
-    </div>
-</div>
+
+<h1>Test Case</h1>
+<h2>Name:</h2> <span id="test-case-name"></span>
+<h2>Method:</h2> <span id="test-case-methodname"></span>
+<h2>Class:</h2> <span id="test-case-classname"></span>
+<h2>Seed:</h2> <span id="test-case-seed"></span>
+<h2>Run State:</h2> <span id="test-case-runstate"></span>
+
+<br/>
+
+<h3>Properties: </h3>
+<span id="test-case-properties"></span>
+
+<h3>Output: </h3>
+
+<pre id="test-case-output"></pre>
 </body>
 </html>

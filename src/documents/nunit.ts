@@ -13,8 +13,15 @@ export class NunitProperty {
 
 export class NunitTestSuite {
     element: Element;
+    name: string;
+    runState: string;
+    seed: string;
+
     constructor(element: Element){
         this.element = element;
+        this.name = element.getAttribute("name");
+        this.runState = element.getAttribute("runstate");
+        this.seed = element.getAttribute("seed");
     }
 
     getProperties() : Array<NunitProperty> {
@@ -34,7 +41,8 @@ export class NunitTestCase {
     className: string;
     methodName: string;
     runState: string;
-    seed: string
+    seed: string;
+
     constructor(element: Element){
         this.element = element;
         this.name = element.getAttribute("name");
