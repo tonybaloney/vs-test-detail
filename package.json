@@ -5,22 +5,24 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build": "tsc -p .",
+    "build": "tsc --skipLibCheck -p .",
     "postbuild": "npm run package",
     "package": "tfx extension create --output-path build",
-    "gallery-publish": "tfx extension publish --rev-version",
-    "clean": "rimraf ./dist && rimraf ./*.vsix"
+    "gallery-publish": "tfx extension publish --output-path build --rev-version",
+    "clean": "rimraf ./dist && rimraf ./build/*.vsix"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "vss-web-extension-sdk": "^5.141.0"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.15",
     "jest": "^24.8.0",
     "rimraf": "^2.5.4",
     "tfx-cli": "^0.7.8",
+    "ts-jest": "^24.0.2",
     "typescript": "^2.1.4"
   }
 }
