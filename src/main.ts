@@ -49,7 +49,6 @@ VSS.ready(function() {
             document.getElementById("test-case-output").innerText = testCase.getOutput();
 
             document.getElementById("test-suite-name").innerText = testSuite.name;
-            document.getElementById("test-suite-seed").innerText = testSuite.seed;
             document.getElementById("test-suite-runstate").innerText = testSuite.runState;
 
             for (let property of testSuite.getProperties()) {
