@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc -p .",
+    "postbuild": "npm run package",
+    "package": "tfx extension create --output-path build",
+    "gallery-publish": "tfx extension publish --rev-version",
+    "clean": "rimraf ./dist && rimraf ./*.vsix"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +18,9 @@
     "vss-web-extension-sdk": "^5.141.0"
   },
   "devDependencies": {
-    "jest": "^24.8.0"
+    "jest": "^24.8.0",
+    "rimraf": "^2.5.4",
+    "tfx-cli": "^0.7.8",
+    "typescript": "^2.1.4"
   }
 }

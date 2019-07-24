@@ -34,7 +34,7 @@
             "addressable": true
         },
         {
-            "path": "scripts",
+            "path": "dist",
             "addressable": true
         },
         {
