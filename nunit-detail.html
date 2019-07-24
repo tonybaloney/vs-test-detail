@@ -10,7 +10,18 @@
             font-family: "Segoe UI VSS (Regular)","-apple-system",BlinkMacSystemFont,"Segoe UI",sans-serif;
         }
     </style>
-    <script type="text/javascript" src="scripts/main.js"></script>
+    <script type="text/javascript">
+        // Initialize the VSS sdk
+        VSS.init({
+            usePlatformScripts: true,
+            usePlatformStyles: true
+        });
+
+        VSS.require(["dist/main"], function (app) {
+            console.log("Loaded app");
+            console.log(app);
+        });
+    </script>
 </head>
 <body>        
     <h3>Test Case Properties: </h3>

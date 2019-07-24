@@ -1,45 +1,88 @@
-let testCaseName = "";
+/// <reference types="vss-web-extension-sdk" />
 
-function isNunitXml(dom){
-    return true;
+import {TestHttpClient5} from "TFS/TestManagement/RestClient";
+
+let testCaseName: string = "";
+let parser: DOMParser = new DOMParser();
+let enc: TextDecoder = new TextDecoder();
+
+function isNunitXml(document: Document) : boolean {
+    return (document.firstElementChild.className === "test-run")
 }
 
-VSS.init({ usePlatformScripts: true, usePlatformStyles: true });
+class NunitProperty {
+    name: string;
+    value: string;
+    constructor(element: Element){
+        this.name = element.getAttribute('name');
+        this.value = element.getAttribute('value');
+    }
+}
+
+class NunitTestCase {
+    element: Element;
+    constructor(element: Element){
+        this.element = element;
+    }
+
+    getProperties() : Array<NunitProperty> {
+        let results = new Array();
+        // @ts-ignore
+        for (let el of this.element.getElementsByTagName('property')) {
+            results.push(new NunitProperty(el));
+        }
+        return results;
+    }
+
+    getOutput() : string {
+        return this.element.getElementsByTagName('output')[0].textContent;
+    }
+}
+
+class NunitXMLDocument {
+    document: XMLDocument;
+    constructor(document: XMLDocument){
+        if (!isNunitXml(document))
+            throw new DOMException("Invalid NUnit XML document", document.firstElementChild.className);
+
+        this.document = document;
+    }
+
+    private getCases() : NodeListOf<Element> {
+        return this.document.getElementsByTagName('test-case');
+    }
+
+    getCase(name: string) :NunitTestCase {
+        // @ts-ignore
+        for (let testCase of this.getCases()) {
+            const caseName: string = testCase.getAttribute('name');
+            if (caseName === name) {
+                return new NunitTestCase(testCase);
+            }
+        }
+    }
+}
+
 VSS.ready(function() {
-    let parser = new DOMParser();
-    let enc = new TextDecoder();
-    let extensionContext = VSS.getConfiguration();
+
+    let extensionContext: any = VSS.getConfiguration();
 
     VSS.require(["VSS/Service", "TFS/TestManagement/RestClient"], function (VSS_Service, TFS_Test_WebApi) {
-        const testClient = VSS_Service.getCollectionClient(TFS_Test_WebApi.TestHttpClient5_2);
-        testClient.getTestRunById(extensionContext.viewContext.data.mainData.project.id, extensionContext.runId).then(
-            function(run) {
-                console.log(run);
-            }
-        );
+        const testClient:TestHttpClient5 = VSS_Service.getCollectionClient(TFS_Test_WebApi.TestHttpClient5);
 
-        const processAttachment = function (buf) {
-            let out = enc.decode(buf);
-            const dom = parser.parseFromString(out, 'text/xml');
+        const processAttachment = function (buf: ArrayBuffer) {
+            let out:string = enc.decode(buf);
+            const dom:Document = parser.parseFromString(out, 'text/xml');
 
             if (!isNunitXml(dom))
                 return;
 
-            const cases = dom.getElementsByTagName('test-case');
-            console.log(dom);
-            for (var i = 0; i < cases.length; i++) {
-                var caseName = cases[i].getAttribute('name');
-                if (caseName === testCaseName) {
-                    const properties = cases[i].getElementsByTagName('property');
-                    for (let j = 0; j < properties.length; j++) {
-                        let name = properties[j].getAttribute('name');
-                        let value = properties[j].getAttribute('value');
-                        document.getElementById("properties").innerHTML += "<strong>" + name + "</strong>: " + value + "<br/>"
-                    }
-                    const output = cases[i].getElementsByTagName('output')[0];
-                    document.getElementById("output").innerText = output.textContent;
-                }
+            let nunitDocument = new NunitXMLDocument(document);
+            let testCase = nunitDocument.getCase(testCaseName);
+            for (let property of testCase.getProperties()) {
+                document.getElementById("properties").innerHTML += "<strong>" + property.name + "</strong>: " + property.value + "<br/>"
             }
+            document.getElementById("output").innerText = testCase.getOutput();
         };
 
         const scopeAttachments = function (attachments) {
