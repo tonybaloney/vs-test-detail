@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "vss-nunit",
     "publisher": "AnthonyShaw",
-    "version": "1.0.28",
+    "version": "1.0.29",
     "name": "NUnit Details",
     "description": "An extension for seeing detailed NUnit data in the test results UI.",
     "public": false,

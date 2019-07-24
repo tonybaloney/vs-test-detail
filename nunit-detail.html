@@ -6,8 +6,8 @@
         body {
             background-color: white;
             color: black;
-            margin: 10px;    
-            font-family: "Segoe UI VSS (Regular)","-apple-system",BlinkMacSystemFont,"Segoe UI",sans-serif;
+            margin: 10px;
+            font-family: "Segoe UI VSS (Regular)", "-apple-system", BlinkMacSystemFont, "Segoe UI", sans-serif;
         }
     </style>
     <script type="text/javascript">
@@ -19,14 +19,46 @@
 
         VSS.require(["dist/main"], function (app) {
             console.log("Loaded app");
-            console.log(app);
         });
     </script>
 </head>
-<body>        
-    <h3>Test Case Properties: </h3>
-    <span id="properties"></span>
-    <h3>Output: </h3>
-    <pre id="output"></pre>
+<body>
+
+<!-- Test Suite -->
+<div class="accordion-root">
+    <div class="accordion-item">
+        <button aria-expanded="true" class="accordion-header bolt-button enabled subtle bolt-focus-treatment"
+                data-focuszone="" data-is-focusable="true" role="button" tabindex="0" type="button"><span
+                aria-hidden="true" class="accordion-chevron flex-noshrink fabric-icon ms-Icon--ChevronDown"></span>
+            <div class="text-ellipsis">Test Suite</div>
+        </button>
+        <div class="accordion-content">
+            <div class="error-message"></div>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button aria-expanded="true" class="accordion-header bolt-button enabled subtle bolt-focus-treatment"
+                data-focuszone="" data-is-focusable="true" role="button" tabindex="0" type="button"><span
+                aria-hidden="true" class="accordion-chevron flex-noshrink fabric-icon ms-Icon--ChevronDown"></span>
+            <div class="text-ellipsis">Test Case</div>
+        </button>
+        <div class="accordion-content">
+            <h3>Properties: </h3>
+            <span id="properties"></span>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button aria-expanded="true" class="accordion-header bolt-button enabled subtle bolt-focus-treatment"
+                data-focuszone="" data-is-focusable="true" role="button" tabindex="0" type="button"><span
+                aria-hidden="true" class="accordion-chevron flex-noshrink fabric-icon ms-Icon--ChevronDown"></span>
+            <div class="text-ellipsis">Output</div>
+        </button>
+        <div class="accordion-content">
+            <div class="stack-trace"><pre id="output"></pre></div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

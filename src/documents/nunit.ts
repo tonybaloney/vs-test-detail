@@ -1,5 +1,5 @@
 export function isNunitXml(document: Document) : boolean {
-    return (document.firstElementChild.tagName === "test-run")
+    return (document && document.firstElementChild && document.firstElementChild.tagName === "test-run")
 }
 
 export class NunitProperty {
@@ -30,8 +30,18 @@ export class NunitTestSuite {
 
 export class NunitTestCase {
     element: Element;
+    name: string;
+    className: string;
+    methodName: string;
+    runState: string;
+    seed: string
     constructor(element: Element){
         this.element = element;
+        this.name = element.getAttribute("name");
+        this.className = element.getAttribute("classname");
+        this.methodName = element.getAttribute("methodname");
+        this.runState = element.getAttribute("runstate");
+        this.seed = element.getAttribute("seed");
     }
 
     getTestSuite() : NunitTestSuite {

@@ -1,4 +1,6 @@
 import * as nunit from '../documents/nunit';
+var fs = require('fs');
+
 
 test('test invalid Nunit XML file', () => {
     const testXml = "<xml/><foo></foo>"
@@ -26,4 +28,41 @@ test('invalid test case match', () => {
 
     const testNunit = new nunit.NunitXMLDocument(testDoc);
     expect(testNunit.getCase('invalid')).toBeUndefined();
+});
+
+test('valid complex test case match', (done) => {
+    let path = 'src/tests/test-results-integration.xml';
+    expect(fs.existsSync(path)).toBe(true);
+    fs.readFile(path, 'utf8', function(err, contents) {
+        if (err)
+            throw err;
+        let testDoc = (new DOMParser()).parseFromString(contents, 'text/xml');
+        const testNunit = new nunit.NunitXMLDocument(testDoc);
+        let resolvedCase = testNunit.getCase('tests/integration/test_properties.py::test_attachment');
+        expect(resolvedCase).toBeDefined();
+        expect(resolvedCase.name).toBe("tests/integration/test_properties.py::test_attachment");
+        expect(resolvedCase.className).toBe("TestClass");
+        expect(resolvedCase.methodName).toBe("test_method");
+        expect(resolvedCase.runState).toBe("Runnable");
+        expect(resolvedCase.seed).toBe("1");
+
+        done();
+    });
+});
+
+test('valid complex test case match test suite', (done) => {
+    let path = 'src/tests/test-results-integration.xml';
+    expect(fs.existsSync(path)).toBe(true);
+    fs.readFile(path, 'utf8', function(err, contents) {
+        if (err)
+            throw err;
+        let testDoc = (new DOMParser()).parseFromString(contents, 'text/xml');
+        const testNunit = new nunit.NunitXMLDocument(testDoc);
+        let resolvedCase = testNunit.getCase('tests/integration/test_properties.py::test_attachment');
+        expect(resolvedCase).toBeDefined();
+        let resolvedSuite = resolvedCase.getTestSuite();
+        expect(resolvedSuite).toBeDefined();
+
+        done();
+    });
 });
