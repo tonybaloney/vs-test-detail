@@ -16,10 +16,16 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    npm install
+    npm install --only=dev
     npm run build
   displayName: 'npm install and build'
 
 - script: |
     npm run test
   displayName: 'npm test'
+
+- task: PublishTestResults@2
+  condition: succeededOrFailed()
+  inputs:
+    testRunner: NUnit
+    testResultsFiles: '**/test-report.xml'
