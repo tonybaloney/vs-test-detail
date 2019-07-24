@@ -2,10 +2,9 @@
     "manifestVersion": 1,
     "id": "vss-nunit",
     "publisher": "AnthonyShaw",
-    "version": "1.0.40",
+    "version": "1.0.49",
     "name": "NUnit Details",
     "description": "An extension for seeing detailed NUnit data in the test results UI.",
-    "public": false,
     "categories": ["Azure Pipelines"],
     "targets": [
         {
@@ -42,5 +41,45 @@
             "addressable": true,
             "packagePath": "lib"
         }
-    ]
+    ],
+    "galleryFlags": [
+        "Public",
+        "Preview"
+    ],
+    "content": {
+        "details": {
+            "path": "overview.md"
+        }
+    },
+    "license": {
+        "path": "LICENSE"
+    },
+    "links": {
+        "source": {
+            "uri": "https://github.com/tonybaloney/vs-nunit"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/tonybaloney/vs-nunit"
+    },
+    "badges": [
+        {
+            "href": "https://dev.azure.com/AnthonyShaw/vs-nunit/_build/latest?definitionId=6&branchName=master",
+            "uri": "https://dev.azure.com/AnthonyShaw/vs-nunit/_apis/build/status/tonybaloney.vs-nunit?branchName=master",
+            "description": "Azure Pipelines Status"
+        }
+    ],
+    "branding": {
+        "color": "rgb(34, 34, 34)",
+        "theme": "dark"
+    },
+    "screenshots": [
+        {
+            "path": "images/screenshot.png"
+        }
+    ],
+    "icons": {
+        "default": "images/logo.png"
+    }
 }

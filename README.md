@@ -6,7 +6,7 @@ An NUnit UI extension for test cases in Azure DevOps (VSO)
 
 Loads NUnit XML 3.0 test results and displays additional detail in the test console
 
-![](screenshot.png)
+![](images/screenshot.png)
 
 ### Install
 
