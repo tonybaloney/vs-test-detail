@@ -15,20 +15,22 @@ export class NunitTestSuite {
     element: Element;
     name: string;
     runState: string;
-    seed: string;
 
     constructor(element: Element){
         this.element = element;
         this.name = element.getAttribute("name");
         this.runState = element.getAttribute("runstate");
-        this.seed = element.getAttribute("seed");
     }
 
     getProperties() : Array<NunitProperty> {
         let results = new Array();
         // @ts-ignore
-        for (let el of this.element.getElementsByTagName('property')) {
-            results.push(new NunitProperty(el));
+        for (let child of this.element.childNodes){
+            if (child.nodeName === "properties") {
+                for (let el of child.getElementsByTagName('property')) {
+                    results.push(new NunitProperty(el));
+                }
+            }
         }
         return results;
     }

@@ -60,9 +60,10 @@ test('valid complex test case match test suite', (done) => {
         const testNunit = new nunit.NunitXMLDocument(testDoc);
         let resolvedCase = testNunit.getCase('tests/integration/test_properties.py::test_attachment');
         expect(resolvedCase).toBeDefined();
+        expect(resolvedCase.getProperties().length).toBe(1);
         let resolvedSuite = resolvedCase.getTestSuite();
         expect(resolvedSuite).toBeDefined();
-
+        expect(resolvedSuite.getProperties().length).toBe(1);
         done();
     });
 });
