@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Card } from "azure-devops-ui/Card";
+import { Header, TitleSize } from "azure-devops-ui/Header";
 import { Table } from "azure-devops-ui/Table";
 import { IItemProvider } from "azure-devops-ui/Utilities/Provider";
 import * as NUnit from "../documents/nunit"
@@ -56,12 +56,18 @@ export class PropertyTable extends React.Component<PropertyTableProps, PropertyT
 
     public render(): JSX.Element {
         return (
-            <Card
-            className="flex-grow bolt-table-card"
-            titleProps={{ text: "Properties" }}
-            >
-                <Table columns={fixedPropertyColumns} itemProvider={this.state.propertiesProvider} role="table" />
-            </Card>
+            <div style={{ display: "flex" }}>
+                <div className="flex-row">
+                    <Header
+                        title={"Properties"}
+                        titleSize={TitleSize.Small}
+                        titleIconProps={{ iconName: "TestParameter" }}
+                    />
+                </div>
+                <div className="flex-row">
+                    <Table columns={fixedPropertyColumns} itemProvider={this.state.propertiesProvider} role="table" />
+                </div>
+            </div>
         );
     }
 };

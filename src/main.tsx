@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import NUnitCard from "./ui/card";
+import NUnitPageState from "./ui/card";
 
 import { SurfaceBackground, SurfaceContext } from "azure-devops-ui/Surface";
 
@@ -45,21 +45,10 @@ VSS.ready(function() {
 
             ReactDOM.render(
                 <SurfaceContext.Provider value={{ background: SurfaceBackground.neutral }}>
-                  <NUnitCard testCase={testCase} testSuite={testSuite}/>
+                  <NUnitPageState testCase={testCase} testSuite={testSuite}/>
                 </SurfaceContext.Provider>,
                 document.getElementById("root")
             );
-
-            // document.getElementById("test-case-classname").innerText = testCase.className;
-            // document.getElementById("test-case-methodname").innerText = testCase.methodName;
-            // document.getElementById("test-case-name").innerText = testCase.name;
-            // document.getElementById("test-case-seed").innerText = testCase.seed;
-            // document.getElementById("test-case-runstate").innerText = testCase.runState;
-
-            // for (let property of testCase.getProperties()) {
-            //     document.getElementById("test-case-properties").innerText +=  property.name + ": " + property.value;
-            // }
-            // document.getElementById("test-case-output").innerText = testCase.getOutput();
 
             // document.getElementById("test-suite-name").innerText = testSuite.name;
             // document.getElementById("test-suite-runstate").innerText = testSuite.runState;

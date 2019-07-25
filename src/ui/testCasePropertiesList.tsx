@@ -2,7 +2,6 @@ import * as React from "react";
 import { ScrollableList, IListItemDetails, ListSelection, ListItem } from "azure-devops-ui/List";
 import { ArrayItemProvider, IItemProvider } from "azure-devops-ui/Utilities/Provider";
 import { Icon, IconSize } from "azure-devops-ui/Icon";
-import { Card } from "azure-devops-ui/Card";
 import { NunitTestCase } from "../documents/nunit";
 
 export interface ITaskItem {
@@ -29,24 +28,29 @@ export default class TestCasePropertiesList extends React.Component<TestCaseProp
         let propertiesList: ITaskItem[] = [
             {
                 value: props.testCase.name,
-                iconName: "Home",
+                iconName: "TestPlan",
                 name: "Name"
             },
             {
                 value: props.testCase.methodName,
-                iconName: "Home",
+                iconName: "TestStep",
                 name: "Method"
             },
             {
                 value: props.testCase.className,
-                iconName: "Home",
+                iconName: "TestStep",
                 name: "Class"
             },
             {
                 value: props.testCase.seed,
-                iconName: "Home",
+                iconName: "Coffee",
                 name: "Seed"
             },
+            {
+                value: props.testCase.runState,
+                iconName: "TestAutoSolid",
+                name: "Run State"
+            }
         ];
         this.state = { 
             properties: new ArrayItemProvider(propertiesList)
@@ -55,16 +59,14 @@ export default class TestCasePropertiesList extends React.Component<TestCaseProp
 
     public render(): JSX.Element {
         return (
-            <Card>
-                <div style={{ display: "flex", height: "300px" }}>
-                    <ScrollableList
-                        itemProvider={this.state.properties}
-                        renderRow={this.renderRow}
-                        selection={this.selection}
-                        width="100%"
-                    />
-                </div>
-            </Card>
+            <div style={{ display: "flex-ro", height: "300px" }} className="flex-row">
+                <ScrollableList
+                    itemProvider={this.state.properties}
+                    renderRow={this.renderRow}
+                    selection={this.selection}
+                    width="100%"
+                />
+            </div>
         );
     }
 

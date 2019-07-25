@@ -4,20 +4,21 @@ import { Header, TitleSize } from "azure-devops-ui/Header";
 import { Page } from "azure-devops-ui/Page";
 import {PropertyTable} from "./propertyTable"
 import TestCasePropertiesList from "./testCasePropertiesList";
+import { Card } from "azure-devops-ui/Card";
 
+import "./root.scss"
 
-interface CardProps {
+interface NUnitPageProps {
     testCase: NUnit.NunitTestCase,
     testSuite: NUnit.NunitTestSuite
 }
 
-interface CardState {
+interface NUnitPageState {
     testCase: NUnit.NunitTestCase
     testSuite: NUnit.NunitTestSuite
 }
 
-
-export default class NUnitCard extends React.Component<CardProps, CardState> {
+export default class NUnitPage extends React.Component<NUnitPageProps, NUnitPageState> {
     constructor(props) {
         super(props);
         
@@ -29,25 +30,25 @@ export default class NUnitCard extends React.Component<CardProps, CardState> {
 
     public render(): JSX.Element {
         return (
-            <Page>
-                <Header
-                    title={"Test Suite"}
-                    titleSize={TitleSize.Medium}
-                    titleIconProps={{ iconName: "OpenSource" }}
-                />
+            <Page className="flex-grow">
                 <div className="page-content page-content-top">
-
-                    <PropertyTable properties={this.state.testSuite.getProperties()}/>
-                </div>
-
-                <Header
-                    title={"Test Suite"}
-                    titleSize={TitleSize.Medium}
-                    titleIconProps={{ iconName: "OpenSource" }}
-                />
-                <div className="page-content page-content-top">
-                    <TestCasePropertiesList testCase={this.state.testCase} />
-                    <PropertyTable properties={this.state.testCase.getProperties()}/>
+                    <Header
+                        title={"Test Suite"}
+                        titleSize={TitleSize.Medium}
+                        titleIconProps={{ iconName: "TestSuite" }}
+                    />
+                    <Card>
+                        <PropertyTable properties={this.state.testSuite.getProperties()}/>
+                    </Card>
+                    <Header
+                        title={"Test Case"}
+                        titleSize={TitleSize.Medium}
+                        titleIconProps={{ iconName: "TestCase" }}
+                    />
+                    <Card>
+                        <TestCasePropertiesList testCase={this.state.testCase} />
+                        <PropertyTable properties={this.state.testCase.getProperties()}/>
+                    </Card>
                 </div>
             </Page>
         );
