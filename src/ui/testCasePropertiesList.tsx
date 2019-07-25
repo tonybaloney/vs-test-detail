@@ -59,7 +59,7 @@ export default class TestCasePropertiesList extends React.Component<TestCaseProp
 
     public render(): JSX.Element {
         return (
-            <div style={{ display: "flex-ro", height: "300px" }} className="flex-row">
+            <div style={{ display: "flex", height: "300px" }} className="flex-row">
                 <ScrollableList
                     itemProvider={this.state.properties}
                     renderRow={this.renderRow}
