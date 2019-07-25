@@ -4,9 +4,17 @@
 
 An NUnit UI extension for test cases in Azure DevOps (VSO)
 
-Loads NUnit XML 3.0 test results and displays additional detail in the test console
+Loads NUnit XML 2/3 test results and displays additional detail in the test console
 
 ![](images/screenshot.png)
+
+## Compatibility
+
+| Platform/Plugin      | NUnit Output           | Supported?  |
+| -------------------- |:-----------------:| -----:|
+| Pytest/[pytest-nunit](https://pypi.org/project/pytest-nunit/)  | 3.0 XML | **Yes** |
+| Node/[jest-nunit-reporter](https://www.npmjs.com/package/jest-nunit-reporter) | 2.0 XML      |   Yes |
+| .NET/NUnit                        | 2.5 XML      |   Yes |
 
 ### Install
 

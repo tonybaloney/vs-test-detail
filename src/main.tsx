@@ -8,6 +8,7 @@ import { SurfaceBackground, SurfaceContext } from "azure-devops-ui/Surface";
 
 import {TestHttpClient5} from "TFS/TestManagement/RestClient";
 import {NunitXMLDocument, isNunitXml} from "./documents/nunit";
+import {Nunit2XMLDocument, isNunit2Xml} from "./documents/nunit2";
 
 let testCaseName: string = "";
 let parser: DOMParser = new DOMParser();
@@ -24,13 +25,17 @@ VSS.ready(function() {
             let out: string = enc.decode(buf);
             const dom: Document = parser.parseFromString(out, 'text/xml');
 
-            if (!isNunitXml(dom)) {
+            let doc: any = undefined;
+            if (isNunitXml(dom)) {
+                doc = new NunitXMLDocument(dom);
+            } else if (isNunit2Xml(dom)) {
+                doc = new Nunit2XMLDocument(dom);
+            } else {
                 document.getElementById("plugin-error").innerHTML += "Attachment is not a valid NUnit 3.0 XML file. <br/>";
                 return;
             }
 
-            let nunitDocument = new NunitXMLDocument(dom);
-            let testCase = nunitDocument.getCase(testCaseName);
+            let testCase = doc.getCase(testCaseName);
             let testSuite = testCase.getTestSuite();
 
             if (!testCase) {
@@ -49,13 +54,6 @@ VSS.ready(function() {
                 </SurfaceContext.Provider>,
                 document.getElementById("root")
             );
-
-            // document.getElementById("test-suite-name").innerText = testSuite.name;
-            // document.getElementById("test-suite-runstate").innerText = testSuite.runState;
-
-            // for (let property of testSuite.getProperties()) {
-            //     document.getElementById("test-suite-properties").innerText +=  property.name + ": " + property.value;
-            // }
         };
 
         const scopeAttachments = function (attachments) {
@@ -68,7 +66,7 @@ VSS.ready(function() {
                 }
             }
             if (!foundAttachment){
-                document.getElementById("plugin-error").innerHTML += "Could not locate an NUnit 3.0 XML attachment. <br/>";
+                document.getElementById("plugin-error").innerHTML += "Could not locate an NUnit XML attachment. <br/>";
             }
         };
 

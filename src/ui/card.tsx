@@ -1,5 +1,4 @@
 import * as React from "react";
-import * as NUnit from "../documents/nunit"
 import { Header, TitleSize } from "azure-devops-ui/Header";
 import { Page } from "azure-devops-ui/Page";
 import {PropertyTable} from "./propertyTable"
@@ -7,18 +6,19 @@ import TestCasePropertiesList from "./testCasePropertiesList";
 import { Card } from "azure-devops-ui/Card";
 
 import "./root.scss"
+import {ITestCase, ITestSuite} from "../documents/abstract";
 
-interface NUnitPageProps {
-    testCase: NUnit.NunitTestCase,
-    testSuite: NUnit.NunitTestSuite
+interface IPageProps {
+    testCase: ITestCase,
+    testSuite: ITestSuite
 }
 
-interface NUnitPageState {
-    testCase: NUnit.NunitTestCase
-    testSuite: NUnit.NunitTestSuite
+interface IPageState {
+    testCase: ITestCase
+    testSuite: ITestSuite
 }
 
-export default class NUnitPage extends React.Component<NUnitPageProps, NUnitPageState> {
+export default class NUnitPage extends React.Component<IPageProps, IPageState> {
     constructor(props) {
         super(props);
         

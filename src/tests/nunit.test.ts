@@ -31,7 +31,7 @@ test('invalid test case match', () => {
 });
 
 test('valid complex test case match', (done) => {
-    let path = 'src/tests/test-results-integration.xml';
+    let path = 'src/tests/pytest-nunit-report.xml';
     expect(fs.existsSync(path)).toBe(true);
     fs.readFile(path, 'utf8', function(err, contents) {
         if (err)
@@ -51,7 +51,7 @@ test('valid complex test case match', (done) => {
 });
 
 test('valid complex test case match test suite', (done) => {
-    let path = 'src/tests/test-results-integration.xml';
+    let path = 'src/tests/pytest-nunit-report.xml';
     expect(fs.existsSync(path)).toBe(true);
     fs.readFile(path, 'utf8', function(err, contents) {
         if (err)
