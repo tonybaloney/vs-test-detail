@@ -1,12 +1,16 @@
-import {NunitProperty, NunitTestCase, NunitTestSuite} from "./nunit";
-import { ITaskItem } from "../ui/testCasePropertiesList";
+import { ITaskItem } from "../ui/testPropertiesList";
 
-export interface ITestSuite {
+export interface IPropertiesListProvider {
+    getPropertiesList(): ITaskItem[];
+}
+
+export abstract class ITestSuite implements IPropertiesListProvider {
     element: Element;
     name: string;
-    runState: string;
 
-    getProperties(): Array<NunitProperty>;
+    abstract getPropertiesList(): ITaskItem[];
+
+    abstract getProperties(): Array<IProperty>;
 }
 
 export interface IProperty {
@@ -14,7 +18,7 @@ export interface IProperty {
     value: string;
 }
 
-export abstract class ITestCase {
+export abstract class ITestCase implements IPropertiesListProvider {
     element: Element;
     name: string;
 
@@ -22,15 +26,17 @@ export abstract class ITestCase {
 
     abstract getTestSuite(): ITestSuite;
 
-    abstract getProperties(): Array<NunitProperty>;
+    abstract getProperties(): Array<IProperty>;
 
     abstract getOutput(): string;
 }
 
-export interface ITestResultDocument {
+export abstract class ITestResultDocument implements IPropertiesListProvider {
     document: XMLDocument;
 
-    getCases(): NodeListOf<Element>;
+    abstract getPropertiesList(): ITaskItem[];
 
-    getCase(name: string): NunitTestCase;
+    abstract getCases(): NodeListOf<Element>;
+
+    abstract getCase(name: string): ITestCase;
 }

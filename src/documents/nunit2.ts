@@ -1,5 +1,5 @@
 import {IProperty, ITestCase, ITestResultDocument, ITestSuite} from "./abstract";
-import { ITaskItem } from "../ui/testCasePropertiesList";
+import { ITaskItem } from "../ui/testPropertiesList";
 
 export function isNunit2Xml(document: Document) : boolean {
     return (document && document.firstElementChild && document.firstElementChild.tagName === "test-results")
@@ -25,6 +25,16 @@ export class Nunit2TestSuite implements ITestSuite {
         this.runState = "";
     }
     
+    getPropertiesList(): ITaskItem[] {
+        return [
+        {
+            value: this.name,
+            iconName: "TestPlan",
+            name: "Name"
+        },
+        ];
+    }
+
     getProperties(): Array<IProperty> {
         let results = new Array();
         // @ts-ignore
@@ -55,6 +65,21 @@ export class Nunit2TestCase implements ITestCase {
             value: this.name,
             iconName: "TestPlan",
             name: "Name"
+        },
+        {
+            value: this.element.getAttribute('description'),
+            iconName: "TestPlan",
+            name: "Description"
+        },
+        {
+            value: this.element.getAttribute('executed'),
+            iconName: "TestPlan",
+            name: "Executed"
+        },
+        {
+            value: this.element.getAttribute('result'),
+            iconName: "TestPlan",
+            name: "Result"
         }
         ]
     };
@@ -81,6 +106,10 @@ export class Nunit2XMLDocument implements ITestResultDocument {
 
         this.document = document;
     }
+
+    getPropertiesList(): ITaskItem[] {
+        return [];
+    };
 
     getCases(): NodeListOf<Element> {
         return this.document.getElementsByTagName('test-case');

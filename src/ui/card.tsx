@@ -2,7 +2,7 @@ import * as React from "react";
 import { Header, TitleSize } from "azure-devops-ui/Header";
 import { Page } from "azure-devops-ui/Page";
 import {PropertyTable} from "./propertyTable"
-import TestCasePropertiesList from "./testCasePropertiesList";
+import TestPropertiesList from "./testPropertiesList";
 import { Card } from "azure-devops-ui/Card";
 
 import "./root.scss"
@@ -38,6 +38,7 @@ export default class NUnitPage extends React.Component<IPageProps, IPageState> {
                         titleIconProps={{ iconName: "TestSuite" }}
                     />
                     <Card>
+                        <TestPropertiesList provider={this.state.testCase} />
                         <PropertyTable properties={this.state.testSuite.getProperties()}/>
                     </Card>
                     <Header
@@ -46,7 +47,7 @@ export default class NUnitPage extends React.Component<IPageProps, IPageState> {
                         titleIconProps={{ iconName: "TestCase" }}
                     />
                     <Card>
-                        <TestCasePropertiesList testCase={this.state.testCase} />
+                        <TestPropertiesList provider={this.state.testCase} />
                         <PropertyTable properties={this.state.testCase.getProperties()}/>
                     </Card>
                 </div>

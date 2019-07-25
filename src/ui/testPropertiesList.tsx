@@ -2,7 +2,7 @@ import * as React from "react";
 import { ScrollableList, IListItemDetails, ListSelection, ListItem } from "azure-devops-ui/List";
 import { ArrayItemProvider, IItemProvider } from "azure-devops-ui/Utilities/Provider";
 import { Icon, IconSize } from "azure-devops-ui/Icon";
-import {ITestCase} from "../documents/abstract";
+import {IPropertiesListProvider} from "../documents/abstract";
 
 export interface ITaskItem {
     value: string;
@@ -10,22 +10,22 @@ export interface ITaskItem {
     name: string;
 }
 
-interface TestCasePropertiesListProps {
-    testCase: ITestCase
+interface TestPropertiesListProps {
+    provider: IPropertiesListProvider
 }
 
-interface TestCasePropertiesListState {
+interface TestPropertiesListState {
     properties: IItemProvider<any>
 }
 
-export default class TestCasePropertiesList extends React.Component<TestCasePropertiesListProps, TestCasePropertiesListState>  {
+export default class TestPropertiesList extends React.Component<TestPropertiesListProps, TestPropertiesListState>  {
     private selection = new ListSelection(true);
 
     constructor(props) {
         super(props);
         
         this.state = { 
-            properties: new ArrayItemProvider(props.testCase.getPropertiesList())
+            properties: new ArrayItemProvider(props.provider.getPropertiesList())
         }
     }
 

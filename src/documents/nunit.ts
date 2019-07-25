@@ -1,5 +1,5 @@
 import {IProperty, ITestCase, ITestResultDocument, ITestSuite} from "./abstract";
-import { ITaskItem } from "../ui/testCasePropertiesList";
+import { ITaskItem } from "../ui/testPropertiesList";
 
 export function isNunitXml(document: Document) : boolean {
     return (document && document.firstElementChild && document.firstElementChild.tagName === "test-run")
@@ -23,6 +23,16 @@ export class NunitTestSuite implements ITestSuite {
         this.element = element;
         this.name = element.getAttribute("name");
         this.runState = element.getAttribute("runstate");
+    }
+
+    getPropertiesList(): ITaskItem[] {
+        return [
+        {
+            value: this.name,
+            iconName: "TestPlan",
+            name: "Name"
+        },
+        ];
     }
 
     getProperties(): Array<IProperty> {
@@ -105,6 +115,10 @@ export class NunitXMLDocument implements ITestResultDocument {
 
         this.document = document;
     }
+
+    getPropertiesList(): ITaskItem[] {
+        return [];
+    };
 
     getCases(): NodeListOf<Element> {
         return this.document.getElementsByTagName('test-case');
