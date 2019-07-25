@@ -8,10 +8,20 @@ import { SurfaceBackground, SurfaceContext } from "azure-devops-ui/Surface";
 
 import {TestHttpClient5} from "TFS/TestManagement/RestClient";
 import {NunitXMLDocument, isNunitXml} from "./documents/nunit";
+import ErrorMessage from "./ui/errorWindow";
 
 let testCaseName: string = "";
 let parser: DOMParser = new DOMParser();
 let enc: TextDecoder = new TextDecoder();
+
+export const showError = function(message){
+    ReactDOM.render(
+        <SurfaceContext.Provider value={{ background: SurfaceBackground.neutral }}>
+          <ErrorMessage message={message}/>
+        </SurfaceContext.Provider>,
+        document.getElementById("error")
+    );
+}
 
 VSS.ready(function() {
 
@@ -25,7 +35,7 @@ VSS.ready(function() {
             const dom: Document = parser.parseFromString(out, 'text/xml');
 
             if (!isNunitXml(dom)) {
-                document.getElementById("plugin-error").innerHTML += "Attachment is not a valid NUnit 3.0 XML file. <br/>";
+                showError("Attachment is not a valid NUnit 3.0 XML file. ");
                 return;
             }
 
@@ -34,12 +44,12 @@ VSS.ready(function() {
             let testSuite = testCase.getTestSuite();
 
             if (!testCase) {
-                document.getElementById("plugin-error").innerHTML += "Could not locate a matching test case in the results. <br/>";
+                showError("Could not locate a matching test case in the results. ");
                 return;
             }
 
             if (!testSuite) {
-                document.getElementById("plugin-error").innerHTML += "Could not locate a matching test suite in the results. <br/>";
+                showError("Could not locate a matching test suite in the results. ");
                 return;
             }
 
@@ -49,13 +59,6 @@ VSS.ready(function() {
                 </SurfaceContext.Provider>,
                 document.getElementById("root")
             );
-
-            // document.getElementById("test-suite-name").innerText = testSuite.name;
-            // document.getElementById("test-suite-runstate").innerText = testSuite.runState;
-
-            // for (let property of testSuite.getProperties()) {
-            //     document.getElementById("test-suite-properties").innerText +=  property.name + ": " + property.value;
-            // }
         };
 
         const scopeAttachments = function (attachments) {
@@ -68,7 +71,7 @@ VSS.ready(function() {
                 }
             }
             if (!foundAttachment){
-                document.getElementById("plugin-error").innerHTML += "Could not locate an NUnit 3.0 XML attachment. <br/>";
+                showError("Could not locate an NUnit 3.0 XML attachment. ");
             }
         };
 
