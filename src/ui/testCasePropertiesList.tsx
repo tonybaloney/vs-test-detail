@@ -2,7 +2,7 @@ import * as React from "react";
 import { ScrollableList, IListItemDetails, ListSelection, ListItem } from "azure-devops-ui/List";
 import { ArrayItemProvider, IItemProvider } from "azure-devops-ui/Utilities/Provider";
 import { Icon, IconSize } from "azure-devops-ui/Icon";
-import { NunitTestCase } from "../documents/nunit";
+import {ITestCase} from "../documents/abstract";
 
 export interface ITaskItem {
     value: string;
@@ -11,7 +11,7 @@ export interface ITaskItem {
 }
 
 interface TestCasePropertiesListProps {
-    testCase: NunitTestCase
+    testCase: ITestCase
 }
 
 interface TestCasePropertiesListState {
@@ -59,7 +59,7 @@ export default class TestCasePropertiesList extends React.Component<TestCaseProp
 
     public render(): JSX.Element {
         return (
-            <div style={{ display: "flex", height: "300px" }} className="flex-row">
+            <div className="flex-column">
                 <ScrollableList
                     itemProvider={this.state.properties}
                     renderRow={this.renderRow}

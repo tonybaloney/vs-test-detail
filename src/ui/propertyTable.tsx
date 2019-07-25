@@ -2,25 +2,25 @@ import * as React from "react";
 import { Header, TitleSize } from "azure-devops-ui/Header";
 import { Table } from "azure-devops-ui/Table";
 import { IItemProvider } from "azure-devops-ui/Utilities/Provider";
-import * as NUnit from "../documents/nunit"
 import { ObservableValue } from "azure-devops-ui/Core/Observable";
 import {
     renderSimpleCell,
     TableColumnLayout
 } from "azure-devops-ui/Table";
+import {IProperty} from "../documents/abstract";
 
 
-class NUnitPropertyItemProvider implements IItemProvider<NUnit.NunitProperty> {
-    constructor(items:Array<NUnit.NunitProperty>){
+class PropertyItemProvider implements IItemProvider<any> {
+    constructor(items:Array<IProperty>){
         this.value = items;
         this.length = items.length;
     }
     readonly length: number;
-    readonly value: Array<NUnit.NunitProperty>;
+    readonly value: Array<IProperty>;
 }
 
 interface PropertyTableProps {
-    properties: Array<NUnit.NunitProperty>
+    properties: Array<IProperty>
 }
 
 interface PropertyTableState{
@@ -50,21 +50,21 @@ export class PropertyTable extends React.Component<PropertyTableProps, PropertyT
         super(props);
         
         this.state = {
-            "propertiesProvider": new NUnitPropertyItemProvider(props.properties),
+            "propertiesProvider": new PropertyItemProvider(props.properties),
         }
     }
 
     public render(): JSX.Element {
         return (
-            <div style={{ display: "flex" }}>
-                <div className="flex-row">
+            <div>
+                <div className="flex-column">
                     <Header
                         title={"Properties"}
                         titleSize={TitleSize.Small}
                         titleIconProps={{ iconName: "TestParameter" }}
                     />
                 </div>
-                <div className="flex-row">
+                <div className="column">
                     <Table columns={fixedPropertyColumns} itemProvider={this.state.propertiesProvider} role="table" />
                 </div>
             </div>

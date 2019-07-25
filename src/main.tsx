@@ -9,6 +9,7 @@ import { SurfaceBackground, SurfaceContext } from "azure-devops-ui/Surface";
 import {TestHttpClient5} from "TFS/TestManagement/RestClient";
 import {NunitXMLDocument, isNunitXml} from "./documents/nunit";
 import ErrorMessage from "./ui/errorWindow";
+import {Nunit2XMLDocument, isNunit2Xml} from "./documents/nunit2";
 
 let testCaseName: string = "";
 let parser: DOMParser = new DOMParser();
@@ -21,7 +22,7 @@ export const showError = function(message){
         </SurfaceContext.Provider>,
         document.getElementById("error")
     );
-}
+};
 
 VSS.ready(function() {
 
@@ -34,13 +35,18 @@ VSS.ready(function() {
             let out: string = enc.decode(buf);
             const dom: Document = parser.parseFromString(out, 'text/xml');
 
-            if (!isNunitXml(dom)) {
-                showError("Attachment is not a valid NUnit 3.0 XML file. ");
+            let doc: any = undefined;
+
+            if (isNunitXml(dom)) {
+                doc = new NunitXMLDocument(dom);
+            } else if (isNunit2Xml(dom)) {
+                doc = new Nunit2XMLDocument(dom);
+            } else {
+                showError("Attachment is not a valid NUnit XML file. See documentation for supported formats.");
                 return;
             }
 
-            let nunitDocument = new NunitXMLDocument(dom);
-            let testCase = nunitDocument.getCase(testCaseName);
+            let testCase = doc.getCase(testCaseName);
             let testSuite = testCase.getTestSuite();
 
             if (!testCase) {
@@ -71,7 +77,7 @@ VSS.ready(function() {
                 }
             }
             if (!foundAttachment){
-                showError("Could not locate an NUnit 3.0 XML attachment. ");
+                showError("Could not locate an NUnit XML attachment in the test run attachments. ");
             }
         };
 

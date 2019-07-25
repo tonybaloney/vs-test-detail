@@ -8,7 +8,7 @@
     "compile": "npm run clean && webpack --mode production",
     "compile:dev": "npm run clean && webpack --mode development",
     "postbuild": "npm run package",
-    "package": "tfx extension create --output-path build",
+    "package": "cp README.md overview.md && tfx extension create --output-path build",
     "gallery-publish-testing": "tfx extension publish --publisher AnthonyShaw-testing --overrides-file vss-extension-testing.json --output-path build --rev-version",
     "gallery-publish": "tfx extension publish --output-path build --rev-version",
     "clean": "rimraf ./dist && rimraf ./build/*.vsix",
