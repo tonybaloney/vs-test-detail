@@ -67,3 +67,28 @@ test('valid complex test case match test suite', (done) => {
         done();
     });
 });
+
+
+test('nunit30 test suite', (done) => {
+    let path = 'src/tests/nunit30-nunit-report.xml';
+    expect(fs.existsSync(path)).toBe(true);
+    fs.readFile(path, 'utf8', function(err, contents) {
+        if (err)
+            throw err;
+        let testDoc = (new DOMParser()).parseFromString(contents, 'text/xml');
+        const testNunit = new nunit.NunitXMLDocument(testDoc);
+        let resolvedCase = testNunit.getCase('FailingTest');
+        expect(resolvedCase).toBeDefined();
+        expect(resolvedCase.getProperties().length).toBe(0);
+        expect(resolvedCase.name).toBe("FailingTest");
+        expect(resolvedCase.className).toBe(null);
+        expect(resolvedCase.methodName).toBe(null);
+        expect(resolvedCase.runState).toBe(null);
+        expect(resolvedCase.seed).toBe(null);
+        let resolvedSuite = resolvedCase.getTestSuite();
+        expect(resolvedSuite).toBeDefined();
+        expect(resolvedSuite.name).toBe("MockTestFixture");
+        expect(resolvedSuite.getProperties().length).toBe(2);
+        done();
+    });
+});

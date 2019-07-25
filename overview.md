@@ -1,11 +1,43 @@
-# NUnit Details
+# vs-nunit
 
 [![Build Status](https://dev.azure.com/AnthonyShaw/vs-nunit/_apis/build/status/tonybaloney.vs-nunit?branchName=master)](https://dev.azure.com/AnthonyShaw/vs-nunit/_build/latest?definitionId=6&branchName=master)
 
 An NUnit UI extension for test cases in Azure DevOps (VSO)
 
-Loads NUnit XML 3.0 test results and displays additional detail in the test console
+Loads NUnit XML 2/3 test results and displays additional detail in the test console
 
-## Developer Information
+![](images/screenshot.png)
 
-This extension is open-source on [github](https://github.com/tonybaloney/vs-unit).
+## Compatibility
+
+| Platform/Plugin      | NUnit Output           | Supported?  |
+| -------------------- |:-----------------:| -----:|
+| Pytest/[pytest-nunit](https://pypi.org/project/pytest-nunit/)  | 3.0 XML | **Yes** |
+| Node/[jest-nunit-reporter](https://www.npmjs.com/package/jest-nunit-reporter) | 2.0 XML      |   Yes |
+| .NET/NUnit                        | 2.5 XML      |   Yes |
+
+### Install
+
+The project can be installed using npm
+
+```
+npm install
+```
+
+### Build
+
+To build the components:
+
+```
+npm run build
+```
+
+The package will be within the `dist/` directory as a VSIX extension file.
+
+### Testing
+
+The test suite is written in TypeScript and kept within the source dir. To run jest, call:
+
+```
+npm run test
+```

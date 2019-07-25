@@ -29,3 +29,12 @@ steps:
   inputs:
     testRunner: NUnit
     testResultsFiles: '**/test-report.xml'
+
+- task: PublishTestResults@2
+  condition: succeededOrFailed()
+  inputs:
+    testRunner: NUnit
+    testResultsFiles: '**/*-nunit-report.xml'
+    failTaskOnFailedTests: false
+  displayName: Upload testing files
+

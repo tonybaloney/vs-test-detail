@@ -10,11 +10,14 @@ Loads NUnit XML 2/3 test results and displays additional detail in the test cons
 
 ## Compatibility
 
+NUnit 3.0 XML output provides more granular data. The amount of data shown will depend on the plugin output.
+
 | Platform/Plugin      | NUnit Output           | Supported?  |
 | -------------------- |:-----------------:| -----:|
 | Pytest/[pytest-nunit](https://pypi.org/project/pytest-nunit/)  | 3.0 XML | **Yes** |
-| Node/[jest-nunit-reporter](https://www.npmjs.com/package/jest-nunit-reporter) | 2.0 XML      |   Yes |
-| .NET/NUnit                        | 2.5 XML      |   Yes |
+| Node/[jest-nunit-reporter](https://www.npmjs.com/package/jest-nunit-reporter) | 2.0 XML      |   Yes  (minimal data) |
+| .NET/NUnit 2                        | 2.5 XML      |   **Yes** (minimal data) |
+| .NET/NUnit 3                        | 3.0 XML      |   **Yes**  |
 
 ### Install
 
