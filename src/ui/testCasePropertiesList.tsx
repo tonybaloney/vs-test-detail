@@ -20,40 +20,12 @@ interface TestCasePropertiesListState {
 
 export default class TestCasePropertiesList extends React.Component<TestCasePropertiesListProps, TestCasePropertiesListState>  {
     private selection = new ListSelection(true);
-    private 
 
     constructor(props) {
         super(props);
         
-        let propertiesList: ITaskItem[] = [
-            {
-                value: props.testCase.name,
-                iconName: "TestPlan",
-                name: "Name"
-            },
-            {
-                value: props.testCase.methodName,
-                iconName: "TestStep",
-                name: "Method"
-            },
-            {
-                value: props.testCase.className,
-                iconName: "TestStep",
-                name: "Class"
-            },
-            {
-                value: props.testCase.seed,
-                iconName: "Coffee",
-                name: "Seed"
-            },
-            {
-                value: props.testCase.runState,
-                iconName: "TestAutoSolid",
-                name: "Run State"
-            }
-        ];
         this.state = { 
-            properties: new ArrayItemProvider(propertiesList)
+            properties: new ArrayItemProvider(props.testCase.getPropertiesList())
         }
     }
 

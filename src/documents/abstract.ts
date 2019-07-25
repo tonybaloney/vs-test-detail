@@ -1,4 +1,5 @@
 import {NunitProperty, NunitTestCase, NunitTestSuite} from "./nunit";
+import { ITaskItem } from "../ui/testCasePropertiesList";
 
 export interface ITestSuite {
     element: Element;
@@ -13,19 +14,17 @@ export interface IProperty {
     value: string;
 }
 
-export interface ITestCase {
+export abstract class ITestCase {
     element: Element;
     name: string;
-    className: string;
-    methodName: string;
-    runState: string;
-    seed: string;
 
-    getTestSuite(): NunitTestSuite;
+    abstract getPropertiesList(): ITaskItem[];
 
-    getProperties(): Array<NunitProperty>;
+    abstract getTestSuite(): ITestSuite;
 
-    getOutput(): string;
+    abstract getProperties(): Array<NunitProperty>;
+
+    abstract getOutput(): string;
 }
 
 export interface ITestResultDocument {

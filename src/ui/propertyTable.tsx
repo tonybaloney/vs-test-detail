@@ -64,7 +64,7 @@ export class PropertyTable extends React.Component<PropertyTableProps, PropertyT
                         titleIconProps={{ iconName: "TestParameter" }}
                     />
                 </div>
-                <div className="column">
+                <div className="flex-column">
                     <Table columns={fixedPropertyColumns} itemProvider={this.state.propertiesProvider} role="table" />
                 </div>
             </div>

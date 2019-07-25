@@ -41,10 +41,6 @@ test('valid complex test case match', (done) => {
         let resolvedCase = testNunit.getCase('tests/integration/test_properties.py::test_attachment');
         expect(resolvedCase).toBeDefined();
         expect(resolvedCase.name).toBe("tests/integration/test_properties.py::test_attachment");
-        expect(resolvedCase.className).toBe("TestClass");
-        expect(resolvedCase.methodName).toBe("test_method");
-        expect(resolvedCase.runState).toBe("Runnable");
-        expect(resolvedCase.seed).toBe("1");
 
         done();
     });
@@ -81,10 +77,6 @@ test('nunit30 test suite', (done) => {
         expect(resolvedCase).toBeDefined();
         expect(resolvedCase.getProperties().length).toBe(0);
         expect(resolvedCase.name).toBe("FailingTest");
-        expect(resolvedCase.className).toBe(null);
-        expect(resolvedCase.methodName).toBe(null);
-        expect(resolvedCase.runState).toBe(null);
-        expect(resolvedCase.seed).toBe(null);
         let resolvedSuite = resolvedCase.getTestSuite();
         expect(resolvedSuite).toBeDefined();
         expect(resolvedSuite.name).toBe("MockTestFixture");

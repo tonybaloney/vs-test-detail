@@ -1,4 +1,5 @@
 import {IProperty, ITestCase, ITestResultDocument, ITestSuite} from "./abstract";
+import { ITaskItem } from "../ui/testCasePropertiesList";
 
 export function isNunit2Xml(document: Document) : boolean {
     return (document && document.firstElementChild && document.firstElementChild.tagName === "test-results")
@@ -23,7 +24,7 @@ export class Nunit2TestSuite implements ITestSuite {
         this.name = element.getAttribute("name");
         this.runState = "";
     }
-
+    
     getProperties(): Array<IProperty> {
         let results = new Array();
         // @ts-ignore
@@ -42,19 +43,21 @@ export class Nunit2TestSuite implements ITestSuite {
 export class Nunit2TestCase implements ITestCase {
     element: Element;
     name: string;
-    className: string;
-    methodName: string;
-    runState: string;
-    seed: string;
 
     constructor(element: Element){
         this.element = element;
         this.name = element.getAttribute("name");
-        this.className = "";
-        this.methodName = "";
-        this.runState = "";
-        this.seed = "";
     }
+
+    getPropertiesList(): ITaskItem[] {
+        return [
+        {
+            value: this.name,
+            iconName: "TestPlan",
+            name: "Name"
+        }
+        ]
+    };
 
     getTestSuite(): ITestSuite {
         return new Nunit2TestSuite(this.element.parentElement.parentElement); // results->test-suite

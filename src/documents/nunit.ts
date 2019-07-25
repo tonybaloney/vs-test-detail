@@ -1,4 +1,5 @@
 import {IProperty, ITestCase, ITestResultDocument, ITestSuite} from "./abstract";
+import { ITaskItem } from "../ui/testCasePropertiesList";
 
 export function isNunitXml(document: Document) : boolean {
     return (document && document.firstElementChild && document.firstElementChild.tagName === "test-run")
@@ -42,19 +43,41 @@ export class NunitTestSuite implements ITestSuite {
 export class NunitTestCase implements ITestCase {
     element: Element;
     name: string;
-    className: string;
-    methodName: string;
-    runState: string;
-    seed: string;
 
     constructor(element: Element){
         this.element = element;
         this.name = element.getAttribute("name");
-        this.className = element.getAttribute("classname");
-        this.methodName = element.getAttribute("methodname");
-        this.runState = element.getAttribute("runstate");
-        this.seed = element.getAttribute("seed");
     }
+
+    getPropertiesList(): ITaskItem[] {
+        return [
+        {
+            value: this.name,
+            iconName: "TestPlan",
+            name: "Name"
+        },
+        {
+            value: this.element.getAttribute("methodname"),
+            iconName: "TestStep",
+            name: "Method"
+        },
+        {
+            value: this.element.getAttribute("classname"),
+            iconName: "TestStep",
+            name: "Class"
+        },
+        {
+            value: this.element.getAttribute("seed"),
+            iconName: "NumberSymbol",
+            name: "Seed"
+        },
+        {
+            value: this.element.getAttribute("runstate"),
+            iconName: "TestAutoSolid",
+            name: "Run State"
+        }
+        ]
+    };
 
     getTestSuite(): ITestSuite {
         return new NunitTestSuite(this.element.parentElement);

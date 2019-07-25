@@ -41,10 +41,6 @@ test('valid complex test case match', (done) => {
         let resolvedCase = testNunit.getCase(' test valid Nunit XML file');
         expect(resolvedCase).toBeDefined();
         expect(resolvedCase.name).toBe(" test valid Nunit XML file");
-        expect(resolvedCase.className).toBe("");
-        expect(resolvedCase.methodName).toBe("");
-        expect(resolvedCase.runState).toBe("");
-        expect(resolvedCase.seed).toBe("");
 
         done();
     });
@@ -79,11 +75,6 @@ test('nunit 2.5 test suite', (done) => {
         let resolvedCase = testNunit.getCase('NUnit.Tests.Assemblies.MockTestFixture.FailingTest');
         expect(resolvedCase).toBeDefined();
         expect(resolvedCase.name).toBe("NUnit.Tests.Assemblies.MockTestFixture.FailingTest");
-        expect(resolvedCase.className).toBe("");
-        expect(resolvedCase.methodName).toBe("");
-        expect(resolvedCase.runState).toBe("");
-        expect(resolvedCase.seed).toBe("");
-
         expect(resolvedCase).toBeDefined();
         expect(resolvedCase.getProperties().length).toBe(0);
         let resolvedSuite = resolvedCase.getTestSuite();
