@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "vss-nunit",
     "publisher": "AnthonyShaw",
-    "version": "1.0.51",
+    "version": "1.0.59",
     "name": "NUnit Details",
     "description": "An extension for seeing detailed NUnit data in the test results UI.",
     "categories": ["Azure Pipelines"],

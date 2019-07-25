@@ -1,5 +1,11 @@
 /// <reference types="vss-web-extension-sdk" />
 
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import NUnitCard from "./ui/card";
+
+import { SurfaceBackground, SurfaceContext } from "azure-devops-ui/Surface";
+
 import {TestHttpClient5} from "TFS/TestManagement/RestClient";
 import {NunitXMLDocument, isNunitXml} from "./documents/nunit";
 
@@ -37,27 +43,34 @@ VSS.ready(function() {
                 return;
             }
 
-            document.getElementById("test-case-classname").innerText = testCase.className;
-            document.getElementById("test-case-methodname").innerText = testCase.methodName;
-            document.getElementById("test-case-name").innerText = testCase.name;
-            document.getElementById("test-case-seed").innerText = testCase.seed;
-            document.getElementById("test-case-runstate").innerText = testCase.runState;
+            ReactDOM.render(
+                <SurfaceContext.Provider value={{ background: SurfaceBackground.neutral }}>
+                  <NUnitCard testCase={testCase} testSuite={testSuite}/>
+                </SurfaceContext.Provider>,
+                document.getElementById("root")
+            );
 
-            for (let property of testCase.getProperties()) {
-                document.getElementById("test-case-properties").innerText +=  property.name + ": " + property.value;
-            }
-            document.getElementById("test-case-output").innerText = testCase.getOutput();
+            // document.getElementById("test-case-classname").innerText = testCase.className;
+            // document.getElementById("test-case-methodname").innerText = testCase.methodName;
+            // document.getElementById("test-case-name").innerText = testCase.name;
+            // document.getElementById("test-case-seed").innerText = testCase.seed;
+            // document.getElementById("test-case-runstate").innerText = testCase.runState;
 
-            document.getElementById("test-suite-name").innerText = testSuite.name;
-            document.getElementById("test-suite-runstate").innerText = testSuite.runState;
+            // for (let property of testCase.getProperties()) {
+            //     document.getElementById("test-case-properties").innerText +=  property.name + ": " + property.value;
+            // }
+            // document.getElementById("test-case-output").innerText = testCase.getOutput();
 
-            for (let property of testSuite.getProperties()) {
-                document.getElementById("test-suite-properties").innerText +=  property.name + ": " + property.value;
-            }
+            // document.getElementById("test-suite-name").innerText = testSuite.name;
+            // document.getElementById("test-suite-runstate").innerText = testSuite.runState;
+
+            // for (let property of testSuite.getProperties()) {
+            //     document.getElementById("test-suite-properties").innerText +=  property.name + ": " + property.value;
+            // }
         };
 
         const scopeAttachments = function (attachments) {
-            console.log(attachments);
+            console.log("Fetched attachments");
             let foundAttachment = false;
             for (let i = 0; i < attachments.length; i++) {
                 if (attachments[i].fileName.endsWith(".xml")) {

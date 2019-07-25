@@ -1,17 +1,55 @@
 import * as React from "react";
-import { Card } from "azure-devops-ui/Card";
+import * as NUnit from "../documents/nunit"
+import { Header, TitleSize } from "azure-devops-ui/Header";
+import { Page } from "azure-devops-ui/Page";
+import {PropertyTable} from "./propertyTable"
+import TestCasePropertiesList from "./testCasePropertiesList";
 
-export default class CardExample extends React.Component {
+
+interface CardProps {
+    testCase: NUnit.NunitTestCase,
+    testSuite: NUnit.NunitTestSuite
+}
+
+interface CardState {
+    testCase: NUnit.NunitTestCase
+    testSuite: NUnit.NunitTestSuite
+}
+
+
+export default class NUnitCard extends React.Component<CardProps, CardState> {
+    constructor(props) {
+        super(props);
+        
+        this.state = {
+            "testSuite": props.testSuite,
+            "testCase": props.testCase
+        }
+    }
+
     public render(): JSX.Element {
         return (
-            <Card className="flex-grow">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.
-            </Card>
+            <Page>
+                <Header
+                    title={"Test Suite"}
+                    titleSize={TitleSize.Medium}
+                    titleIconProps={{ iconName: "OpenSource" }}
+                />
+                <div className="page-content page-content-top">
+
+                    <PropertyTable properties={this.state.testSuite.getProperties()}/>
+                </div>
+
+                <Header
+                    title={"Test Suite"}
+                    titleSize={TitleSize.Medium}
+                    titleIconProps={{ iconName: "OpenSource" }}
+                />
+                <div className="page-content page-content-top">
+                    <TestCasePropertiesList testCase={this.state.testCase} />
+                    <PropertyTable properties={this.state.testCase.getProperties()}/>
+                </div>
+            </Page>
         );
     }
 }

@@ -17,39 +17,13 @@
             usePlatformStyles: true
         });
 
-        VSS.require(["dist/main", "dist/ui"], function (app) {
+        VSS.require(["dist/vs-nunit"], function (app) {
             console.log("Loaded app");
         });
     </script>
 </head>
 <body>
-    <div id="root"></div>
     <span id="plugin-error" style="color:red">&nbsp;</span>
-
-    <!-- Test Suite -->
-    <h1>Test Suite</h1>
-    <h2>Name:</h2> <span id="test-suite-name"></span>
-    <h2>Run State:</h2> <span id="test-suite-runstate"></span>
-
-    <br/>
-    <h3>Properties: </h3>
-    <span id="test-suite-properties"></span>
-
-
-    <h1>Test Case</h1>
-    <h2>Name:</h2> <span id="test-case-name"></span>
-    <h2>Method:</h2> <span id="test-case-methodname"></span>
-    <h2>Class:</h2> <span id="test-case-classname"></span>
-    <h2>Seed:</h2> <span id="test-case-seed"></span>
-    <h2>Run State:</h2> <span id="test-case-runstate"></span>
-
-    <br/>
-
-    <h3>Properties: </h3>
-    <span id="test-case-properties"></span>
-
-    <h3>Output: </h3>
-
-    <pre id="test-case-output"></pre>
+    <div id="root"></div>
 </body>
 </html>
