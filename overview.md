@@ -1,4 +1,4 @@
-# vs-nunit
+# vs-test-detail
 
 [![Build Status](https://dev.azure.com/AnthonyShaw/vs-test-detail/_apis/build/status/tonybaloney.vs-test-detail?branchName=master)](https://dev.azure.com/AnthonyShaw/vs-test-detail/_build/latest?definitionId=6&branchName=master)
 

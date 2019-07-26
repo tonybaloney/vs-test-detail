@@ -48,7 +48,7 @@ export default class TestPropertiesList extends React.Component<TestPropertiesLi
         details: IListItemDetails<ITaskItem>,
         key?: string
     ): JSX.Element => {
-        if (item.value !== null)
+        if (item.value !== null) {
             return (
                 <ListItem key={key || "list-item" + index} index={index} details={details}>
                     <div className="list-example-row flex-row h-scroll-hidden">
@@ -65,5 +65,8 @@ export default class TestPropertiesList extends React.Component<TestPropertiesLi
                     </div>
                 </ListItem>
             );
+        } else {
+            return null;
+        }
     };
 }

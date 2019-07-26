@@ -19,13 +19,14 @@ export class ErrorBoundary extends React.Component<any, ErrorBoundaryState> {
   
     componentDidCatch(error, info) {
       // You can also log the error to an error reporting service
-      return { hasError: true, error: error };
+      console.log(error);
+      console.log(info);
     }
   
     render() {
       if (this.state.hasError) {
         return (
-            <h1>Error: {this.state.error}</h1>
+            <h1>Error producing test details. See Console for details.</h1>
         );
       } else {
         return this.props.children; 
