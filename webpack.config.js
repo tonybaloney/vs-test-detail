@@ -3,7 +3,7 @@ const path = require("path");
 module.exports = {
     entry: ['./src/main.tsx'],
     output: {
-        filename: "vs-nunit.js"
+        filename: "vs-test-detail.js"
     },
     resolve: {
         extensions: [".ts", ".tsx", ".js"],
