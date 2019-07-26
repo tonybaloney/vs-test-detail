@@ -28,6 +28,8 @@ export abstract class ITestCase implements IPropertiesListProvider {
 
     abstract getProperties(): Array<IProperty>;
 
+    abstract hasOutput(): boolean;
+
     abstract getOutput(): string;
 }
 

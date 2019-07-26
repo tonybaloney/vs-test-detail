@@ -108,8 +108,12 @@ export class Nunit2TestCase implements ITestCase {
         return new Array();
     }
 
+    hasOutput(): boolean {
+        return false;
+    }
+
     getOutput(): string {
-        return this.element.getElementsByTagName('output')[0].textContent;
+        return "unsupported";
     }
 }
 

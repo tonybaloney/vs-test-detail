@@ -56,7 +56,7 @@ export default class NUnitPage extends React.Component<IPageProps, IPageState> {
                         titleSize={TitleSize.Medium}
                         titleIconProps={{ iconName: "TextCallout" }}
                     />
-                    <OutputCard text={this.state.testCase.getOutput()}/>
+                    <OutputCard testCase={this.state.testCase}/>
                 </div>
             </Page>
         );

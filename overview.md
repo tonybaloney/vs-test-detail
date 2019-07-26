@@ -1,16 +1,16 @@
 # vs-nunit
 
-[![Build Status](https://dev.azure.com/AnthonyShaw/vs-nunit/_apis/build/status/tonybaloney.vs-nunit?branchName=master)](https://dev.azure.com/AnthonyShaw/vs-nunit/_build/latest?definitionId=6&branchName=master)
+[![Build Status](https://dev.azure.com/AnthonyShaw/vs-test-detail/_apis/build/status/tonybaloney.vs-test-detail?branchName=master)](https://dev.azure.com/AnthonyShaw/vs-test-detail/_build/latest?definitionId=6&branchName=master)
 
-An NUnit UI extension for test cases in Azure DevOps (VSO)
+A UI extension for test cases in Azure DevOps (VSO)
 
-Loads NUnit XML 2/3 test results and displays additional detail in the test console
+* Currently supports NUnit XML 2/3 test results and displays additional detail in the test console
 
 ![](images/screenshot.png)
 
 ## Compatibility
 
-NUnit 3.0 XML output provides more granular data. The amount of data shown will depend on the plugin output.
+NUnit XML output provides more granular data. The amount of data shown will depend on the plugin output.
 
 | Platform/Plugin      | NUnit Output           | Supported?  |
 | -------------------- |:-----------------:| -----:|

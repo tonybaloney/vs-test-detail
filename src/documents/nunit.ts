@@ -137,6 +137,10 @@ export class NunitTestCase implements ITestCase {
         return results;
     }
 
+    hasOutput(): boolean {
+        return (this.element.getElementsByTagName('output') !== undefined && this.element.getElementsByTagName('output').length > 0);
+    }
+
     getOutput(): string {
         return this.element.getElementsByTagName('output')[0].textContent;
     }
