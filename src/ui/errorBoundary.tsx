@@ -1,6 +1,5 @@
 import * as React from "react";
 
-import {ErrorMessage} from "./errorWindow"
 
 interface ErrorBoundaryState {
     hasError: boolean;
@@ -26,7 +25,7 @@ export class ErrorBoundary extends React.Component<any, ErrorBoundaryState> {
     render() {
       if (this.state.hasError) {
         return (
-            <ErrorMessage message={this.state.error}/>
+            <h1>Error: {this.state.error}</h1>
         );
       } else {
         return this.props.children; 
