@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="lib/VSS.SDK.min.js"></script>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            margin: 10px;
+            font-family: "Segoe UI VSS (Regular)", "-apple-system", BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+    </style>
+    <script type="text/javascript">
+        // Initialize the VSS sdk
+        VSS.init({
+            usePlatformScripts: true,
+            usePlatformStyles: true
+        });
+
+        VSS.require(["dist/vs-nunit"], function (app) {
+            console.log("Loaded app");
+        });
+    </script>
+</head>
+<body>
+    <div id="error"></div>
+    <div id="root"></div>
+</body>
+</html>

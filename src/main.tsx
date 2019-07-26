@@ -1,11 +1,28 @@
 /// <reference types="vss-web-extension-sdk" />
 
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import NUnitPageState from "./ui/card";
+
+import { SurfaceBackground, SurfaceContext } from "azure-devops-ui/Surface";
+
 import {TestHttpClient5} from "TFS/TestManagement/RestClient";
 import {NunitXMLDocument, isNunitXml} from "./documents/nunit";
+import ErrorMessage from "./ui/errorWindow";
+import {Nunit2XMLDocument, isNunit2Xml} from "./documents/nunit2";
 
 let testCaseName: string = "";
 let parser: DOMParser = new DOMParser();
 let enc: TextDecoder = new TextDecoder();
+
+export const showError = function(message){
+    ReactDOM.render(
+        <SurfaceContext.Provider value={{ background: SurfaceBackground.neutral }}>
+          <ErrorMessage message={message}/>
+        </SurfaceContext.Provider>,
+        document.getElementById("error")
+    );
+};
 
 VSS.ready(function() {
 
@@ -18,46 +35,40 @@ VSS.ready(function() {
             let out: string = enc.decode(buf);
             const dom: Document = parser.parseFromString(out, 'text/xml');
 
-            if (!isNunitXml(dom)) {
-                document.getElementById("plugin-error").innerHTML += "Attachment is not a valid NUnit 3.0 XML file. <br/>";
+            let doc: any = undefined;
+
+            if (isNunitXml(dom)) {
+                doc = new NunitXMLDocument(dom);
+            } else if (isNunit2Xml(dom)) {
+                doc = new Nunit2XMLDocument(dom);
+            } else {
+                showError("Attachment is not a valid NUnit XML file. See documentation for supported formats.");
                 return;
             }
 
-            let nunitDocument = new NunitXMLDocument(dom);
-            let testCase = nunitDocument.getCase(testCaseName);
+            let testCase = doc.getCase(testCaseName);
             let testSuite = testCase.getTestSuite();
 
             if (!testCase) {
-                document.getElementById("plugin-error").innerHTML += "Could not locate a matching test case in the results. <br/>";
+                showError("Could not locate a matching test case in the results. ");
                 return;
             }
 
             if (!testSuite) {
-                document.getElementById("plugin-error").innerHTML += "Could not locate a matching test suite in the results. <br/>";
+                showError("Could not locate a matching test suite in the results. ");
                 return;
             }
 
-            document.getElementById("test-case-classname").innerText = testCase.className;
-            document.getElementById("test-case-methodname").innerText = testCase.methodName;
-            document.getElementById("test-case-name").innerText = testCase.name;
-            document.getElementById("test-case-seed").innerText = testCase.seed;
-            document.getElementById("test-case-runstate").innerText = testCase.runState;
-
-            for (let property of testCase.getProperties()) {
-                document.getElementById("test-case-properties").innerText +=  property.name + ": " + property.value;
-            }
-            document.getElementById("test-case-output").innerText = testCase.getOutput();
-
-            document.getElementById("test-suite-name").innerText = testSuite.name;
-            document.getElementById("test-suite-runstate").innerText = testSuite.runState;
-
-            for (let property of testSuite.getProperties()) {
-                document.getElementById("test-suite-properties").innerText +=  property.name + ": " + property.value;
-            }
+            ReactDOM.render(
+                <SurfaceContext.Provider value={{ background: SurfaceBackground.neutral }}>
+                  <NUnitPageState testCase={testCase} testSuite={testSuite}/>
+                </SurfaceContext.Provider>,
+                document.getElementById("root")
+            );
         };
 
         const scopeAttachments = function (attachments) {
-            console.log(attachments);
+            console.log("Fetched attachments");
             let foundAttachment = false;
             for (let i = 0; i < attachments.length; i++) {
                 if (attachments[i].fileName.endsWith(".xml")) {
@@ -66,7 +77,7 @@ VSS.ready(function() {
                 }
             }
             if (!foundAttachment){
-                document.getElementById("plugin-error").innerHTML += "Could not locate an NUnit 3.0 XML attachment. <br/>";
+                showError("Could not locate an NUnit XML attachment in the test run attachments. ");
             }
         };
 
@@ -78,3 +89,4 @@ VSS.ready(function() {
         );
     });
 });
+

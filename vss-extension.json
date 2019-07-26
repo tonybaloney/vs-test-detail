@@ -1,10 +1,10 @@
 {
     "manifestVersion": 1,
-    "id": "vss-nunit",
+    "id": "vss-test-detail",
     "publisher": "AnthonyShaw",
-    "version": "1.0.49",
-    "name": "NUnit Details",
-    "description": "An extension for seeing detailed NUnit data in the test results UI.",
+    "version": "1.0.71",
+    "name": "Test Details",
+    "description": "An extension for seeing detailed test data in the test results UI.",
     "categories": ["Azure Pipelines"],
     "targets": [
         {
@@ -14,22 +14,22 @@
     "scopes": ["vso.test"],
     "contributions": [
         {
-            "id": "nunit-detail-item",
+            "id": "test-detail-item",
             "type": "ms.vss-web.tab",
             "targets": [
                 "ms.vss-test-web.test-result-details-tab-items"
             ],
             "description": "extension to show nunit test data",
             "properties": {
-                "name": "NUnit Details",
-                "uri": "nunit-detail.html",
+                "name": "Test Details",
+                "uri": "test-detail.html",
                 "order": 107
             }
         }
     ],
     "files": [
         {
-            "path": "nunit-detail.html",
+            "path": "test-detail.html",
             "addressable": true
         },
         {
@@ -56,12 +56,12 @@
     },
     "links": {
         "source": {
-            "uri": "https://github.com/tonybaloney/vs-nunit"
+            "uri": "https://github.com/tonybaloney/vs-test-detail"
         }
     },
     "repository": {
         "type": "git",
-        "uri": "https://github.com/tonybaloney/vs-nunit"
+        "uri": "https://github.com/tonybaloney/vs-test-detail"
     },
     "badges": [
         {

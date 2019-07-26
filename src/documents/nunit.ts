@@ -1,8 +1,11 @@
+import {IProperty, ITestCase, ITestResultDocument, ITestSuite} from "./abstract";
+import { ITaskItem } from "../ui/testPropertiesList";
+
 export function isNunitXml(document: Document) : boolean {
     return (document && document.firstElementChild && document.firstElementChild.tagName === "test-run")
 }
 
-export class NunitProperty {
+export class NunitProperty implements IProperty {
     name: string;
     value: string;
     constructor(element: Element){
@@ -11,7 +14,7 @@ export class NunitProperty {
     }
 }
 
-export class NunitTestSuite {
+export class NunitTestSuite implements ITestSuite {
     element: Element;
     name: string;
     runState: string;
@@ -22,10 +25,50 @@ export class NunitTestSuite {
         this.runState = element.getAttribute("runstate");
     }
 
-    getProperties() : Array<NunitProperty> {
+    getPropertiesList(): ITaskItem[] {
+        return [
+            {
+                value: this.name,
+                iconName: "TestPlan",
+                name: "Name"
+            },
+            {
+                value: this.element.getAttribute("fullname"),
+                iconName: "TestPlan",
+                name: "Full Name"
+            },
+            {
+                value: this.element.getAttribute("type"),
+                iconName: "TestPlan",
+                name: "Type"
+            },
+            {
+                value: this.element.getAttribute("methodname"),
+                iconName: "TestStep",
+                name: "Method"
+            },
+            {
+                value: this.element.getAttribute("classname"),
+                iconName: "TestStep",
+                name: "Class"
+            },
+            {
+                value: this.element.getAttribute("runstate"),
+                iconName: "TestAutoSolid",
+                name: "Run State"
+            },
+            {
+                value: this.element.getAttribute("testcasecount"),
+                iconName: "NumberSymbol",
+                name: "Test Cases"
+            },
+            ];
+    }
+
+    getProperties(): Array<IProperty> {
         let results = new Array();
         // @ts-ignore
-        for (let child of this.element.childNodes){
+        for (let child of this.element.childNodes) {
             if (child.nodeName === "properties") {
                 for (let el of child.getElementsByTagName('property')) {
                     results.push(new NunitProperty(el));
@@ -37,28 +80,55 @@ export class NunitTestSuite {
 }
 
 
-export class NunitTestCase {
+export class NunitTestCase implements ITestCase {
     element: Element;
     name: string;
-    className: string;
-    methodName: string;
-    runState: string;
-    seed: string;
 
     constructor(element: Element){
         this.element = element;
         this.name = element.getAttribute("name");
-        this.className = element.getAttribute("classname");
-        this.methodName = element.getAttribute("methodname");
-        this.runState = element.getAttribute("runstate");
-        this.seed = element.getAttribute("seed");
     }
 
-    getTestSuite() : NunitTestSuite {
+    getPropertiesList(): ITaskItem[] {
+        return [
+        {
+            value: this.name,
+            iconName: "TestPlan",
+            name: "Name"
+        },
+        {
+            value: this.element.getAttribute("fullname"),
+            iconName: "TestPlan",
+            name: "Full Name"
+        },
+        {
+            value: this.element.getAttribute("methodname"),
+            iconName: "TestStep",
+            name: "Method"
+        },
+        {
+            value: this.element.getAttribute("classname"),
+            iconName: "TestStep",
+            name: "Class"
+        },
+        {
+            value: this.element.getAttribute("seed"),
+            iconName: "NumberSymbol",
+            name: "Seed"
+        },
+        {
+            value: this.element.getAttribute("runstate"),
+            iconName: "TestAutoSolid",
+            name: "Run State"
+        }
+        ]
+    };
+
+    getTestSuite(): ITestSuite {
         return new NunitTestSuite(this.element.parentElement);
     }
 
-    getProperties() : Array<NunitProperty> {
+    getProperties(): Array<IProperty> {
         let results = new Array();
         // @ts-ignore
         for (let el of this.element.getElementsByTagName('property')) {
@@ -67,12 +137,12 @@ export class NunitTestCase {
         return results;
     }
 
-    getOutput() : string {
+    getOutput(): string {
         return this.element.getElementsByTagName('output')[0].textContent;
     }
 }
 
-export class NunitXMLDocument {
+export class NunitXMLDocument implements ITestResultDocument {
     document: XMLDocument;
     constructor(document: XMLDocument){
         if (!isNunitXml(document))
@@ -81,11 +151,15 @@ export class NunitXMLDocument {
         this.document = document;
     }
 
-    private getCases() : NodeListOf<Element> {
+    getPropertiesList(): ITaskItem[] {
+        return [];
+    };
+
+    getCases(): NodeListOf<Element> {
         return this.document.getElementsByTagName('test-case');
     }
 
-    getCase(name: string) :NunitTestCase {
+    getCase(name: string): ITestCase {
         // @ts-ignore
         for (let testCase of this.getCases()) {
             const caseName: string = testCase.getAttribute('name');
