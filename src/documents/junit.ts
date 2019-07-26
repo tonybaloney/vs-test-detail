@@ -93,18 +93,18 @@ export class JunitTestCase implements ITestCase {
             name: "Status"
         },
         {
-            value: this.element.getElementsByTagName('skipped') ? this.element.getElementsByTagName('skipped')[0].getAttribute('message') : null,
+            value: this.element.getElementsByTagName('skipped').length > 0 ? this.element.getElementsByTagName('skipped')[0].getAttribute('message') : null,
             iconName: "TestAutoSolid",
             name: "Skipped Message"
         },
         {
-            value: this.element.getElementsByTagName('error') ? this.element.getElementsByTagName('error')[0].getAttribute('message') : null,
+            value: this.element.getElementsByTagName('error').length > 0 ? this.element.getElementsByTagName('error')[0].getAttribute('message') : null,
             iconName: "TestAutoSolid",
             name: "Error Message"
         },
         ,
         {
-            value: this.element.getElementsByTagName('failure') ? this.element.getElementsByTagName('failure')[0].getAttribute('message') : null,
+            value: this.element.getElementsByTagName('failure').length > 0 ? this.element.getElementsByTagName('failure')[0].getAttribute('message') : null,
             iconName: "TestAutoSolid",
             name: "Failure Message"
         }
@@ -117,7 +117,7 @@ export class JunitTestCase implements ITestCase {
 
     getProperties(): Array<IProperty> {
         let results = new Array();
-        if (!this.element.getElementsByTagName('property'))
+        if (this.element.getElementsByTagName('property').length == 0)
             return results;
         // @ts-ignore
         for (let el of this.element.getElementsByTagName('property')) {

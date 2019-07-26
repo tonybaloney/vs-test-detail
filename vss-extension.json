@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "vss-test-detail",
     "publisher": "AnthonyShaw",
-    "version": "1.0.90",
+    "version": "1.0.96",
     "name": "Test Details",
     "description": "An extension for seeing detailed test data in the test results UI.",
     "categories": ["Azure Pipelines"],
@@ -80,6 +80,9 @@
         },
         {
             "path": "images/screenshot2.png"
+        },
+        {
+            "path": "images/screenshot3.png"
         }
     ],
     "icons": {
