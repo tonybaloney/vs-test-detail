@@ -1,8 +1,9 @@
 import * as React from "react";
 import { Card } from "azure-devops-ui/Card";
+import { ITestCase } from "../documents/abstract";
 
 interface IOutputCardProps {
-    text: string
+    testCase: ITestCase
 }
 
 interface IOutputCardState {
@@ -14,7 +15,7 @@ export class OutputCard extends React.Component<IOutputCardProps, IOutputCardSta
         super(props);
         
         this.state = {
-            "text": props.text,
+            "text": props.testCase.hasOutput() ? props.testCase.getOutput() : "No output provided"
         }
     }
 
