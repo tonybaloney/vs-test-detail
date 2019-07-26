@@ -19,7 +19,7 @@
             "targets": [
                 "ms.vss-test-web.test-result-details-tab-items"
             ],
-            "description": "extension to show nunit test data",
+            "description": "Extension to show nunit test data",
             "properties": {
                 "name": "Test Details",
                 "uri": "test-detail.html",
@@ -65,8 +65,8 @@
     },
     "badges": [
         {
-            "href": "https://dev.azure.com/AnthonyShaw/vs-nunit/_build/latest?definitionId=6&branchName=master",
-            "uri": "https://dev.azure.com/AnthonyShaw/vs-nunit/_apis/build/status/tonybaloney.vs-nunit?branchName=master",
+            "href": "https://dev.azure.com/AnthonyShaw/vs-test-detail/_build/latest?definitionId=6&branchName=master",
+            "uri": "https://dev.azure.com/AnthonyShaw/vs-test-detail/_apis/build/status/tonybaloney.vs-test-detail?branchName=master",
             "description": "Azure Pipelines Status"
         }
     ],
@@ -77,6 +77,9 @@
     "screenshots": [
         {
             "path": "images/screenshot.png"
+        },
+        {
+            "path": "images/screenshot2.png"
         }
     ],
     "icons": {
