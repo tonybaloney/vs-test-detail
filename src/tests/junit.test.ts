@@ -37,7 +37,7 @@ test('invalid test case match', () => {
 });
 
 test('junit sample 1', (done) => {
-    let path = 'src/tests/fixtures/junit-cs-report.xml';
+    let path = 'src/tests/fixtures/cs-junit-report.xml';
     expect(fs.existsSync(path)).toBe(true);
     fs.readFile(path, 'utf8', function(err, contents) {
         if (err)
@@ -52,7 +52,7 @@ test('junit sample 1', (done) => {
 });
 
 test('junit sample 2', (done) => {
-    let path = 'src/tests/fixtures/junit-ibm-report.xml';
+    let path = 'src/tests/fixtures/ibm-junit-report.xml';
     expect(fs.existsSync(path)).toBe(true);
     fs.readFile(path, 'utf8', function(err, contents) {
         if (err)

@@ -18,6 +18,8 @@ NUnit XML output provides more granular data. The amount of data shown will depe
 | Node/[jest-nunit-reporter](https://www.npmjs.com/package/jest-nunit-reporter) | 2.0 XML      |   Yes  (minimal data) |
 | .NET/NUnit 2                        | 2.5 XML      |   **Yes** (minimal data) |
 | .NET/NUnit 3                        | 3.0 XML      |   **Yes**  |
+| Java/JUnit 4                        | 4.0 XML      |   **Yes**  |
+| Python/Junit                         | 4.0 XML      |   **Yes**  |
 
 ### Install
 

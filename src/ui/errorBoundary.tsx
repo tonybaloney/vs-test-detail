@@ -1,18 +1,13 @@
 import * as React from "react";
-import * as ReactDOM from "react-dom";
 
 import {ErrorMessage} from "./errorWindow"
-
-interface ErrorBoundaryProps {
-
-}
 
 interface ErrorBoundaryState {
     hasError: boolean;
     error: any;
 }
 
-export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
+export class ErrorBoundary extends React.Component<any, ErrorBoundaryState> {
     constructor(props) {
       super(props);
       this.state = { hasError: false, error: null };
@@ -28,13 +23,13 @@ export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoun
       return { hasError: true, error: error };
     }
   
-    render() : JSX.Element {
+    render() {
       if (this.state.hasError) {
         return (
             <ErrorMessage message={this.state.error}/>
         );
       } else {
-          return null;
+        return this.props.children; 
       }
     }
   }

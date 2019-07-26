@@ -38,3 +38,10 @@ steps:
     failTaskOnFailedTests: false
   displayName: Upload testing files
 
+- task: PublishTestResults@2
+  condition: succeededOrFailed()
+  inputs:
+    testRunner: JUnit
+    testResultsFiles: '**/*-junit-report.xml'
+    failTaskOnFailedTests: false
+  displayName: Upload testing files
