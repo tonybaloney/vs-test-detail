@@ -1,11 +1,11 @@
 import {IProperty, ITestCase, ITestResultDocument, ITestSuite} from "./abstract";
 import { ITaskItem } from "../ui/testPropertiesList";
 
-export function isNunitXml(document: Document) : boolean {
-    return (document && document.firstElementChild && document.firstElementChild.tagName === "test-run")
+export function isJunitXml(document: Document) : boolean {
+    return (document && document.firstElementChild && (document.firstElementChild.tagName === "testsuites" || document.firstElementChild.tagName === "testsuite"))
 }
 
-export class NunitProperty implements IProperty {
+export class JunitProperty implements IProperty {
     name: string;
     value: string;
     constructor(element: Element){
@@ -14,7 +14,7 @@ export class NunitProperty implements IProperty {
     }
 }
 
-export class NunitTestSuite implements ITestSuite {
+export class JunitTestSuite implements ITestSuite {
     element: Element;
     name: string;
     runState: string;
@@ -33,32 +33,17 @@ export class NunitTestSuite implements ITestSuite {
                 name: "Name"
             },
             {
-                value: this.element.getAttribute("fullname"),
+                value: this.element.getAttribute("hostname"),
                 iconName: "TestPlan",
-                name: "Full Name"
+                name: "Hostname"
             },
             {
-                value: this.element.getAttribute("type"),
+                value: this.element.getAttribute("package"),
                 iconName: "TestPlan",
-                name: "Type"
+                name: "Package"
             },
             {
-                value: this.element.getAttribute("methodname"),
-                iconName: "TestStep",
-                name: "Method"
-            },
-            {
-                value: this.element.getAttribute("classname"),
-                iconName: "TestStep",
-                name: "Class"
-            },
-            {
-                value: this.element.getAttribute("runstate"),
-                iconName: "TestAutoSolid",
-                name: "Run State"
-            },
-            {
-                value: this.element.getAttribute("testcasecount"),
+                value: this.element.getAttribute("tests"),
                 iconName: "NumberSymbol",
                 name: "Test Cases"
             },
@@ -72,7 +57,7 @@ export class NunitTestSuite implements ITestSuite {
         for (let child of this.element.childNodes) {
             if (child.nodeName === "properties") {
                 for (let el of child.getElementsByTagName('property')) {
-                    results.push(new NunitProperty(el));
+                    results.push(new JunitProperty(el));
                 }
             }
         }
@@ -81,7 +66,7 @@ export class NunitTestSuite implements ITestSuite {
 }
 
 
-export class NunitTestCase implements ITestCase {
+export class JunitTestCase implements ITestCase {
     element: Element;
     name: string;
 
@@ -98,35 +83,36 @@ export class NunitTestCase implements ITestCase {
             name: "Name"
         },
         {
-            value: this.element.getAttribute("fullname"),
-            iconName: "TestPlan",
-            name: "Full Name"
-        },
-        {
-            value: this.element.getAttribute("methodname"),
-            iconName: "TestStep",
-            name: "Method"
-        },
-        {
             value: this.element.getAttribute("classname"),
             iconName: "TestStep",
             name: "Class"
         },
         {
-            value: this.element.getAttribute("seed"),
-            iconName: "NumberSymbol",
-            name: "Seed"
+            value: this.element.getAttribute("status"),
+            iconName: "TestAutoSolid",
+            name: "Status"
         },
         {
-            value: this.element.getAttribute("runstate"),
+            value: this.element.getElementsByTagName('skipped') ? this.element.getElementsByTagName('skipped')[0].getAttribute('message') : null,
             iconName: "TestAutoSolid",
-            name: "Run State"
+            name: "Skipped Message"
+        },
+        {
+            value: this.element.getElementsByTagName('error') ? this.element.getElementsByTagName('error')[0].getAttribute('message') : null,
+            iconName: "TestAutoSolid",
+            name: "Error Message"
+        },
+        ,
+        {
+            value: this.element.getElementsByTagName('failure') ? this.element.getElementsByTagName('failure')[0].getAttribute('message') : null,
+            iconName: "TestAutoSolid",
+            name: "Failure Message"
         }
         ]
     };
 
     getTestSuite(): ITestSuite {
-        return new NunitTestSuite(this.element.parentElement);
+        return new JunitTestSuite(this.element.parentElement);
     }
 
     getProperties(): Array<IProperty> {
@@ -135,47 +121,47 @@ export class NunitTestCase implements ITestCase {
             return results;
         // @ts-ignore
         for (let el of this.element.getElementsByTagName('property')) {
-            results.push(new NunitProperty(el));
+            results.push(new JunitProperty(el));
         }
         return results;
     }
 
     hasOutput(): boolean {
-        return (this.element.getElementsByTagName('output') !== undefined && this.element.getElementsByTagName('output').length > 0);
+        return (this.element.getElementsByTagName('system-out') !== undefined && this.element.getElementsByTagName('system-out').length > 0);
     }
 
     getOutput(): string {
-        return this.element.getElementsByTagName('output')[0].textContent;
+        return this.element.getElementsByTagName('system-out')[0].textContent;
     }
 }
 
-export class NunitXMLDocument implements ITestResultDocument {
+export class JunitXMLDocument implements ITestResultDocument {
     document: XMLDocument;
     constructor(document: XMLDocument){
-        if (!isNunitXml(document))
-            throw new DOMException("Invalid NUnit XML document", document.firstElementChild.tagName);
+        if (!isJunitXml(document))
+            throw new DOMException("Invalid JUnit XML document", document.firstElementChild.tagName);
 
         this.document = document;
     }
 
     getPropertiesList(): ITaskItem[] {
         return [{
-            value: "NUnit 3.0 XML Result",
+            value: "JUnit XML Result",
             iconName: "TestPlan",
             name: "Type"
         }];
     };
 
     getCases(): NodeListOf<Element> {
-        return this.document.getElementsByTagName('test-case');
+        return this.document.getElementsByTagName('testcase');
     }
 
     getCase(name: string): ITestCase {
         // @ts-ignore
         for (let testCase of this.getCases()) {
-            const caseName: string = testCase.getAttribute('fullname');
+            const caseName: string = testCase.getAttribute('name');
             if (caseName === name) {
-                return new NunitTestCase(testCase);
+                return new JunitTestCase(testCase);
             }
         }
     }

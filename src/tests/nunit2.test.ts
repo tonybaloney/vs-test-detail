@@ -31,7 +31,7 @@ test('invalid test case match', () => {
 });
 
 test('valid complex test case match', (done) => {
-    let path = 'src/tests/jest-nunit-report.xml';
+    let path = 'src/tests/fixtures/jest-nunit-report.xml';
     expect(fs.existsSync(path)).toBe(true);
     fs.readFile(path, 'utf8', function(err, contents) {
         if (err)
@@ -47,7 +47,7 @@ test('valid complex test case match', (done) => {
 });
 
 test('jest-nunit-reporter test suite', (done) => {
-    let path = 'src/tests/jest-nunit-report.xml';
+    let path = 'src/tests/fixtures/jest-nunit-report.xml';
     expect(fs.existsSync(path)).toBe(true);
     fs.readFile(path, 'utf8', function(err, contents) {
         if (err)
@@ -65,7 +65,7 @@ test('jest-nunit-reporter test suite', (done) => {
 });
 
 test('nunit 2.5 test suite', (done) => {
-    let path = 'src/tests/nunit25-nunit-report.xml';
+    let path = 'src/tests/fixtures/nunit25-nunit-report.xml';
     expect(fs.existsSync(path)).toBe(true);
     fs.readFile(path, 'utf8', function(err, contents) {
         if (err)

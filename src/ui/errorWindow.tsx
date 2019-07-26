@@ -7,7 +7,7 @@ interface ErrorMessageProps {
     message: string;
 }
 
-export default class ErrorMessage extends React.Component<ErrorMessageProps> {
+export class ErrorMessage extends React.Component<ErrorMessageProps> {
     private buttonProps: IButtonProps[] = [
         {
             text: "Documentation",

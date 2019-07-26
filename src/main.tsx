@@ -8,10 +8,11 @@ import { SurfaceBackground, SurfaceContext } from "azure-devops-ui/Surface";
 
 import {TestHttpClient5} from "TFS/TestManagement/RestClient";
 import {NunitXMLDocument, isNunitXml} from "./documents/nunit";
-import ErrorMessage from "./ui/errorWindow";
+import {ErrorMessage} from "./ui/errorWindow";
 import {Nunit2XMLDocument, isNunit2Xml} from "./documents/nunit2";
+import {ErrorBoundary} from "./ui/errorBoundary"
+import { isJunitXml, JunitXMLDocument } from "./documents/junit";
 
-let testCaseName: string = "";
 let parser: DOMParser = new DOMParser();
 let enc: TextDecoder = new TextDecoder();
 
@@ -27,6 +28,7 @@ export const showError = function(message){
 VSS.ready(function() {
 
     let extensionContext: any = VSS.getConfiguration();
+    let testCaseName: string = "";
 
     VSS.require(["VSS/Service", "TFS/TestManagement/RestClient"], function (VSS_Service, TFS_Test_WebApi) {
         const testClient:TestHttpClient5 = VSS_Service.getCollectionClient(TFS_Test_WebApi.TestHttpClient5);
@@ -41,19 +43,19 @@ VSS.ready(function() {
                 doc = new NunitXMLDocument(dom);
             } else if (isNunit2Xml(dom)) {
                 doc = new Nunit2XMLDocument(dom);
+            } else if (isJunitXml(dom)) {
+                doc = new JunitXMLDocument(dom);
             } else {
-                showError("Attachment is not a valid NUnit XML file. See documentation for supported formats.");
+                showError("Attachment is not a valid NUnit/JUnit XML file. See documentation for supported formats.");
                 return;
             }
 
             let testCase = doc.getCase(testCaseName);
-            let testSuite = testCase.getTestSuite();
-
             if (!testCase) {
-                showError("Could not locate a matching test case in the results. ");
+                showError("Could not locate a matching test case '" + testCaseName + "'in the results. ");
                 return;
             }
-
+            let testSuite = testCase.getTestSuite();
             if (!testSuite) {
                 showError("Could not locate a matching test suite in the results. ");
                 return;
@@ -61,7 +63,9 @@ VSS.ready(function() {
 
             ReactDOM.render(
                 <SurfaceContext.Provider value={{ background: SurfaceBackground.neutral }}>
-                  <NUnitPageState testCase={testCase} testSuite={testSuite}/>
+                    <ErrorBoundary>
+                        <NUnitPageState testCase={testCase} testSuite={testSuite}/>
+                    </ErrorBoundary>
                 </SurfaceContext.Provider>,
                 document.getElementById("root")
             );
@@ -77,7 +81,7 @@ VSS.ready(function() {
                 }
             }
             if (!foundAttachment){
-                showError("Could not locate an NUnit XML attachment in the test run attachments. ");
+                showError("Could not locate an XML attachment in the test run attachments. ");
             }
         };
 

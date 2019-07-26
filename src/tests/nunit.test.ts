@@ -31,7 +31,7 @@ test('invalid test case match', () => {
 });
 
 test('valid complex test case match', (done) => {
-    let path = 'src/tests/pytest-nunit-report.xml';
+    let path = 'src/tests/fixtures/pytest-nunit-report.xml';
     expect(fs.existsSync(path)).toBe(true);
     fs.readFile(path, 'utf8', function(err, contents) {
         if (err)
@@ -47,7 +47,7 @@ test('valid complex test case match', (done) => {
 });
 
 test('valid complex test case match test suite', (done) => {
-    let path = 'src/tests/pytest-nunit-report.xml';
+    let path = 'src/tests/fixtures/pytest-nunit-report.xml';
     expect(fs.existsSync(path)).toBe(true);
     fs.readFile(path, 'utf8', function(err, contents) {
         if (err)
@@ -66,14 +66,15 @@ test('valid complex test case match test suite', (done) => {
 
 
 test('nunit30 test suite', (done) => {
-    let path = 'src/tests/nunit30-nunit-report.xml';
+    let path = 'src/tests/fixtures/nunit30-nunit-report.xml';
     expect(fs.existsSync(path)).toBe(true);
     fs.readFile(path, 'utf8', function(err, contents) {
         if (err)
             throw err;
         let testDoc = (new DOMParser()).parseFromString(contents, 'text/xml');
+        expect(nunit.isNunitXml(testDoc)).toBe(true);
         const testNunit = new nunit.NunitXMLDocument(testDoc);
-        let resolvedCase = testNunit.getCase('FailingTest');
+        let resolvedCase = testNunit.getCase('NUnit.Tests.Assemblies.MockTestFixture.FailingTest');
         expect(resolvedCase).toBeDefined();
         expect(resolvedCase.getProperties().length).toBe(0);
         expect(resolvedCase.name).toBe("FailingTest");

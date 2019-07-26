@@ -127,7 +127,11 @@ export class Nunit2XMLDocument implements ITestResultDocument {
     }
 
     getPropertiesList(): ITaskItem[] {
-        return [];
+        return [{
+            value: "NUnit 3.0 XML Result",
+            iconName: "TestPlan",
+            name: "Type"
+        }];
     };
 
     getCases(): NodeListOf<Element> {
