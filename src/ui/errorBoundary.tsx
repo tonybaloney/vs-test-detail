@@ -23,13 +23,14 @@ export class ErrorBoundary extends React.Component<any, ErrorBoundaryState> {
       console.log(info);
     }
   
-    render() {
+    render() : JSX.Element {
       if (this.state.hasError) {
         return (
             <h1>Error producing test details. See Console for details.</h1>
         );
       } else {
-        return this.props.children; 
+          // @ts-ignore
+          return this.props.children;
       }
     }
   }

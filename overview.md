@@ -5,6 +5,8 @@
 A UI extension for test cases in Azure DevOps (VSO)
 
 * Currently supports NUnit XML 2/3 test results and displays additional detail in the test console
+* Supports displaying custom test parameters and properties
+* Supports stdout (missing from debug window) in NUnit 3 and JUnit
 
 ![](images/screenshot.png)
 
@@ -21,28 +23,10 @@ NUnit XML output provides more granular data. The amount of data shown will depe
 | Java/JUnit 4                        | 4.0 XML      |   **Yes**  |
 | Python/Junit                         | 4.0 XML      |   **Yes**  |
 
-### Install
+## Configuration
 
-The project can be installed using npm
+No additional configuration is required if you are using the `PublishTestResults@2` task with either the `NUnit` or `JUnit` test runner formats.
 
-```
-npm install
-```
+## Issues
 
-### Build
-
-To build the components:
-
-```
-npm run build
-```
-
-The package will be within the `dist/` directory as a VSIX extension file.
-
-### Testing
-
-The test suite is written in TypeScript and kept within the source dir. To run jest, call:
-
-```
-npm run test
-```
+If you come across any issues with this extension, please report them on the GitHub page. Attaching your report XML file to the issue will aid debugging.
