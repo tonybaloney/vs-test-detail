@@ -48,21 +48,22 @@ export default class TestPropertiesList extends React.Component<TestPropertiesLi
         details: IListItemDetails<ITaskItem>,
         key?: string
     ): JSX.Element => {
-        return (
-            <ListItem key={key || "list-item" + index} index={index} details={details}>
-                <div className="list-example-row flex-row h-scroll-hidden">
-                    <Icon iconName={item.iconName} size={IconSize.medium} />
-                    <div
-                        style={{ marginLeft: "10px", padding: "10px 0px" }}
-                        className="flex-column h-scroll-hidden"
-                    >
-                        <span className="text-ellipsis">{item.name}</span>
-                        <span className="fontSizeMS font-size-ms text-ellipsis secondary-text">
-                            {item.value}
-                        </span>
+        if (item.value !== null)
+            return (
+                <ListItem key={key || "list-item" + index} index={index} details={details}>
+                    <div className="list-example-row flex-row h-scroll-hidden">
+                        <Icon iconName={item.iconName} size={IconSize.medium} />
+                        <div
+                            style={{ marginLeft: "10px", padding: "10px 0px" }}
+                            className="flex-column h-scroll-hidden"
+                        >
+                            <span className="text-ellipsis">{item.name}</span>
+                            <span className="fontSizeMS font-size-ms text-ellipsis secondary-text">
+                                {item.value}
+                            </span>
+                        </div>
                     </div>
-                </div>
-            </ListItem>
-        );
+                </ListItem>
+            );
     };
 }

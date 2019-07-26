@@ -32,8 +32,23 @@ export class Nunit2TestSuite implements ITestSuite {
             iconName: "TestPlan",
             name: "Name"
         },
-        ];
-    }
+        {
+            value: this.element.getAttribute('description'),
+            iconName: "TestPlan",
+            name: "Description"
+        },
+        {
+            value: this.element.getAttribute('executed'),
+            iconName: "TestAutoSolid",
+            name: "Executed"
+        },
+        {
+            value: this.element.getAttribute('result'),
+            iconName: "TestPlan",
+            name: "Result"
+        }
+        ]
+    };
 
     getProperties(): Array<IProperty> {
         let results = new Array();
@@ -73,12 +88,12 @@ export class Nunit2TestCase implements ITestCase {
         },
         {
             value: this.element.getAttribute('executed'),
-            iconName: "TestPlan",
+            iconName: "TestAutoSolid",
             name: "Executed"
         },
         {
             value: this.element.getAttribute('result'),
-            iconName: "TestPlan",
+            iconName: "TestBeaker",
             name: "Result"
         }
         ]

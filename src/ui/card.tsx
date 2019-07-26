@@ -7,6 +7,7 @@ import { Card } from "azure-devops-ui/Card";
 
 import "./root.scss"
 import {ITestCase, ITestSuite} from "../documents/abstract";
+import {OutputCard} from "./outputCard";
 
 interface IPageProps {
     testCase: ITestCase,
@@ -44,12 +45,18 @@ export default class NUnitPage extends React.Component<IPageProps, IPageState> {
                     <Header
                         title={"Test Case"}
                         titleSize={TitleSize.Medium}
-                        titleIconProps={{ iconName: "TestCase" }}
+                        titleIconProps={{ iconName: "TestStep" }}
                     />
                     <Card>
                         <TestPropertiesList provider={this.state.testCase} />
                         <PropertyTable properties={this.state.testCase.getProperties()}/>
                     </Card>
+                    <Header
+                        title={"Output"}
+                        titleSize={TitleSize.Medium}
+                        titleIconProps={{ iconName: "TextCallout" }}
+                    />
+                    <OutputCard text={this.state.testCase.getOutput()}/>
                 </div>
             </Page>
         );

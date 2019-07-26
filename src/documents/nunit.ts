@@ -27,12 +27,42 @@ export class NunitTestSuite implements ITestSuite {
 
     getPropertiesList(): ITaskItem[] {
         return [
-        {
-            value: this.name,
-            iconName: "TestPlan",
-            name: "Name"
-        },
-        ];
+            {
+                value: this.name,
+                iconName: "TestPlan",
+                name: "Name"
+            },
+            {
+                value: this.element.getAttribute("fullname"),
+                iconName: "TestPlan",
+                name: "Full Name"
+            },
+            {
+                value: this.element.getAttribute("type"),
+                iconName: "TestPlan",
+                name: "Type"
+            },
+            {
+                value: this.element.getAttribute("methodname"),
+                iconName: "TestStep",
+                name: "Method"
+            },
+            {
+                value: this.element.getAttribute("classname"),
+                iconName: "TestStep",
+                name: "Class"
+            },
+            {
+                value: this.element.getAttribute("runstate"),
+                iconName: "TestAutoSolid",
+                name: "Run State"
+            },
+            {
+                value: this.element.getAttribute("testcasecount"),
+                iconName: "NumberSymbol",
+                name: "Test Cases"
+            },
+            ];
     }
 
     getProperties(): Array<IProperty> {
@@ -65,6 +95,11 @@ export class NunitTestCase implements ITestCase {
             value: this.name,
             iconName: "TestPlan",
             name: "Name"
+        },
+        {
+            value: this.element.getAttribute("fullname"),
+            iconName: "TestPlan",
+            name: "Full Name"
         },
         {
             value: this.element.getAttribute("methodname"),
