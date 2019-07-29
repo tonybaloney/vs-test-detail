@@ -8,6 +8,7 @@
     "types": [
       "vss-web-extension-sdk",
       "jest",
+      "jest-enzyme",
       "react"
     ],
     "sourceMap": true,
@@ -23,5 +24,9 @@
   "exclude": [
     "node_modules",
     "tests",
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
   ],
 }

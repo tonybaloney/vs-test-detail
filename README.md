@@ -1,6 +1,7 @@
 # vs-test-detail
 
 [![Build Status](https://dev.azure.com/AnthonyShaw/vs-test-detail/_apis/build/status/tonybaloney.vs-test-detail?branchName=master)](https://dev.azure.com/AnthonyShaw/vs-test-detail/_build/latest?definitionId=6&branchName=master)
+[![codecov](https://codecov.io/gh/tonybaloney/vs-test-detail/branch/master/graph/badge.svg)](https://codecov.io/gh/tonybaloney/vs-test-detail)
 
 A UI extension for test cases in Azure DevOps (VSO)
 

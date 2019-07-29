@@ -1,4 +1,4 @@
-import * as nunit from '../documents/nunit2';
+import * as nunit from '../../documents/nunit2';
 var fs = require('fs');
 
 

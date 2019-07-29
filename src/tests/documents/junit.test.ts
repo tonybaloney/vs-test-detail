@@ -1,4 +1,4 @@
-import * as junit from '../documents/junit';
+import * as junit from '../../documents/junit';
 var fs = require('fs');
 
 
