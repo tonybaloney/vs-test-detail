@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "vss-pytest",
     "publisher": "AnthonyShaw",
-    "version": "1.0.104",
+    "version": "1.0.109",
     "name": "Pytest details",
     "description": "An extension for seeing detailed Pytest test data in the test results UI.",
     "categories": ["Azure Pipelines"],

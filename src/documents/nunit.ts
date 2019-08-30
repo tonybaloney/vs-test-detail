@@ -217,16 +217,11 @@ export class NunitTestPlan implements ITestPlan {
     }
 
     getPropertiesList(): ITaskItem[] {
-        return [
+        let f = [
             {
                 value: this.name,
                 iconName: "TestPlan",
                 name: "Name"
-            },
-            {
-                value: this.element.getAttribute('fullname'),
-                iconName: "TestPlan",
-                name: "Full Name"
             },
             {
                 value: this.element.getAttribute('total'),
@@ -234,15 +229,52 @@ export class NunitTestPlan implements ITestPlan {
                 name: "Total"
             },
             {
-                value: this.element.getAttribute('failures'),
-                iconName: "TestAutoSolid",
-                name: "Failures"
-            },
-            {
-                value: this.element.getAttribute('time'),
+                value: this.element.getAttribute('duration'),
                 iconName: "NumberSymbol",
-                name: "Time"
+                name: "Duration"
             }
-        ]
+        ];
+        if (this.element.getElementsByTagName('command-line')[0]) {
+            f.push({
+                value: this.element.getElementsByTagName('command-line')[0].textContent,
+                iconName: "CommandPrompt",
+                name: "Command Line"
+            });
+        }
+
+        if (this.element.getElementsByTagName('filter')[0]){
+            let filter_element = this.element.getElementsByTagName('filter')[0];
+            if (filter_element.getElementsByTagName("name")){
+                // @ts-ignore
+                for (let el of filter_element.getElementsByTagName('name')) {
+                    f.push({
+                        value: el.textContent,
+                        iconName: "Filter",
+                        name: "Keyword Filter"
+                    })
+                }
+            }
+            if (filter_element.getElementsByTagName("namespace")){
+                // @ts-ignore
+                for (let el of filter_element.getElementsByTagName('namespace')) {
+                    f.push({
+                        value: el.textContent,
+                        iconName: "Filter",
+                        name: "Marker Filter"
+                    })
+                }
+            }
+            if (filter_element.getElementsByTagName("test")){
+                // @ts-ignore
+                for (let el of filter_element.getElementsByTagName('test')) {
+                    f.push({
+                        value: el.textContent,
+                        iconName: "Filter",
+                        name: "Path Filter"
+                    })
+                }
+            }
+        }
+        return f;
     };
 }

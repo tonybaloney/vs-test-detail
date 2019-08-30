@@ -3,7 +3,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import NUnitPageState from "./ui/card";
-import * as unzipper from "unzipper";
+import * as JSZip from "jszip";
 
 import { SurfaceBackground, SurfaceContext } from "azure-devops-ui/Surface";
 
@@ -35,10 +35,17 @@ VSS.ready(function() {
         const testClient:TestHttpClient5 = VSS_Service.getCollectionClient(TFS_Test_WebApi.TestHttpClient5);
 
         const processAttachmentZip = function (buf: ArrayBuffer) {
-            unzipper.Open.buffer(buf).then((dir)=> {
-                dir.files[0].buffer().then((contents) => {processAttachment(contents);});
+            console.log("Loading ZIP attachment.");
+            JSZip.loadAsync(buf).then( (x) => {
+                console.log(x);
+                let f = x.file(/.xml/)[0];
+                if (f != undefined){
+                    f.async("arraybuffer").then(processAttachment);
+                } else {
+                    showError("Test results ZIP does not contain an XML file.");
+                }
             });
-        }
+        };
 
         const processAttachment = function (buf: ArrayBuffer) {
             let out: string = enc.decode(buf);

@@ -54,6 +54,9 @@ test('valid complex test case match test suite', (done) => {
             throw err;
         let testDoc = (new DOMParser()).parseFromString(contents, 'text/xml');
         const testNunit = new nunit.NunitXMLDocument(testDoc);
+        let resolvedPlan = testNunit.getPlan();
+        expect(resolvedPlan.name).toBeNull();
+        expect(resolvedPlan.getPropertiesList().length).toBe(5);
         let resolvedCase = testNunit.getCase('integration/test_properties.py::test_attachment');
         expect(resolvedCase).toBeDefined();
         expect(resolvedCase.getProperties().length).toBe(2);
@@ -76,7 +79,7 @@ test('nunit30 test suite', (done) => {
         const testNunit = new nunit.NunitXMLDocument(testDoc);
         let resolvedPlan = testNunit.getPlan();
         expect(resolvedPlan.name).toEqual("mock-assembly.dll");
-
+        expect(resolvedPlan.getPropertiesList().length).toBe(3);
         let resolvedCase = testNunit.getCase('NUnit.Tests.Assemblies.MockTestFixture.FailingTest');
         expect(resolvedCase).toBeDefined();
         expect(resolvedCase.getProperties().length).toBe(0);
