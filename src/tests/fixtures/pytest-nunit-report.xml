@@ -1,25 +1,25 @@
 <test-run asserts="0" clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
-          duration="7" end-time="2019-08-30 00:16:36.694200" engine-version="3.6.2" failed="0" id="2" inconclusive="0"
-          passed="29" result="Passed" skipped="1" start-time="2019-08-30 00:16:29.166245" testcasecount="30" total="30">
-    <command-line>/Users/anthonyshaw/PycharmProjects/pytest-nunit/venv/bin/pytest tests --nunitxml=out.xml -x --pdb
+          duration="8" end-time="2019-08-30 02:27:57.227446" engine-version="3.6.2" failed="0" id="2" inconclusive="0"
+          passed="29" result="Passed" skipped="1" start-time="2019-08-30 02:27:49.013286" testcasecount="30" total="30">
+    <command-line>/Users/anthonyshaw/PycharmProjects/pytest-nunit/venv/bin/pytest tests --nunitxml=out.xml -x
     </command-line>
     <filter>
         <test re="0">tests</test>
     </filter>
-    <test-suite asserts="0" classname="" duration="0.034701" end-time="2019-08-30 00:16:29.687337" failed="0"
+    <test-suite asserts="0" classname="" duration="0.053189" end-time="2019-08-30 02:27:49.929573" failed="0"
                 fullname="integration/test_azure.py" id="integration/test_azure.py" inconclusive="0"
                 label="Test things in Azure Pipelines" methodname="" name="integration/test_azure.py" passed="3"
-                result="Passed" runstate="Runnable" skipped="1" start-time="2019-08-30 00:16:29.652636"
+                result="Passed" runstate="Runnable" skipped="1" start-time="2019-08-30 02:27:49.876384"
                 testcasecount="4" total="4" type="Assembly" warnings="0">
         <properties>
             <property name="python_version"
                       value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
         </properties>
-        <test-case asserts="0" classname="integration/test_azure.py" duration="0.001005"
-                   end-time="2019-08-30 00:16:29.653641" fullname="integration/test_azure.py::test_attachment" id="100"
+        <test-case asserts="0" classname="integration/test_azure.py" duration="0.001191"
+                   end-time="2019-08-30 02:27:49.877575" fullname="integration/test_azure.py::test_attachment" id="100"
                    label="Test adding custom attachment" methodname="test_attachment"
                    name="integration/test_azure.py::test_attachment" result="Passed" runstate="Runnable" seed="1"
-                   start-time="2019-08-30 00:16:29.652636">
+                   start-time="2019-08-30 02:27:49.876384">
             <properties>
                 <property name="python-version"
                           value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
@@ -45,11 +45,11 @@
                 </attachment>
             </attachments>
         </test-case>
-        <test-case asserts="0" classname="integration/test_azure.py" duration="0.000737"
-                   end-time="2019-08-30 00:16:29.655078" fullname="integration/test_azure.py::test_property" id="101"
+        <test-case asserts="0" classname="integration/test_azure.py" duration="0.000805"
+                   end-time="2019-08-30 02:27:49.879076" fullname="integration/test_azure.py::test_property" id="101"
                    label="Test adding custom property" methodname="test_property"
                    name="integration/test_azure.py::test_property" result="Passed" runstate="Runnable" seed="1"
-                   start-time="2019-08-30 00:16:29.654341">
+                   start-time="2019-08-30 02:27:49.878271">
             <properties>
                 <property name="python-version"
                           value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
@@ -70,10 +70,10 @@
             </reason>
             <output><![CDATA[]]></output>
         </test-case>
-        <test-case asserts="0" classname="integration/test_azure.py" duration="0.030406"
-                   end-time="2019-08-30 00:16:29.686043" fullname="integration/test_azure.py::test_failure" id="102"
+        <test-case asserts="0" classname="integration/test_azure.py" duration="0.048691"
+                   end-time="2019-08-30 02:27:49.928475" fullname="integration/test_azure.py::test_failure" id="102"
                    label="" methodname="test_failure" name="integration/test_azure.py::test_failure" result="Passed"
-                   runstate="Runnable" seed="1" start-time="2019-08-30 00:16:29.655637">
+                   runstate="Runnable" seed="1" start-time="2019-08-30 02:27:49.879784">
             <properties>
                 <property name="python-version"
                           value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
@@ -87,7 +87,7 @@
             <failure>
                 <message><![CDATA[@pytest.mark.xfail
     def test_failure():
->       assert 1 == 0
+&gt;       assert 1 == 0
 E       assert 1 == 0
 
 tests/integration/test_azure.py:28: AssertionError]]></message>
@@ -99,10 +99,10 @@ tests/integration/test_azure.py:28: AssertionError]]></message>
             </reason>
             <output><![CDATA[]]></output>
         </test-case>
-        <test-case asserts="0" classname="integration/test_azure.py" duration="0" end-time="2019-08-30 00:16:29.687337"
+        <test-case asserts="0" classname="integration/test_azure.py" duration="0" end-time="2019-08-30 02:27:49.929573"
                    fullname="integration/test_azure.py::test_skip" id="103" label="" methodname="test_skip"
                    name="integration/test_azure.py::test_skip" result="Skipped" runstate="Skipped" seed="1"
-                   start-time="2019-08-30 00:16:29.686868">
+                   start-time="2019-08-30 02:27:49.929180">
             <properties>
                 <property name="python-version"
                           value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
@@ -127,276 +127,20 @@ tests/integration/test_azure.py:28: AssertionError]]></message>
                      machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
                      uiculture="en_AU" user="" user-domain=""/>
     </test-suite>
-    <test-suite asserts="0" classname="" duration="0.004693" end-time="2019-08-30 00:16:36.693460" failed="0"
-                fullname="unit/test_names.py" id="unit/test_names.py" inconclusive="0" label="" methodname=""
-                name="unit/test_names.py" passed="3" result="Passed" runstate="Runnable" skipped="0"
-                start-time="2019-08-30 00:16:36.688767" testcasecount="3" total="3" type="Assembly" warnings="0">
-        <properties>
-            <property name="python_version"
-                      value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
-        </properties>
-        <test-case asserts="0" classname="unit/test_names.py" duration="0.000834" end-time="2019-08-30 00:16:36.689601"
-                   fullname="unit/test_names.py::test_names" id="127" label="Test basic split of module::test"
-                   methodname="test_names" name="unit/test_names.py::test_names" result="Passed" runstate="Runnable"
-                   seed="1" start-time="2019-08-30 00:16:36.688767">
-            <properties>
-                <property name="python-version"
-                          value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
-                <property name="fspath" value="unit/test_names.py"/>
-            </properties>
-            <environment
-                    clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
-                    culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
-                    machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
-                    uiculture="en_AU" user="" user-domain=""/>
-            <failure>
-                <message><![CDATA[]]></message>
-                <stack-trace><![CDATA[None]]></stack-trace>
-            </failure>
-            <reason>
-                <message><![CDATA[]]></message>
-            </reason>
-            <output><![CDATA[]]></output>
-        </test-case>
-        <test-case asserts="0" classname="unit/test_names.py" duration="0.000724" end-time="2019-08-30 00:16:36.690954"
-                   fullname="unit/test_names.py::test_name" id="128" label="Test split of module::class::test"
-                   methodname="test_name" name="unit/test_names.py::test_name" result="Passed" runstate="Runnable"
-                   seed="1" start-time="2019-08-30 00:16:36.690230">
-            <properties>
-                <property name="python-version"
-                          value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
-                <property name="fspath" value="unit/test_names.py"/>
-            </properties>
-            <environment
-                    clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
-                    culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
-                    machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
-                    uiculture="en_AU" user="" user-domain=""/>
-            <failure>
-                <message><![CDATA[]]></message>
-                <stack-trace><![CDATA[None]]></stack-trace>
-            </failure>
-            <reason>
-                <message><![CDATA[]]></message>
-            </reason>
-            <output><![CDATA[]]></output>
-        </test-case>
-        <test-case asserts="0" classname="unit/test_names.py" duration="0.001908" end-time="2019-08-30 00:16:36.693460"
-                   fullname="unit/test_names.py::test_words" id="129" label="Test split of module::class::test"
-                   methodname="test_words" name="unit/test_names.py::test_words" result="Passed" runstate="Runnable"
-                   seed="1" start-time="2019-08-30 00:16:36.691552">
-            <properties>
-                <property name="python-version"
-                          value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
-                <property name="fspath" value="unit/test_names.py"/>
-            </properties>
-            <environment
-                    clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
-                    culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
-                    machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
-                    uiculture="en_AU" user="" user-domain=""/>
-            <failure>
-                <message><![CDATA[]]></message>
-                <stack-trace><![CDATA[None]]></stack-trace>
-            </failure>
-            <reason>
-                <message><![CDATA[]]></message>
-            </reason>
-            <output><![CDATA[]]></output>
-        </test-case>
-        <environment clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
-                     culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
-                     machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
-                     uiculture="en_AU" user="" user-domain=""/>
-    </test-suite>
-    <test-suite asserts="0" classname="" duration="0.949603" end-time="2019-08-30 00:16:36.682689" failed="0"
-                fullname="integration/test_tests.py" id="integration/test_tests.py" inconclusive="0"
-                label="Test various scenarios" methodname="" name="integration/test_tests.py" passed="5" result="Passed"
-                runstate="Runnable" skipped="0" start-time="2019-08-30 00:16:35.733086" testcasecount="5" total="5"
-                type="Assembly" warnings="0">
-        <properties>
-            <property name="python_version"
-                      value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
-        </properties>
-        <test-case asserts="0" classname="integration/test_tests.py" duration="0.174504"
-                   end-time="2019-08-30 00:16:35.907590" fullname="integration/test_tests.py::test_passing_test"
-                   id="120" label="Test a basic passing test" methodname="test_passing_test"
-                   name="integration/test_tests.py::test_passing_test" result="Passed" runstate="Runnable" seed="1"
-                   start-time="2019-08-30 00:16:35.733086">
-            <properties>
-                <property name="python-version"
-                          value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
-                <property name="fspath" value="integration/test_tests.py"/>
-            </properties>
-            <environment
-                    clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
-                    culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
-                    machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
-                    uiculture="en_AU" user="" user-domain=""/>
-            <failure>
-                <message><![CDATA[]]></message>
-                <stack-trace><![CDATA[None]]></stack-trace>
-            </failure>
-            <reason>
-                <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_passing_test.py::test_pass' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_passing_test.py::test_pass' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_passing_test.py::test_pass' when='teardown' outcome='passed'>]]></message>
-            </reason>
-            <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_passing_test.py::test_pass' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_passing_test.py::test_pass' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_passing_test.py::test_pass' when='teardown' outcome='passed'>]]></output>
-        </test-case>
-        <test-case asserts="0" classname="integration/test_tests.py" duration="0.179281"
-                   end-time="2019-08-30 00:16:36.090893" fullname="integration/test_tests.py::test_failing_test"
-                   id="121" label="Test a basic failing test" methodname="test_failing_test"
-                   name="integration/test_tests.py::test_failing_test" result="Passed" runstate="Runnable" seed="1"
-                   start-time="2019-08-30 00:16:35.911612">
-            <properties>
-                <property name="python-version"
-                          value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
-                <property name="fspath" value="integration/test_tests.py"/>
-            </properties>
-            <environment
-                    clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
-                    culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
-                    machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
-                    uiculture="en_AU" user="" user-domain=""/>
-            <failure>
-                <message><![CDATA[]]></message>
-                <stack-trace><![CDATA[None]]></stack-trace>
-            </failure>
-            <reason>
-                <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_failing_test.py::test_fail' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_failing_test.py::test_fail' when='call' outcome='failed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_failing_test.py::test_fail' when='teardown' outcome='passed'>]]></message>
-            </reason>
-            <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_failing_test.py::test_fail' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_failing_test.py::test_fail' when='call' outcome='failed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_failing_test.py::test_fail' when='teardown' outcome='passed'>]]></output>
-        </test-case>
-        <test-case asserts="0" classname="integration/test_tests.py" duration="0.17571"
-                   end-time="2019-08-30 00:16:36.269379" fullname="integration/test_tests.py::test_skipped_test"
-                   id="122" label="Test a basic skipped test" methodname="test_skipped_test"
-                   name="integration/test_tests.py::test_skipped_test" result="Passed" runstate="Runnable" seed="1"
-                   start-time="2019-08-30 00:16:36.093669">
-            <properties>
-                <property name="python-version"
-                          value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
-                <property name="fspath" value="integration/test_tests.py"/>
-            </properties>
-            <environment
-                    clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
-                    culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
-                    machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
-                    uiculture="en_AU" user="" user-domain=""/>
-            <failure>
-                <message><![CDATA[]]></message>
-                <stack-trace><![CDATA[None]]></stack-trace>
-            </failure>
-            <reason>
-                <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_skipped_test.py::test_skip' when='setup' outcome='skipped'>
-[35mDEBUG   [0m __name__:plugin.py:129 skipping : ('test_skipped_test.py', 2, 'Skipped: unconditional skip')
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_skipped_test.py::test_skip' when='teardown' outcome='passed'>]]></message>
-            </reason>
-            <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_skipped_test.py::test_skip' when='setup' outcome='skipped'>
-[35mDEBUG   [0m __name__:plugin.py:129 skipping : ('test_skipped_test.py', 2, 'Skipped: unconditional skip')
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_skipped_test.py::test_skip' when='teardown' outcome='passed'>]]></output>
-        </test-case>
-        <test-case asserts="0" classname="integration/test_tests.py" duration="0.22107"
-                   end-time="2019-08-30 00:16:36.493273" fullname="integration/test_tests.py::test_all_outcomes"
-                   id="123" label="Test all 3 types of outcomes" methodname="test_all_outcomes"
-                   name="integration/test_tests.py::test_all_outcomes" result="Passed" runstate="Runnable" seed="1"
-                   start-time="2019-08-30 00:16:36.272203">
-            <properties>
-                <property name="python-version"
-                          value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
-                <property name="fspath" value="integration/test_tests.py"/>
-            </properties>
-            <environment
-                    clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
-                    culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
-                    machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
-                    uiculture="en_AU" user="" user-domain=""/>
-            <failure>
-                <message><![CDATA[]]></message>
-                <stack-trace><![CDATA[None]]></stack-trace>
-            </failure>
-            <reason>
-                <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_all_outcomes.py::test_pass' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_all_outcomes.py::test_pass' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_all_outcomes.py::test_pass' when='teardown' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_all_outcomes.py::test_fail' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_all_outcomes.py::test_fail' when='call' outcome='failed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_all_outcomes.py::test_fail' when='teardown' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_all_outcomes.py::test_skip' when='setup' outcome='skipped'>
-[35mDEBUG   [0m __name__:plugin.py:129 skipping : ('test_all_outcomes.py', 8, 'Skipped: unconditional skip')
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_all_outcomes.py::test_skip' when='teardown' outcome='passed'>]]></message>
-            </reason>
-            <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_all_outcomes.py::test_pass' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_all_outcomes.py::test_pass' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_all_outcomes.py::test_pass' when='teardown' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_all_outcomes.py::test_fail' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_all_outcomes.py::test_fail' when='call' outcome='failed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_all_outcomes.py::test_fail' when='teardown' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_all_outcomes.py::test_skip' when='setup' outcome='skipped'>
-[35mDEBUG   [0m __name__:plugin.py:129 skipping : ('test_all_outcomes.py', 8, 'Skipped: unconditional skip')
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_all_outcomes.py::test_skip' when='teardown' outcome='passed'>]]></output>
-        </test-case>
-        <test-case asserts="0" classname="integration/test_tests.py" duration="0.186552"
-                   end-time="2019-08-30 00:16:36.682689" fullname="integration/test_tests.py::test_error_test" id="124"
-                   label="Test a test that fails" methodname="test_error_test"
-                   name="integration/test_tests.py::test_error_test" result="Passed" runstate="Runnable" seed="1"
-                   start-time="2019-08-30 00:16:36.496137">
-            <properties>
-                <property name="python-version"
-                          value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
-                <property name="fspath" value="integration/test_tests.py"/>
-            </properties>
-            <environment
-                    clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
-                    culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
-                    machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
-                    uiculture="en_AU" user="" user-domain=""/>
-            <failure>
-                <message><![CDATA[]]></message>
-                <stack-trace><![CDATA[None]]></stack-trace>
-            </failure>
-            <reason>
-                <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_error_test.py::test_error' when='setup' outcome='failed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_error_test.py::test_error' when='teardown' outcome='passed'>]]></message>
-            </reason>
-            <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_error_test.py::test_error' when='setup' outcome='failed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_error_test.py::test_error' when='teardown' outcome='passed'>]]></output>
-        </test-case>
-        <environment clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
-                     culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
-                     machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
-                     uiculture="en_AU" user="" user-domain=""/>
-    </test-suite>
-    <test-suite asserts="0" classname="" duration="1.106668" end-time="2019-08-30 00:16:31.008565" failed="0"
+    <test-suite asserts="0" classname="" duration="1.219476" end-time="2019-08-30 02:27:51.416162" failed="0"
                 fullname="integration/test_filters.py" id="integration/test_filters.py" inconclusive="0"
                 label="Test adding properties to tests" methodname="" name="integration/test_filters.py" passed="6"
-                result="Passed" runstate="Runnable" skipped="0" start-time="2019-08-30 00:16:29.901897"
+                result="Passed" runstate="Runnable" skipped="0" start-time="2019-08-30 02:27:50.196686"
                 testcasecount="6" total="6" type="Assembly" warnings="0">
         <properties>
             <property name="python_version"
                       value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
         </properties>
-        <test-case asserts="0" classname="integration/test_filters.py" duration="0.179875"
-                   end-time="2019-08-30 00:16:30.081772" fullname="integration/test_filters.py::test_keyword_filter"
+        <test-case asserts="0" classname="integration/test_filters.py" duration="0.195759"
+                   end-time="2019-08-30 02:27:50.392445" fullname="integration/test_filters.py::test_keyword_filter"
                    id="105" label="" methodname="test_keyword_filter"
                    name="integration/test_filters.py::test_keyword_filter" result="Passed" runstate="Runnable" seed="1"
-                   start-time="2019-08-30 00:16:29.901897">
+                   start-time="2019-08-30 02:27:50.196686">
             <properties>
                 <property name="python-version"
                           value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
@@ -413,21 +157,21 @@ tests/integration/test_azure.py:28: AssertionError]]></message>
             </failure>
             <reason>
                 <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_keyword_filter.py::test_basic' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_keyword_filter.py::test_basic' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_keyword_filter.py::test_basic' when='teardown' outcome='passed'>]]></message>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_keyword_filter.py::test_basic' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_keyword_filter.py::test_basic' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_keyword_filter.py::test_basic' when='teardown' outcome='passed'&gt;]]></message>
             </reason>
             <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_keyword_filter.py::test_basic' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_keyword_filter.py::test_basic' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_keyword_filter.py::test_basic' when='teardown' outcome='passed'>]]></output>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_keyword_filter.py::test_basic' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_keyword_filter.py::test_basic' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_keyword_filter.py::test_basic' when='teardown' outcome='passed'&gt;]]></output>
         </test-case>
-        <test-case asserts="0" classname="integration/test_filters.py" duration="0.198196"
-                   end-time="2019-08-30 00:16:30.282069"
+        <test-case asserts="0" classname="integration/test_filters.py" duration="0.174807"
+                   end-time="2019-08-30 02:27:50.569741"
                    fullname="integration/test_filters.py::test_keyword_filter_complex" id="106" label=""
                    methodname="test_keyword_filter_complex"
                    name="integration/test_filters.py::test_keyword_filter_complex" result="Passed" runstate="Runnable"
-                   seed="1" start-time="2019-08-30 00:16:30.083873">
+                   seed="1" start-time="2019-08-30 02:27:50.394934">
             <properties>
                 <property name="python-version"
                           value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
@@ -444,20 +188,20 @@ tests/integration/test_azure.py:28: AssertionError]]></message>
             </failure>
             <reason>
                 <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_keyword_filter_complex.py::test_basic' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_keyword_filter_complex.py::test_basic' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_keyword_filter_complex.py::test_basic' when='teardown' outcome='passed'>]]></message>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_keyword_filter_complex.py::test_basic' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_keyword_filter_complex.py::test_basic' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_keyword_filter_complex.py::test_basic' when='teardown' outcome='passed'&gt;]]></message>
             </reason>
             <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_keyword_filter_complex.py::test_basic' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_keyword_filter_complex.py::test_basic' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_keyword_filter_complex.py::test_basic' when='teardown' outcome='passed'>]]></output>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_keyword_filter_complex.py::test_basic' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_keyword_filter_complex.py::test_basic' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_keyword_filter_complex.py::test_basic' when='teardown' outcome='passed'&gt;]]></output>
         </test-case>
-        <test-case asserts="0" classname="integration/test_filters.py" duration="0.184095"
-                   end-time="2019-08-30 00:16:30.468362" fullname="integration/test_filters.py::test_marker_filter"
+        <test-case asserts="0" classname="integration/test_filters.py" duration="0.31102"
+                   end-time="2019-08-30 02:27:50.883289" fullname="integration/test_filters.py::test_marker_filter"
                    id="107" label="" methodname="test_marker_filter"
                    name="integration/test_filters.py::test_marker_filter" result="Passed" runstate="Runnable" seed="1"
-                   start-time="2019-08-30 00:16:30.284267">
+                   start-time="2019-08-30 02:27:50.572269">
             <properties>
                 <property name="python-version"
                           value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
@@ -474,21 +218,21 @@ tests/integration/test_azure.py:28: AssertionError]]></message>
             </failure>
             <reason>
                 <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_marker_filter.py::test_basic' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_marker_filter.py::test_basic' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_marker_filter.py::test_basic' when='teardown' outcome='passed'>]]></message>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_marker_filter.py::test_basic' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_marker_filter.py::test_basic' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_marker_filter.py::test_basic' when='teardown' outcome='passed'&gt;]]></message>
             </reason>
             <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_marker_filter.py::test_basic' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_marker_filter.py::test_basic' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_marker_filter.py::test_basic' when='teardown' outcome='passed'>]]></output>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_marker_filter.py::test_basic' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_marker_filter.py::test_basic' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_marker_filter.py::test_basic' when='teardown' outcome='passed'&gt;]]></output>
         </test-case>
-        <test-case asserts="0" classname="integration/test_filters.py" duration="0.180958"
-                   end-time="2019-08-30 00:16:30.651433"
+        <test-case asserts="0" classname="integration/test_filters.py" duration="0.174015"
+                   end-time="2019-08-30 02:27:51.059437"
                    fullname="integration/test_filters.py::test_marker_filter_complex" id="108" label=""
                    methodname="test_marker_filter_complex"
                    name="integration/test_filters.py::test_marker_filter_complex" result="Passed" runstate="Runnable"
-                   seed="1" start-time="2019-08-30 00:16:30.470475">
+                   seed="1" start-time="2019-08-30 02:27:50.885422">
             <properties>
                 <property name="python-version"
                           value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
@@ -505,19 +249,19 @@ tests/integration/test_azure.py:28: AssertionError]]></message>
             </failure>
             <reason>
                 <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_marker_filter_complex.py::test_basic' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_marker_filter_complex.py::test_basic' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_marker_filter_complex.py::test_basic' when='teardown' outcome='passed'>]]></message>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_marker_filter_complex.py::test_basic' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_marker_filter_complex.py::test_basic' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_marker_filter_complex.py::test_basic' when='teardown' outcome='passed'&gt;]]></message>
             </reason>
             <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_marker_filter_complex.py::test_basic' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_marker_filter_complex.py::test_basic' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_marker_filter_complex.py::test_basic' when='teardown' outcome='passed'>]]></output>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_marker_filter_complex.py::test_basic' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_marker_filter_complex.py::test_basic' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_marker_filter_complex.py::test_basic' when='teardown' outcome='passed'&gt;]]></output>
         </test-case>
-        <test-case asserts="0" classname="integration/test_filters.py" duration="0.174139"
-                   end-time="2019-08-30 00:16:30.827696" fullname="integration/test_filters.py::test_path_filter"
+        <test-case asserts="0" classname="integration/test_filters.py" duration="0.172567"
+                   end-time="2019-08-30 02:27:51.234326" fullname="integration/test_filters.py::test_path_filter"
                    id="109" label="" methodname="test_path_filter" name="integration/test_filters.py::test_path_filter"
-                   result="Passed" runstate="Runnable" seed="1" start-time="2019-08-30 00:16:30.653557">
+                   result="Passed" runstate="Runnable" seed="1" start-time="2019-08-30 02:27:51.061759">
             <properties>
                 <property name="python-version"
                           value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
@@ -534,20 +278,20 @@ tests/integration/test_azure.py:28: AssertionError]]></message>
             </failure>
             <reason>
                 <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_path_filter.py::test_basic' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_path_filter.py::test_basic' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_path_filter.py::test_basic' when='teardown' outcome='passed'>]]></message>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_path_filter.py::test_basic' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_path_filter.py::test_basic' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_path_filter.py::test_basic' when='teardown' outcome='passed'&gt;]]></message>
             </reason>
             <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_path_filter.py::test_basic' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_path_filter.py::test_basic' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_path_filter.py::test_basic' when='teardown' outcome='passed'>]]></output>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_path_filter.py::test_basic' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_path_filter.py::test_basic' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_path_filter.py::test_basic' when='teardown' outcome='passed'&gt;]]></output>
         </test-case>
-        <test-case asserts="0" classname="integration/test_filters.py" duration="0.178696"
-                   end-time="2019-08-30 00:16:31.008565"
+        <test-case asserts="0" classname="integration/test_filters.py" duration="0.179275"
+                   end-time="2019-08-30 02:27:51.416162"
                    fullname="integration/test_filters.py::test_path_filter_complex" id="110" label=""
                    methodname="test_path_filter_complex" name="integration/test_filters.py::test_path_filter_complex"
-                   result="Passed" runstate="Runnable" seed="1" start-time="2019-08-30 00:16:30.829869">
+                   result="Passed" runstate="Runnable" seed="1" start-time="2019-08-30 02:27:51.236887">
             <properties>
                 <property name="python-version"
                           value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
@@ -564,40 +308,214 @@ tests/integration/test_azure.py:28: AssertionError]]></message>
             </failure>
             <reason>
                 <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_path_filter_complex.py::test_basic' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_path_filter_complex.py::test_basic' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_path_filter_complex.py::test_basic' when='teardown' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_path_filter_complex.py::test_basic' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_path_filter_complex.py::test_basic' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_path_filter_complex.py::test_basic' when='teardown' outcome='passed'>]]></message>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_path_filter_complex.py::test_basic' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_path_filter_complex.py::test_basic' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_path_filter_complex.py::test_basic' when='teardown' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_path_filter_complex.py::test_basic' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_path_filter_complex.py::test_basic' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_path_filter_complex.py::test_basic' when='teardown' outcome='passed'&gt;]]></message>
             </reason>
             <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_path_filter_complex.py::test_basic' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_path_filter_complex.py::test_basic' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_path_filter_complex.py::test_basic' when='teardown' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_path_filter_complex.py::test_basic' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_path_filter_complex.py::test_basic' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_path_filter_complex.py::test_basic' when='teardown' outcome='passed'>]]></output>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_path_filter_complex.py::test_basic' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_path_filter_complex.py::test_basic' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_path_filter_complex.py::test_basic' when='teardown' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_path_filter_complex.py::test_basic' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_path_filter_complex.py::test_basic' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_path_filter_complex.py::test_basic' when='teardown' outcome='passed'&gt;]]></output>
         </test-case>
         <environment clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
                      culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
                      machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
                      uiculture="en_AU" user="" user-domain=""/>
     </test-suite>
-    <test-suite asserts="0" classname="" duration="4.539908" end-time="2019-08-30 00:16:35.550957" failed="0"
+    <test-suite asserts="0" classname="" duration="0.969275" end-time="2019-08-30 02:27:57.214852" failed="0"
+                fullname="integration/test_tests.py" id="integration/test_tests.py" inconclusive="0"
+                label="Test various scenarios" methodname="" name="integration/test_tests.py" passed="5" result="Passed"
+                runstate="Runnable" skipped="0" start-time="2019-08-30 02:27:56.245577" testcasecount="5" total="5"
+                type="Assembly" warnings="0">
+        <properties>
+            <property name="python_version"
+                      value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
+        </properties>
+        <test-case asserts="0" classname="integration/test_tests.py" duration="0.180817"
+                   end-time="2019-08-30 02:27:56.426394" fullname="integration/test_tests.py::test_passing_test"
+                   id="120" label="Test a basic passing test" methodname="test_passing_test"
+                   name="integration/test_tests.py::test_passing_test" result="Passed" runstate="Runnable" seed="1"
+                   start-time="2019-08-30 02:27:56.245577">
+            <properties>
+                <property name="python-version"
+                          value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
+                <property name="fspath" value="integration/test_tests.py"/>
+            </properties>
+            <environment
+                    clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
+                    culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
+                    machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
+                    uiculture="en_AU" user="" user-domain=""/>
+            <failure>
+                <message><![CDATA[]]></message>
+                <stack-trace><![CDATA[None]]></stack-trace>
+            </failure>
+            <reason>
+                <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_passing_test.py::test_pass' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_passing_test.py::test_pass' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_passing_test.py::test_pass' when='teardown' outcome='passed'&gt;]]></message>
+            </reason>
+            <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_passing_test.py::test_pass' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_passing_test.py::test_pass' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_passing_test.py::test_pass' when='teardown' outcome='passed'&gt;]]></output>
+        </test-case>
+        <test-case asserts="0" classname="integration/test_tests.py" duration="0.18582"
+                   end-time="2019-08-30 02:27:56.615232" fullname="integration/test_tests.py::test_failing_test"
+                   id="121" label="Test a basic failing test" methodname="test_failing_test"
+                   name="integration/test_tests.py::test_failing_test" result="Passed" runstate="Runnable" seed="1"
+                   start-time="2019-08-30 02:27:56.429412">
+            <properties>
+                <property name="python-version"
+                          value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
+                <property name="fspath" value="integration/test_tests.py"/>
+            </properties>
+            <environment
+                    clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
+                    culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
+                    machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
+                    uiculture="en_AU" user="" user-domain=""/>
+            <failure>
+                <message><![CDATA[]]></message>
+                <stack-trace><![CDATA[None]]></stack-trace>
+            </failure>
+            <reason>
+                <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_failing_test.py::test_fail' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_failing_test.py::test_fail' when='call' outcome='failed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_failing_test.py::test_fail' when='teardown' outcome='passed'&gt;]]></message>
+            </reason>
+            <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_failing_test.py::test_fail' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_failing_test.py::test_fail' when='call' outcome='failed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_failing_test.py::test_fail' when='teardown' outcome='passed'&gt;]]></output>
+        </test-case>
+        <test-case asserts="0" classname="integration/test_tests.py" duration="0.182284"
+                   end-time="2019-08-30 02:27:56.800243" fullname="integration/test_tests.py::test_skipped_test"
+                   id="122" label="Test a basic skipped test" methodname="test_skipped_test"
+                   name="integration/test_tests.py::test_skipped_test" result="Passed" runstate="Runnable" seed="1"
+                   start-time="2019-08-30 02:27:56.617959">
+            <properties>
+                <property name="python-version"
+                          value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
+                <property name="fspath" value="integration/test_tests.py"/>
+            </properties>
+            <environment
+                    clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
+                    culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
+                    machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
+                    uiculture="en_AU" user="" user-domain=""/>
+            <failure>
+                <message><![CDATA[]]></message>
+                <stack-trace><![CDATA[None]]></stack-trace>
+            </failure>
+            <reason>
+                <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_skipped_test.py::test_skip' when='setup' outcome='skipped'&gt;
+[35mDEBUG   [0m __name__:plugin.py:129 skipping : ('test_skipped_test.py', 2, 'Skipped: unconditional skip')
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_skipped_test.py::test_skip' when='teardown' outcome='passed'&gt;]]></message>
+            </reason>
+            <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_skipped_test.py::test_skip' when='setup' outcome='skipped'&gt;
+[35mDEBUG   [0m __name__:plugin.py:129 skipping : ('test_skipped_test.py', 2, 'Skipped: unconditional skip')
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_skipped_test.py::test_skip' when='teardown' outcome='passed'&gt;]]></output>
+        </test-case>
+        <test-case asserts="0" classname="integration/test_tests.py" duration="0.230693"
+                   end-time="2019-08-30 02:27:57.034110" fullname="integration/test_tests.py::test_all_outcomes"
+                   id="123" label="Test all 3 types of outcomes" methodname="test_all_outcomes"
+                   name="integration/test_tests.py::test_all_outcomes" result="Passed" runstate="Runnable" seed="1"
+                   start-time="2019-08-30 02:27:56.803417">
+            <properties>
+                <property name="python-version"
+                          value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
+                <property name="fspath" value="integration/test_tests.py"/>
+            </properties>
+            <environment
+                    clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
+                    culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
+                    machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
+                    uiculture="en_AU" user="" user-domain=""/>
+            <failure>
+                <message><![CDATA[]]></message>
+                <stack-trace><![CDATA[None]]></stack-trace>
+            </failure>
+            <reason>
+                <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_all_outcomes.py::test_pass' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_all_outcomes.py::test_pass' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_all_outcomes.py::test_pass' when='teardown' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_all_outcomes.py::test_fail' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_all_outcomes.py::test_fail' when='call' outcome='failed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_all_outcomes.py::test_fail' when='teardown' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_all_outcomes.py::test_skip' when='setup' outcome='skipped'&gt;
+[35mDEBUG   [0m __name__:plugin.py:129 skipping : ('test_all_outcomes.py', 8, 'Skipped: unconditional skip')
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_all_outcomes.py::test_skip' when='teardown' outcome='passed'&gt;]]></message>
+            </reason>
+            <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_all_outcomes.py::test_pass' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_all_outcomes.py::test_pass' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_all_outcomes.py::test_pass' when='teardown' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_all_outcomes.py::test_fail' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_all_outcomes.py::test_fail' when='call' outcome='failed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_all_outcomes.py::test_fail' when='teardown' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_all_outcomes.py::test_skip' when='setup' outcome='skipped'&gt;
+[35mDEBUG   [0m __name__:plugin.py:129 skipping : ('test_all_outcomes.py', 8, 'Skipped: unconditional skip')
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_all_outcomes.py::test_skip' when='teardown' outcome='passed'&gt;]]></output>
+        </test-case>
+        <test-case asserts="0" classname="integration/test_tests.py" duration="0.177439"
+                   end-time="2019-08-30 02:27:57.214852" fullname="integration/test_tests.py::test_error_test" id="124"
+                   label="Test a test that fails" methodname="test_error_test"
+                   name="integration/test_tests.py::test_error_test" result="Passed" runstate="Runnable" seed="1"
+                   start-time="2019-08-30 02:27:57.037413">
+            <properties>
+                <property name="python-version"
+                          value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
+                <property name="fspath" value="integration/test_tests.py"/>
+            </properties>
+            <environment
+                    clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
+                    culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
+                    machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
+                    uiculture="en_AU" user="" user-domain=""/>
+            <failure>
+                <message><![CDATA[]]></message>
+                <stack-trace><![CDATA[None]]></stack-trace>
+            </failure>
+            <reason>
+                <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_error_test.py::test_error' when='setup' outcome='failed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_error_test.py::test_error' when='teardown' outcome='passed'&gt;]]></message>
+            </reason>
+            <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_error_test.py::test_error' when='setup' outcome='failed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_error_test.py::test_error' when='teardown' outcome='passed'&gt;]]></output>
+        </test-case>
+        <environment clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
+                     culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
+                     machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
+                     uiculture="en_AU" user="" user-domain=""/>
+    </test-suite>
+    <test-suite asserts="0" classname="" duration="4.60798" end-time="2019-08-30 02:27:56.026731" failed="0"
                 fullname="integration/test_properties.py" id="integration/test_properties.py" inconclusive="0"
                 label="Test adding properties to tests" methodname="" name="integration/test_properties.py" passed="8"
-                result="Passed" runstate="Runnable" skipped="0" start-time="2019-08-30 00:16:31.011049"
+                result="Passed" runstate="Runnable" skipped="0" start-time="2019-08-30 02:27:51.418751"
                 testcasecount="8" total="8" type="Assembly" warnings="0">
         <properties>
             <property name="python_version"
                       value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
         </properties>
-        <test-case asserts="0" classname="integration/test_properties.py" duration="0.203669"
-                   end-time="2019-08-30 00:16:31.214718" fullname="integration/test_properties.py::test_basic_property"
+        <test-case asserts="0" classname="integration/test_properties.py" duration="0.193769"
+                   end-time="2019-08-30 02:27:51.612520" fullname="integration/test_properties.py::test_basic_property"
                    id="111" label="Test a basic test with an additional property" methodname="test_basic_property"
                    name="integration/test_properties.py::test_basic_property" result="Passed" runstate="Runnable"
-                   seed="1" start-time="2019-08-30 00:16:31.011049">
+                   seed="1" start-time="2019-08-30 02:27:51.418751">
             <properties>
                 <property name="python-version"
                           value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
@@ -614,20 +532,20 @@ tests/integration/test_azure.py:28: AssertionError]]></message>
             </failure>
             <reason>
                 <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_basic_property.py::test_basic' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_basic_property.py::test_basic' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_basic_property.py::test_basic' when='teardown' outcome='passed'>]]></message>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_basic_property.py::test_basic' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_basic_property.py::test_basic' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_basic_property.py::test_basic' when='teardown' outcome='passed'&gt;]]></message>
             </reason>
             <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_basic_property.py::test_basic' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_basic_property.py::test_basic' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_basic_property.py::test_basic' when='teardown' outcome='passed'>]]></output>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_basic_property.py::test_basic' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_basic_property.py::test_basic' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_basic_property.py::test_basic' when='teardown' outcome='passed'&gt;]]></output>
         </test-case>
-        <test-case asserts="0" classname="integration/test_properties.py" duration="0.178723"
-                   end-time="2019-08-30 00:16:31.395566" fullname="integration/test_properties.py::test_attachment"
+        <test-case asserts="0" classname="integration/test_properties.py" duration="0.180398"
+                   end-time="2019-08-30 02:27:51.796974" fullname="integration/test_properties.py::test_attachment"
                    id="112" label="Test a basic test with an additional property" methodname="test_attachment"
                    name="integration/test_properties.py::test_attachment" result="Passed" runstate="Runnable" seed="1"
-                   start-time="2019-08-30 00:16:31.216843">
+                   start-time="2019-08-30 02:27:51.616576">
             <properties>
                 <property name="python-version"
                           value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
@@ -644,22 +562,22 @@ tests/integration/test_azure.py:28: AssertionError]]></message>
             </failure>
             <reason>
                 <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment.py::test_basic' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment.py::test_basic' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment.py::test_basic' when='teardown' outcome='passed'>]]></message>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment.py::test_basic' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment.py::test_basic' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment.py::test_basic' when='teardown' outcome='passed'&gt;]]></message>
             </reason>
             <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment.py::test_basic' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment.py::test_basic' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment.py::test_basic' when='teardown' outcome='passed'>]]></output>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment.py::test_basic' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment.py::test_basic' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment.py::test_basic' when='teardown' outcome='passed'&gt;]]></output>
         </test-case>
-        <test-case asserts="0" classname="integration/test_properties.py" duration="0.194378"
-                   end-time="2019-08-30 00:16:31.592193"
+        <test-case asserts="0" classname="integration/test_properties.py" duration="0.187898"
+                   end-time="2019-08-30 02:27:51.987161"
                    fullname="integration/test_properties.py::test_attachment_attach_on_any" id="113"
                    label="Test that nunit_attach_on=any sets attachment properties"
                    methodname="test_attachment_attach_on_any"
                    name="integration/test_properties.py::test_attachment_attach_on_any" result="Passed"
-                   runstate="Runnable" seed="1" start-time="2019-08-30 00:16:31.397815">
+                   runstate="Runnable" seed="1" start-time="2019-08-30 02:27:51.799263">
             <properties>
                 <property name="python-version"
                           value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
@@ -676,28 +594,28 @@ tests/integration/test_azure.py:28: AssertionError]]></message>
             </failure>
             <reason>
                 <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_any.py::test_pass' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_any.py::test_pass' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_any.py::test_pass' when='teardown' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_any.py::test_fail' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_any.py::test_fail' when='call' outcome='failed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_any.py::test_fail' when='teardown' outcome='passed'>]]></message>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_any.py::test_pass' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_any.py::test_pass' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_any.py::test_pass' when='teardown' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_any.py::test_fail' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_any.py::test_fail' when='call' outcome='failed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_any.py::test_fail' when='teardown' outcome='passed'&gt;]]></message>
             </reason>
             <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_any.py::test_pass' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_any.py::test_pass' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_any.py::test_pass' when='teardown' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_any.py::test_fail' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_any.py::test_fail' when='call' outcome='failed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_any.py::test_fail' when='teardown' outcome='passed'>]]></output>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_any.py::test_pass' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_any.py::test_pass' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_any.py::test_pass' when='teardown' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_any.py::test_fail' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_any.py::test_fail' when='call' outcome='failed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_any.py::test_fail' when='teardown' outcome='passed'&gt;]]></output>
         </test-case>
-        <test-case asserts="0" classname="integration/test_properties.py" duration="0.185308"
-                   end-time="2019-08-30 00:16:31.779863"
+        <test-case asserts="0" classname="integration/test_properties.py" duration="0.190798"
+                   end-time="2019-08-30 02:27:52.182409"
                    fullname="integration/test_properties.py::test_attachment_attach_on_fail" id="114"
                    label="Test that nunit_attach_on=fail sets attachment properties"
                    methodname="test_attachment_attach_on_fail"
                    name="integration/test_properties.py::test_attachment_attach_on_fail" result="Passed"
-                   runstate="Runnable" seed="1" start-time="2019-08-30 00:16:31.594555">
+                   runstate="Runnable" seed="1" start-time="2019-08-30 02:27:51.991611">
             <properties>
                 <property name="python-version"
                           value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
@@ -714,28 +632,28 @@ tests/integration/test_azure.py:28: AssertionError]]></message>
             </failure>
             <reason>
                 <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : fail
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_fail.py::test_pass' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_fail.py::test_pass' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_fail.py::test_pass' when='teardown' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_fail.py::test_fail' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_fail.py::test_fail' when='call' outcome='failed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_fail.py::test_fail' when='teardown' outcome='passed'>]]></message>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_fail.py::test_pass' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_fail.py::test_pass' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_fail.py::test_pass' when='teardown' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_fail.py::test_fail' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_fail.py::test_fail' when='call' outcome='failed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_fail.py::test_fail' when='teardown' outcome='passed'&gt;]]></message>
             </reason>
             <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : fail
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_fail.py::test_pass' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_fail.py::test_pass' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_fail.py::test_pass' when='teardown' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_fail.py::test_fail' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_fail.py::test_fail' when='call' outcome='failed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_fail.py::test_fail' when='teardown' outcome='passed'>]]></output>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_fail.py::test_pass' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_fail.py::test_pass' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_fail.py::test_pass' when='teardown' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_fail.py::test_fail' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_fail.py::test_fail' when='call' outcome='failed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_fail.py::test_fail' when='teardown' outcome='passed'&gt;]]></output>
         </test-case>
-        <test-case asserts="0" classname="integration/test_properties.py" duration="0.187263"
-                   end-time="2019-08-30 00:16:31.969413"
+        <test-case asserts="0" classname="integration/test_properties.py" duration="0.192483"
+                   end-time="2019-08-30 02:27:52.379594"
                    fullname="integration/test_properties.py::test_attachment_attach_on_pass" id="115"
                    label="Test that nunit_attach_on=pass sets attachment properties"
                    methodname="test_attachment_attach_on_pass"
                    name="integration/test_properties.py::test_attachment_attach_on_pass" result="Passed"
-                   runstate="Runnable" seed="1" start-time="2019-08-30 00:16:31.782150">
+                   runstate="Runnable" seed="1" start-time="2019-08-30 02:27:52.187111">
             <properties>
                 <property name="python-version"
                           value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
@@ -752,26 +670,26 @@ tests/integration/test_azure.py:28: AssertionError]]></message>
             </failure>
             <reason>
                 <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : pass
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_pass.py::test_pass' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_pass.py::test_pass' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_pass.py::test_pass' when='teardown' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_pass.py::test_fail' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_pass.py::test_fail' when='call' outcome='failed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_pass.py::test_fail' when='teardown' outcome='passed'>]]></message>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_pass.py::test_pass' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_pass.py::test_pass' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_pass.py::test_pass' when='teardown' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_pass.py::test_fail' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_pass.py::test_fail' when='call' outcome='failed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_pass.py::test_fail' when='teardown' outcome='passed'&gt;]]></message>
             </reason>
             <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : pass
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_pass.py::test_pass' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_pass.py::test_pass' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_pass.py::test_pass' when='teardown' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_pass.py::test_fail' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_pass.py::test_fail' when='call' outcome='failed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_attachment_attach_on_pass.py::test_fail' when='teardown' outcome='passed'>]]></output>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_pass.py::test_pass' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_pass.py::test_pass' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_pass.py::test_pass' when='teardown' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_pass.py::test_fail' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_pass.py::test_fail' when='call' outcome='failed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_attachment_attach_on_pass.py::test_fail' when='teardown' outcome='passed'&gt;]]></output>
         </test-case>
-        <test-case asserts="0" classname="integration/test_properties.py" duration="3.179134"
-                   end-time="2019-08-30 00:16:35.150958" fullname="integration/test_properties.py::test_slow_test"
+        <test-case asserts="0" classname="integration/test_properties.py" duration="3.187208"
+                   end-time="2019-08-30 02:27:55.569211" fullname="integration/test_properties.py::test_slow_test"
                    id="116" label="Test a test that takes 3 seconds" methodname="test_slow_test"
                    name="integration/test_properties.py::test_slow_test" result="Passed" runstate="Runnable" seed="1"
-                   start-time="2019-08-30 00:16:31.971824">
+                   start-time="2019-08-30 02:27:52.382003">
             <properties>
                 <property name="python-version"
                           value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
@@ -788,19 +706,19 @@ tests/integration/test_azure.py:28: AssertionError]]></message>
             </failure>
             <reason>
                 <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_slow_test.py::test_basic' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_slow_test.py::test_basic' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_slow_test.py::test_basic' when='teardown' outcome='passed'>]]></message>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_slow_test.py::test_basic' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_slow_test.py::test_basic' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_slow_test.py::test_basic' when='teardown' outcome='passed'&gt;]]></message>
             </reason>
             <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_slow_test.py::test_basic' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_slow_test.py::test_basic' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_slow_test.py::test_basic' when='teardown' outcome='passed'>]]></output>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_slow_test.py::test_basic' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_slow_test.py::test_basic' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_slow_test.py::test_basic' when='teardown' outcome='passed'&gt;]]></output>
         </test-case>
-        <test-case asserts="0" classname="integration/test_properties.py" duration="0.220503"
-                   end-time="2019-08-30 00:16:35.374093" fullname="integration/test_properties.py::test_docstring"
+        <test-case asserts="0" classname="integration/test_properties.py" duration="0.276192"
+                   end-time="2019-08-30 02:27:55.848122" fullname="integration/test_properties.py::test_docstring"
                    id="117" label="" methodname="test_docstring" name="integration/test_properties.py::test_docstring"
-                   result="Passed" runstate="Runnable" seed="1" start-time="2019-08-30 00:16:35.153590">
+                   result="Passed" runstate="Runnable" seed="1" start-time="2019-08-30 02:27:55.571930">
             <properties>
                 <property name="python-version"
                           value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
@@ -817,20 +735,20 @@ tests/integration/test_azure.py:28: AssertionError]]></message>
             </failure>
             <reason>
                 <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_docstring.py::test_docstring' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_docstring.py::test_docstring' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_docstring.py::test_docstring' when='teardown' outcome='passed'>]]></message>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_docstring.py::test_docstring' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_docstring.py::test_docstring' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_docstring.py::test_docstring' when='teardown' outcome='passed'&gt;]]></message>
             </reason>
             <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_docstring.py::test_docstring' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_docstring.py::test_docstring' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_docstring.py::test_docstring' when='teardown' outcome='passed'>]]></output>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_docstring.py::test_docstring' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_docstring.py::test_docstring' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_docstring.py::test_docstring' when='teardown' outcome='passed'&gt;]]></output>
         </test-case>
-        <test-case asserts="0" classname="integration/test_properties.py" duration="0.17402"
-                   end-time="2019-08-30 00:16:35.550957" fullname="integration/test_properties.py::test_no_docstring"
+        <test-case asserts="0" classname="integration/test_properties.py" duration="0.176159"
+                   end-time="2019-08-30 02:27:56.026731" fullname="integration/test_properties.py::test_no_docstring"
                    id="118" label="" methodname="test_no_docstring"
                    name="integration/test_properties.py::test_no_docstring" result="Passed" runstate="Runnable" seed="1"
-                   start-time="2019-08-30 00:16:35.376937">
+                   start-time="2019-08-30 02:27:55.850572">
             <properties>
                 <property name="python-version"
                           value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
@@ -847,145 +765,34 @@ tests/integration/test_azure.py:28: AssertionError]]></message>
             </failure>
             <reason>
                 <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_no_docstring.py::test_no_docstring' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_no_docstring.py::test_no_docstring' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_no_docstring.py::test_no_docstring' when='teardown' outcome='passed'>]]></message>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_no_docstring.py::test_no_docstring' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_no_docstring.py::test_no_docstring' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_no_docstring.py::test_no_docstring' when='teardown' outcome='passed'&gt;]]></message>
             </reason>
             <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_no_docstring.py::test_no_docstring' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_no_docstring.py::test_no_docstring' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_no_docstring.py::test_no_docstring' when='teardown' outcome='passed'>]]></output>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_no_docstring.py::test_no_docstring' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_no_docstring.py::test_no_docstring' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_no_docstring.py::test_no_docstring' when='teardown' outcome='passed'&gt;]]></output>
         </test-case>
         <environment clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
                      culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
                      machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
                      uiculture="en_AU" user="" user-domain=""/>
     </test-suite>
-    <test-suite asserts="0" classname="" duration="0.176101" end-time="2019-08-30 00:16:35.730169" failed="0"
-                fullname="integration/test_schema.py" id="integration/test_schema.py" inconclusive="0"
-                label="Validate the output XML file against the schema" methodname="" name="integration/test_schema.py"
-                passed="1" result="Passed" runstate="Runnable" skipped="0" start-time="2019-08-30 00:16:35.554068"
-                testcasecount="1" total="1" type="Assembly" warnings="0">
-        <properties>
-            <property name="python_version"
-                      value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
-        </properties>
-        <test-case asserts="0" classname="integration/test_schema.py" duration="0.176101"
-                   end-time="2019-08-30 00:16:35.730169"
-                   fullname="integration/test_schema.py::test_basic_against_reference_schema" id="119"
-                   label="Test a basic output against the schema in the Nunit3 source"
-                   methodname="test_basic_against_reference_schema"
-                   name="integration/test_schema.py::test_basic_against_reference_schema" result="Passed"
-                   runstate="Runnable" seed="1" start-time="2019-08-30 00:16:35.554068">
-            <properties>
-                <property name="python-version"
-                          value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
-                <property name="fspath" value="integration/test_schema.py"/>
-            </properties>
-            <environment
-                    clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
-                    culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
-                    machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
-                    uiculture="en_AU" user="" user-domain=""/>
-            <failure>
-                <message><![CDATA[]]></message>
-                <stack-trace><![CDATA[None]]></stack-trace>
-            </failure>
-            <reason>
-                <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_basic_against_reference_schema.py::test_basic' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_basic_against_reference_schema.py::test_basic' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_basic_against_reference_schema.py::test_basic' when='teardown' outcome='passed'>]]></message>
-            </reason>
-            <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_basic_against_reference_schema.py::test_basic' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_basic_against_reference_schema.py::test_basic' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_basic_against_reference_schema.py::test_basic' when='teardown' outcome='passed'>]]></output>
-        </test-case>
-        <environment clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
-                     culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
-                     machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
-                     uiculture="en_AU" user="" user-domain=""/>
-    </test-suite>
-    <test-suite asserts="0" classname="" duration="0.003765" end-time="2019-08-30 00:16:36.687508" failed="0"
-                fullname="unit/test_basic.py" id="unit/test_basic.py" inconclusive="0" label="Test basic situations"
-                methodname="" name="unit/test_basic.py" passed="2" result="Passed" runstate="Runnable" skipped="0"
-                start-time="2019-08-30 00:16:36.683743" testcasecount="2" total="2" type="Assembly" warnings="0">
-        <properties>
-            <property name="python_version"
-                      value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
-        </properties>
-        <test-case asserts="0" classname="unit/test_basic.py" duration="0.000788" end-time="2019-08-30 00:16:36.684531"
-                   fullname="unit/test_basic.py::test_one_and_one" id="125" label="Test 1 + 1"
-                   methodname="test_one_and_one" name="unit/test_basic.py::test_one_and_one" result="Passed"
-                   runstate="Runnable" seed="1" start-time="2019-08-30 00:16:36.683743">
-            <properties>
-                <property name="python-version"
-                          value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
-                <property name="fspath" value="unit/test_basic.py"/>
-            </properties>
-            <environment
-                    clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
-                    culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
-                    machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
-                    uiculture="en_AU" user="" user-domain=""/>
-            <failure>
-                <message><![CDATA[]]></message>
-                <stack-trace><![CDATA[None]]></stack-trace>
-            </failure>
-            <reason>
-                <message><![CDATA[]]></message>
-            </reason>
-            <output><![CDATA[]]></output>
-        </test-case>
-        <test-case asserts="0" classname="unit/test_basic.py" duration="0.002381" end-time="2019-08-30 00:16:36.687508"
-                   fullname="unit/test_basic.py::test_one_and_two" id="126" label="" methodname="test_one_and_two"
-                   name="unit/test_basic.py::test_one_and_two" result="Passed" runstate="Runnable" seed="1"
-                   start-time="2019-08-30 00:16:36.685127">
-            <properties>
-                <property name="python-version"
-                          value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
-                <property name="fspath" value="unit/test_basic.py"/>
-            </properties>
-            <environment
-                    clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
-                    culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
-                    machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
-                    uiculture="en_AU" user="" user-domain=""/>
-            <failure>
-                <message><![CDATA[@pytest.mark.xfail()
-    def test_one_and_two():
->       assert 1 == 2
-E       assert 1 == 2
-
-tests/unit/test_basic.py:16: AssertionError]]></message>
-                <stack-trace>
-                    <![CDATA[/Users/anthonyshaw/PycharmProjects/pytest-nunit/tests/unit/test_basic.py:16: assert 1 == 2]]></stack-trace>
-            </failure>
-            <reason>
-                <message><![CDATA[]]></message>
-            </reason>
-            <output><![CDATA[]]></output>
-        </test-case>
-        <environment clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
-                     culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
-                     machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
-                     uiculture="en_AU" user="" user-domain=""/>
-    </test-suite>
-    <test-suite asserts="0" classname="" duration="0.18289" end-time="2019-08-30 00:16:29.899683" failed="0"
+    <test-suite asserts="0" classname="" duration="0.255116" end-time="2019-08-30 02:27:50.194363" failed="0"
                 fullname="integration/test_config.py" id="integration/test_config.py" inconclusive="0" label=""
                 methodname="" name="integration/test_config.py" passed="1" result="Passed" runstate="Runnable"
-                skipped="0" start-time="2019-08-30 00:16:29.716793" testcasecount="1" total="1" type="Assembly"
+                skipped="0" start-time="2019-08-30 02:27:49.939247" testcasecount="1" total="1" type="Assembly"
                 warnings="0">
         <properties>
             <property name="python_version"
                       value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
         </properties>
-        <test-case asserts="0" classname="integration/test_config.py" duration="0.18289"
-                   end-time="2019-08-30 00:16:29.899683" fullname="integration/test_config.py::test_prefix" id="104"
+        <test-case asserts="0" classname="integration/test_config.py" duration="0.255116"
+                   end-time="2019-08-30 02:27:50.194363" fullname="integration/test_config.py::test_prefix" id="104"
                    label="Test that prefixes are set on the suite name" methodname="test_prefix"
                    name="integration/test_config.py::test_prefix" result="Passed" runstate="Runnable" seed="1"
-                   start-time="2019-08-30 00:16:29.716793">
+                   start-time="2019-08-30 02:27:49.939247">
             <properties>
                 <property name="python-version"
                           value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
@@ -1002,14 +809,207 @@ tests/unit/test_basic.py:16: AssertionError]]></message>
             </failure>
             <reason>
                 <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_prefix.py::test_basic' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_prefix.py::test_basic' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_prefix.py::test_basic' when='teardown' outcome='passed'>]]></message>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_prefix.py::test_basic' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_prefix.py::test_basic' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_prefix.py::test_basic' when='teardown' outcome='passed'&gt;]]></message>
             </reason>
             <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_prefix.py::test_basic' when='setup' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_prefix.py::test_basic' when='call' outcome='passed'>
-[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:<TestReport 'test_prefix.py::test_basic' when='teardown' outcome='passed'>]]></output>
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_prefix.py::test_basic' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_prefix.py::test_basic' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_prefix.py::test_basic' when='teardown' outcome='passed'&gt;]]></output>
+        </test-case>
+        <environment clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
+                     culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
+                     machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
+                     uiculture="en_AU" user="" user-domain=""/>
+    </test-suite>
+    <test-suite asserts="0" classname="" duration="0.005054" end-time="2019-08-30 02:27:57.220989" failed="0"
+                fullname="unit/test_basic.py" id="unit/test_basic.py" inconclusive="0" label="Test basic situations"
+                methodname="" name="unit/test_basic.py" passed="2" result="Passed" runstate="Runnable" skipped="0"
+                start-time="2019-08-30 02:27:57.215935" testcasecount="2" total="2" type="Assembly" warnings="0">
+        <properties>
+            <property name="python_version"
+                      value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
+        </properties>
+        <test-case asserts="0" classname="unit/test_basic.py" duration="0.000755" end-time="2019-08-30 02:27:57.216690"
+                   fullname="unit/test_basic.py::test_one_and_one" id="125" label="Test 1 + 1"
+                   methodname="test_one_and_one" name="unit/test_basic.py::test_one_and_one" result="Passed"
+                   runstate="Runnable" seed="1" start-time="2019-08-30 02:27:57.215935">
+            <properties>
+                <property name="python-version"
+                          value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
+                <property name="fspath" value="unit/test_basic.py"/>
+            </properties>
+            <environment
+                    clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
+                    culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
+                    machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
+                    uiculture="en_AU" user="" user-domain=""/>
+            <failure>
+                <message><![CDATA[]]></message>
+                <stack-trace><![CDATA[None]]></stack-trace>
+            </failure>
+            <reason>
+                <message><![CDATA[]]></message>
+            </reason>
+            <output><![CDATA[]]></output>
+        </test-case>
+        <test-case asserts="0" classname="unit/test_basic.py" duration="0.003702" end-time="2019-08-30 02:27:57.220989"
+                   fullname="unit/test_basic.py::test_one_and_two" id="126" label="" methodname="test_one_and_two"
+                   name="unit/test_basic.py::test_one_and_two" result="Passed" runstate="Runnable" seed="1"
+                   start-time="2019-08-30 02:27:57.217287">
+            <properties>
+                <property name="python-version"
+                          value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
+                <property name="fspath" value="unit/test_basic.py"/>
+            </properties>
+            <environment
+                    clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
+                    culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
+                    machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
+                    uiculture="en_AU" user="" user-domain=""/>
+            <failure>
+                <message><![CDATA[@pytest.mark.xfail()
+    def test_one_and_two():
+&gt;       assert 1 == 2
+E       assert 1 == 2
+
+tests/unit/test_basic.py:16: AssertionError]]></message>
+                <stack-trace>
+                    <![CDATA[/Users/anthonyshaw/PycharmProjects/pytest-nunit/tests/unit/test_basic.py:16: assert 1 == 2]]></stack-trace>
+            </failure>
+            <reason>
+                <message><![CDATA[]]></message>
+            </reason>
+            <output><![CDATA[]]></output>
+        </test-case>
+        <environment clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
+                     culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
+                     machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
+                     uiculture="en_AU" user="" user-domain=""/>
+    </test-suite>
+    <test-suite asserts="0" classname="" duration="0.212265" end-time="2019-08-30 02:27:56.242051" failed="0"
+                fullname="integration/test_schema.py" id="integration/test_schema.py" inconclusive="0"
+                label="Validate the output XML file against the schema" methodname="" name="integration/test_schema.py"
+                passed="1" result="Passed" runstate="Runnable" skipped="0" start-time="2019-08-30 02:27:56.029786"
+                testcasecount="1" total="1" type="Assembly" warnings="0">
+        <properties>
+            <property name="python_version"
+                      value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
+        </properties>
+        <test-case asserts="0" classname="integration/test_schema.py" duration="0.212265"
+                   end-time="2019-08-30 02:27:56.242051"
+                   fullname="integration/test_schema.py::test_basic_against_reference_schema" id="119"
+                   label="Test a basic output against the schema in the Nunit3 source"
+                   methodname="test_basic_against_reference_schema"
+                   name="integration/test_schema.py::test_basic_against_reference_schema" result="Passed"
+                   runstate="Runnable" seed="1" start-time="2019-08-30 02:27:56.029786">
+            <properties>
+                <property name="python-version"
+                          value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
+                <property name="fspath" value="integration/test_schema.py"/>
+            </properties>
+            <environment
+                    clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
+                    culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
+                    machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
+                    uiculture="en_AU" user="" user-domain=""/>
+            <failure>
+                <message><![CDATA[]]></message>
+                <stack-trace><![CDATA[None]]></stack-trace>
+            </failure>
+            <reason>
+                <message><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_basic_against_reference_schema.py::test_basic' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_basic_against_reference_schema.py::test_basic' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_basic_against_reference_schema.py::test_basic' when='teardown' outcome='passed'&gt;]]></message>
+            </reason>
+            <output><![CDATA[[35mDEBUG   [0m root:plugin.py:240 Attach on criteria : any
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_basic_against_reference_schema.py::test_basic' when='setup' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_basic_against_reference_schema.py::test_basic' when='call' outcome='passed'&gt;
+[35mDEBUG   [0m __name__:plugin.py:108 record_test_report:&lt;TestReport 'test_basic_against_reference_schema.py::test_basic' when='teardown' outcome='passed'&gt;]]></output>
+        </test-case>
+        <environment clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
+                     culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
+                     machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
+                     uiculture="en_AU" user="" user-domain=""/>
+    </test-suite>
+    <test-suite asserts="0" classname="" duration="0.004699" end-time="2019-08-30 02:27:57.226846" failed="0"
+                fullname="unit/test_names.py" id="unit/test_names.py" inconclusive="0" label="" methodname=""
+                name="unit/test_names.py" passed="3" result="Passed" runstate="Runnable" skipped="0"
+                start-time="2019-08-30 02:27:57.222147" testcasecount="3" total="3" type="Assembly" warnings="0">
+        <properties>
+            <property name="python_version"
+                      value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
+        </properties>
+        <test-case asserts="0" classname="unit/test_names.py" duration="0.000758" end-time="2019-08-30 02:27:57.222905"
+                   fullname="unit/test_names.py::test_names" id="127" label="Test basic split of module::test"
+                   methodname="test_names" name="unit/test_names.py::test_names" result="Passed" runstate="Runnable"
+                   seed="1" start-time="2019-08-30 02:27:57.222147">
+            <properties>
+                <property name="python-version"
+                          value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
+                <property name="fspath" value="unit/test_names.py"/>
+            </properties>
+            <environment
+                    clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
+                    culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
+                    machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
+                    uiculture="en_AU" user="" user-domain=""/>
+            <failure>
+                <message><![CDATA[]]></message>
+                <stack-trace><![CDATA[None]]></stack-trace>
+            </failure>
+            <reason>
+                <message><![CDATA[]]></message>
+            </reason>
+            <output><![CDATA[]]></output>
+        </test-case>
+        <test-case asserts="0" classname="unit/test_names.py" duration="0.000859" end-time="2019-08-30 02:27:57.224359"
+                   fullname="unit/test_names.py::test_name" id="128" label="Test split of module::class::test"
+                   methodname="test_name" name="unit/test_names.py::test_name" result="Passed" runstate="Runnable"
+                   seed="1" start-time="2019-08-30 02:27:57.223500">
+            <properties>
+                <property name="python-version"
+                          value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
+                <property name="fspath" value="unit/test_names.py"/>
+            </properties>
+            <environment
+                    clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
+                    culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
+                    machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
+                    uiculture="en_AU" user="" user-domain=""/>
+            <failure>
+                <message><![CDATA[]]></message>
+                <stack-trace><![CDATA[None]]></stack-trace>
+            </failure>
+            <reason>
+                <message><![CDATA[]]></message>
+            </reason>
+            <output><![CDATA[]]></output>
+        </test-case>
+        <test-case asserts="0" classname="unit/test_names.py" duration="0.001894" end-time="2019-08-30 02:27:57.226846"
+                   fullname="unit/test_names.py::test_words" id="129" label="Test split of module::class::test"
+                   methodname="test_words" name="unit/test_names.py::test_words" result="Passed" runstate="Runnable"
+                   seed="1" start-time="2019-08-30 02:27:57.224952">
+            <properties>
+                <property name="python-version"
+                          value="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"/>
+                <property name="fspath" value="unit/test_names.py"/>
+            </properties>
+            <environment
+                    clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
+                    culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
+                    machine-name="x86_64" os-architecture="64bit" os-version="18.7.0" platform="Darwin"
+                    uiculture="en_AU" user="" user-domain=""/>
+            <failure>
+                <message><![CDATA[]]></message>
+                <stack-trace><![CDATA[None]]></stack-trace>
+            </failure>
+            <reason>
+                <message><![CDATA[]]></message>
+            </reason>
+            <output><![CDATA[]]></output>
         </test-case>
         <environment clr-version="3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) &#10;[Clang 6.0 (clang-600.0.57)]"
                      culture="en_AU" cwd="/Users/anthonyshaw/PycharmProjects/pytest-nunit" framework-version="3.6.2"
