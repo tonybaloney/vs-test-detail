@@ -62,6 +62,7 @@ test('valid complex test case match test suite', (done) => {
         expect(resolvedCase.getProperties().length).toBe(2);
         let resolvedSuite = resolvedCase.getTestSuite();
         expect(resolvedSuite).toBeDefined();
+        expect(resolvedSuite.name).toEqual("integration/test_properties.py");
         expect(resolvedSuite.getProperties().length).toBe(1);
         done();
     });

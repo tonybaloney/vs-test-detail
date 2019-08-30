@@ -50,7 +50,7 @@ export default class NUnitPage extends React.Component<IPageProps, IPageState> {
                         titleIconProps={{ iconName: "TestSuite" }}
                     />
                     <Card>
-                        <TestPropertiesList provider={this.state.testCase} />
+                        <TestPropertiesList provider={this.state.testSuite} />
                         <PropertyTable properties={this.state.testSuite.getProperties()}/>
                     </Card>
                     <Header
