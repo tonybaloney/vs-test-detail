@@ -42,3 +42,10 @@ export abstract class ITestResultDocument implements IPropertiesListProvider {
 
     abstract getCase(name: string): ITestCase;
 }
+
+export abstract class ITestPlan implements IPropertiesListProvider {
+    element: Element;
+    name: string;
+
+    abstract getPropertiesList(): ITaskItem[];
+}

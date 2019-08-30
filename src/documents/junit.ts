@@ -1,4 +1,4 @@
-import {IProperty, ITestCase, ITestResultDocument, ITestSuite} from "./abstract";
+import {IProperty, ITestCase, ITestResultDocument, ITestSuite, ITestPlan} from "./abstract";
 import { ITaskItem } from "../ui/testPropertiesList";
 
 export function isJunitXml(document: Document) : boolean {
@@ -152,6 +152,10 @@ export class JunitXMLDocument implements ITestResultDocument {
         }];
     };
 
+    getPlan(): JunitTestPlan {
+        return new JunitTestPlan(this.document.getElementsByTagName('testsuites')[0]);
+    }
+
     getCases(): NodeListOf<Element> {
         return this.document.getElementsByTagName('testcase');
     }
@@ -164,5 +168,40 @@ export class JunitXMLDocument implements ITestResultDocument {
                 return new JunitTestCase(testCase);
             }
         }
+    }
+}
+
+export class JunitTestPlan implements ITestPlan {
+    element: Element;
+    name: string;
+
+    constructor(element: Element){
+        this.element = element;
+        this.name = element.getAttribute("name");
+    }
+
+    getPropertiesList(): ITaskItem[] {
+        return [
+            {
+                value: this.name,
+                iconName: "TestPlan",
+                name: "Name"
+            },
+            {
+                value: this.element.getAttribute("tests"),
+                iconName: "NumberSymbol",
+                name: "Tests"
+            },
+            {
+                value: this.element.getAttribute("failures"),
+                iconName: "NumberSymbol",
+                name: "Failures"
+            },
+            {
+                value: this.element.getAttribute("time"),
+                iconName: "NumberSymbol",
+                name: "Time"
+            },
+        ];
     }
 }

@@ -38,9 +38,9 @@ test('valid complex test case match', (done) => {
             throw err;
         let testDoc = (new DOMParser()).parseFromString(contents, 'text/xml');
         const testNunit = new nunit.NunitXMLDocument(testDoc);
-        let resolvedCase = testNunit.getCase('tests/integration/test_properties.py::test_attachment');
+        let resolvedCase = testNunit.getCase('integration/test_properties.py::test_attachment');
         expect(resolvedCase).toBeDefined();
-        expect(resolvedCase.name).toBe("tests/integration/test_properties.py::test_attachment");
+        expect(resolvedCase.name).toBe("integration/test_properties.py::test_attachment");
 
         done();
     });
@@ -54,9 +54,9 @@ test('valid complex test case match test suite', (done) => {
             throw err;
         let testDoc = (new DOMParser()).parseFromString(contents, 'text/xml');
         const testNunit = new nunit.NunitXMLDocument(testDoc);
-        let resolvedCase = testNunit.getCase('tests/integration/test_properties.py::test_attachment');
+        let resolvedCase = testNunit.getCase('integration/test_properties.py::test_attachment');
         expect(resolvedCase).toBeDefined();
-        expect(resolvedCase.getProperties().length).toBe(1);
+        expect(resolvedCase.getProperties().length).toBe(2);
         let resolvedSuite = resolvedCase.getTestSuite();
         expect(resolvedSuite).toBeDefined();
         expect(resolvedSuite.getProperties().length).toBe(1);
@@ -74,6 +74,9 @@ test('nunit30 test suite', (done) => {
         let testDoc = (new DOMParser()).parseFromString(contents, 'text/xml');
         expect(nunit.isNunitXml(testDoc)).toBe(true);
         const testNunit = new nunit.NunitXMLDocument(testDoc);
+        let resolvedPlan = testNunit.getPlan();
+        expect(resolvedPlan.name).toEqual("mock-assembly.dll");
+
         let resolvedCase = testNunit.getCase('NUnit.Tests.Assemblies.MockTestFixture.FailingTest');
         expect(resolvedCase).toBeDefined();
         expect(resolvedCase.getProperties().length).toBe(0);

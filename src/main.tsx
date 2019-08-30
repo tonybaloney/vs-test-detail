@@ -50,6 +50,12 @@ VSS.ready(function() {
                 return;
             }
 
+            let testPlan = doc.getPlan();
+            if (!testPlan) {
+                showError("Could not locate a test plan object. ");
+                return;
+            }
+
             let testCase = doc.getCase(testCaseName);
             if (!testCase) {
                 showError("Could not locate a matching test case '" + testCaseName + "'in the results. ");
@@ -64,7 +70,7 @@ VSS.ready(function() {
             ReactDOM.render(
                 <SurfaceContext.Provider value={{ background: SurfaceBackground.neutral }}>
                     <ErrorBoundary>
-                        <NUnitPageState testCase={testCase} testSuite={testSuite}/>
+                        <NUnitPageState testPlan={testPlan} testCase={testCase} testSuite={testSuite}/>
                     </ErrorBoundary>
                 </SurfaceContext.Provider>,
                 document.getElementById("root")
