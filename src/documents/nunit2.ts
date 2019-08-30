@@ -1,5 +1,6 @@
-import {IProperty, ITestCase, ITestResultDocument, ITestSuite} from "./abstract";
+import {IProperty, ITestCase, ITestResultDocument, ITestSuite, ITestPlan} from "./abstract";
 import { ITaskItem } from "../ui/testPropertiesList";
+import {JunitTestPlan} from "./junit";
 
 export function isNunit2Xml(document: Document) : boolean {
     return (document && document.firstElementChild && document.firstElementChild.tagName === "test-results")
@@ -134,6 +135,10 @@ export class Nunit2XMLDocument implements ITestResultDocument {
         }];
     };
 
+    getPlan(): Nunit2TestPlan {
+        return new Nunit2TestPlan(this.document.getElementsByTagName('test-results')[0]);
+    }
+
     getCases(): NodeListOf<Element> {
         return this.document.getElementsByTagName('test-case');
     }
@@ -147,4 +152,39 @@ export class Nunit2XMLDocument implements ITestResultDocument {
             }
         }
     }
+}
+
+export class Nunit2TestPlan implements ITestPlan {
+    element: Element;
+    name: string;
+
+    constructor(element: Element){
+        this.element = element;
+        this.name = element.getAttribute("name");
+    }
+
+    getPropertiesList(): ITaskItem[] {
+        return [
+            {
+                value: this.name,
+                iconName: "TestPlan",
+                name: "Name"
+            },
+            {
+                value: this.element.getAttribute('total'),
+                iconName: "TestPlan",
+                name: "Total"
+            },
+            {
+                value: this.element.getAttribute('failures'),
+                iconName: "TestAutoSolid",
+                name: "Failures"
+            },
+            {
+                value: this.element.getAttribute('time'),
+                iconName: "NumberSymbol",
+                name: "Time"
+            }
+        ]
+    };
 }

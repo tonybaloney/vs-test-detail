@@ -1,5 +1,6 @@
-import {IProperty, ITestCase, ITestResultDocument, ITestSuite} from "./abstract";
+import {IProperty, ITestCase, ITestPlan, ITestResultDocument, ITestSuite} from "./abstract";
 import { ITaskItem } from "../ui/testPropertiesList";
+import {Nunit2TestPlan} from "./nunit2";
 
 export function isNunitXml(document: Document) : boolean {
     return (document && document.firstElementChild && document.firstElementChild.tagName === "test-run")
@@ -36,6 +37,16 @@ export class NunitTestSuite implements ITestSuite {
                 value: this.element.getAttribute("fullname"),
                 iconName: "TestPlan",
                 name: "Full Name"
+            },
+            {
+                value: this.element.getAttribute("label"),
+                iconName: "TestPlan",
+                name: "Label"
+            },
+            {
+                value: this.element.getAttribute("duration"),
+                iconName: "Timer",
+                name: "Duration"
             },
             {
                 value: this.element.getAttribute("type"),
@@ -103,6 +114,16 @@ export class NunitTestCase implements ITestCase {
             name: "Full Name"
         },
         {
+            value: this.element.getAttribute("label"),
+            iconName: "TestPlan",
+            name: "Label"
+        },
+        {
+            value: this.element.getAttribute("duration"),
+            iconName: "Timer",
+            name: "Duration"
+        },
+        {
             value: this.element.getAttribute("methodname"),
             iconName: "TestStep",
             name: "Method"
@@ -166,6 +187,11 @@ export class NunitXMLDocument implements ITestResultDocument {
         }];
     };
 
+    getPlan(): NunitTestPlan {
+        return new NunitTestPlan(this.document.getElementsByTagName('test-run')[0]);
+    }
+
+
     getCases(): NodeListOf<Element> {
         return this.document.getElementsByTagName('test-case');
     }
@@ -179,4 +205,44 @@ export class NunitXMLDocument implements ITestResultDocument {
             }
         }
     }
+}
+
+export class NunitTestPlan implements ITestPlan {
+    element: Element;
+    name: string;
+
+    constructor(element: Element){
+        this.element = element;
+        this.name = element.getAttribute("name");
+    }
+
+    getPropertiesList(): ITaskItem[] {
+        return [
+            {
+                value: this.name,
+                iconName: "TestPlan",
+                name: "Name"
+            },
+            {
+                value: this.element.getAttribute('fullname'),
+                iconName: "TestPlan",
+                name: "Full Name"
+            },
+            {
+                value: this.element.getAttribute('total'),
+                iconName: "TestPlan",
+                name: "Total"
+            },
+            {
+                value: this.element.getAttribute('failures'),
+                iconName: "TestAutoSolid",
+                name: "Failures"
+            },
+            {
+                value: this.element.getAttribute('time'),
+                iconName: "NumberSymbol",
+                name: "Time"
+            }
+        ]
+    };
 }

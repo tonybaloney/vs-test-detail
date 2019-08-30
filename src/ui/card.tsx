@@ -6,17 +6,19 @@ import TestPropertiesList from "./testPropertiesList";
 import { Card } from "azure-devops-ui/Card";
 
 import "./root.scss"
-import {ITestCase, ITestSuite} from "../documents/abstract";
+import {ITestCase, ITestSuite, ITestPlan} from "../documents/abstract";
 import {OutputCard} from "./outputCard";
 
 interface IPageProps {
     testCase: ITestCase,
-    testSuite: ITestSuite
+    testSuite: ITestSuite,
+    testPlan: ITestPlan
 }
 
 interface IPageState {
     testCase: ITestCase
     testSuite: ITestSuite
+    testPlan: ITestPlan
 }
 
 export default class NUnitPage extends React.Component<IPageProps, IPageState> {
@@ -25,7 +27,8 @@ export default class NUnitPage extends React.Component<IPageProps, IPageState> {
         
         this.state = {
             "testSuite": props.testSuite,
-            "testCase": props.testCase
+            "testCase": props.testCase,
+            "testPlan": props.testPlan
         }
     }
 
@@ -33,6 +36,14 @@ export default class NUnitPage extends React.Component<IPageProps, IPageState> {
         return (
             <Page className="flex-grow">
                 <div className="page-content page-content-top">
+                    <Header
+                        title={"Test Run"}
+                        titleSize={TitleSize.Medium}
+                        titleIconProps={{ iconName: "TestPlan" }}
+                    />
+                    <Card>
+                        <TestPropertiesList provider={this.state.testPlan} />
+                    </Card>
                     <Header
                         title={"Test Suite"}
                         titleSize={TitleSize.Medium}

@@ -72,6 +72,10 @@ test('nunit 2.5 test suite', (done) => {
             throw err;
         let testDoc = (new DOMParser()).parseFromString(contents, 'text/xml');
         const testNunit = new nunit.Nunit2XMLDocument(testDoc);
+        let resolvedPlan = testNunit.getPlan();
+        expect(resolvedPlan.name).toEqual("/home/charlie/Dev/NUnit/nunit-2.5/work/src/bin/Debug/tests/mock-assembly.dll");
+
+
         let resolvedCase = testNunit.getCase('NUnit.Tests.Assemblies.MockTestFixture.FailingTest');
         expect(resolvedCase).toBeDefined();
         expect(resolvedCase.name).toBe("NUnit.Tests.Assemblies.MockTestFixture.FailingTest");

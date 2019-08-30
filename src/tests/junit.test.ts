@@ -59,6 +59,9 @@ test('junit sample 2', (done) => {
             throw err;
         let testDoc = (new DOMParser()).parseFromString(contents, 'text/xml');
         const testXMLDoc = new junit.JunitXMLDocument(testDoc);
+        let resolvedPlan = testXMLDoc.getPlan();
+        expect(resolvedPlan).toBeDefined();
+        expect(resolvedPlan.name).toEqual("New_configuration (14/06/12 17:05:19)");
         let resolvedCase = testXMLDoc.getCase('Use a program name that matches the source file name');
         expect(resolvedCase).toBeDefined();
         expect(resolvedCase.getProperties().length).toBe(0);
