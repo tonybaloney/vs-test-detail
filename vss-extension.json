@@ -1,10 +1,10 @@
 {
     "manifestVersion": 1,
-    "id": "vss-test-detail",
+    "id": "vss-pytest",
     "publisher": "AnthonyShaw",
-    "version": "1.0.98",
-    "name": "Test Details",
-    "description": "An extension for seeing detailed test data in the test results UI.",
+    "version": "1.0.103",
+    "name": "Pytest details",
+    "description": "An extension for seeing detailed Pytest test data in the test results UI.",
     "categories": ["Azure Pipelines"],
     "targets": [
         {
@@ -19,9 +19,9 @@
             "targets": [
                 "ms.vss-test-web.test-result-details-tab-items"
             ],
-            "description": "Extension to show nunit test data",
+            "description": "Extension to show pytest test data",
             "properties": {
-                "name": "Test Details",
+                "name": "Pytest",
                 "uri": "test-detail.html",
                 "order": 107
             }

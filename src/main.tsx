@@ -3,6 +3,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import NUnitPageState from "./ui/card";
+import * as unzipper from "unzipper";
 
 import { SurfaceBackground, SurfaceContext } from "azure-devops-ui/Surface";
 
@@ -32,6 +33,12 @@ VSS.ready(function() {
 
     VSS.require(["VSS/Service", "TFS/TestManagement/RestClient"], function (VSS_Service, TFS_Test_WebApi) {
         const testClient:TestHttpClient5 = VSS_Service.getCollectionClient(TFS_Test_WebApi.TestHttpClient5);
+
+        const processAttachmentZip = async function (buf: ArrayBuffer) {
+            unzipper.Open.buffer(buf).then((dir)=> {
+                dir.files[0].buffer().then((contents) => {processAttachment(contents);});
+            });
+        }
 
         const processAttachment = function (buf: ArrayBuffer) {
             let out: string = enc.decode(buf);
@@ -83,6 +90,10 @@ VSS.ready(function() {
             for (let i = 0; i < attachments.length; i++) {
                 if (attachments[i].fileName.endsWith(".xml")) {
                     testClient.getTestRunAttachmentContent(extensionContext.viewContext.data.mainData.project.id, extensionContext.runId, attachments[i].id).then(processAttachment);
+                    foundAttachment = true;
+                }
+                if (attachments[i].fileName.endsWith(".zip")) {
+                    testClient.getTestRunAttachmentContent(extensionContext.viewContext.data.mainData.project.id, extensionContext.runId, attachments[i].id).then(processAttachmentZip);
                     foundAttachment = true;
                 }
             }

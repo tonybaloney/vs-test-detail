@@ -1,5 +1,5 @@
 {
-  "name": "vs-test-detail",
+  "name": "vs-pytest",
   "version": "1.0.0",
   "description": "",
   "main": "index.tsx",
@@ -9,12 +9,11 @@
     "compile:dev": "npm run clean && webpack --mode development",
     "postbuild": "npm run package",
     "package": "cp README.md overview.md && tfx extension create --output-path build",
-    "gallery-publish:dev": "tfx extension publish --publisher AnthonyShaw-testing --overrides-file vss-extension-testing.json --output-path build --rev-version",
+    "gallery-publish:dev": "tfx extension publish --publisher AnthonyShaw --overrides-file vss-extension-testing.json --output-path build --rev-version",
     "gallery-publish:prod": "tfx extension publish --output-path build --rev-version",
     "clean": "rimraf ./dist && rimraf ./build/*.vsix",
     "go:dev": "npm run compile:dev && npm run package && npm run gallery-publish:dev",
     "go:prod": "npm run compile:prod && npm run package && npm run gallery-publish:prod"
-
   },
   "keywords": [],
   "author": "Anthony Shaw",
@@ -25,6 +24,7 @@
     "azure-devops-ui": "^1.155.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "unzipper": "^0.10.4",
     "vss-web-extension-sdk": "^5.141.0"
   },
   "devDependencies": {
