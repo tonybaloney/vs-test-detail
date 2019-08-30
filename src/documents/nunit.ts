@@ -41,32 +41,12 @@ export class NunitTestSuite implements ITestSuite {
             {
                 value: this.element.getAttribute("label"),
                 iconName: "TestPlan",
-                name: "Label"
+                name: "Docstring"
             },
             {
                 value: this.element.getAttribute("duration"),
-                iconName: "Timer",
+                iconName: "NumberSymbol",
                 name: "Duration"
-            },
-            {
-                value: this.element.getAttribute("type"),
-                iconName: "TestPlan",
-                name: "Type"
-            },
-            {
-                value: this.element.getAttribute("methodname"),
-                iconName: "TestStep",
-                name: "Method"
-            },
-            {
-                value: this.element.getAttribute("classname"),
-                iconName: "TestStep",
-                name: "Class"
-            },
-            {
-                value: this.element.getAttribute("runstate"),
-                iconName: "TestAutoSolid",
-                name: "Run State"
             },
             {
                 value: this.element.getAttribute("testcasecount"),
@@ -116,11 +96,11 @@ export class NunitTestCase implements ITestCase {
         {
             value: this.element.getAttribute("label"),
             iconName: "TestPlan",
-            name: "Label"
+            name: "Docstring"
         },
         {
             value: this.element.getAttribute("duration"),
-            iconName: "Timer",
+            iconName: "NumberSymbol",
             name: "Duration"
         },
         {
@@ -131,7 +111,7 @@ export class NunitTestCase implements ITestCase {
         {
             value: this.element.getAttribute("classname"),
             iconName: "TestStep",
-            name: "Class"
+            name: "Module/Class"
         },
         {
             value: this.element.getAttribute("seed"),
@@ -226,7 +206,7 @@ export class NunitTestPlan implements ITestPlan {
             {
                 value: this.element.getAttribute('total'),
                 iconName: "TestPlan",
-                name: "Total"
+                name: "Total Tests"
             },
             {
                 value: this.element.getAttribute('duration'),
@@ -237,7 +217,7 @@ export class NunitTestPlan implements ITestPlan {
         if (this.element.getElementsByTagName('command-line')[0]) {
             f.push({
                 value: this.element.getElementsByTagName('command-line')[0].textContent,
-                iconName: "CommandPrompt",
+                iconName: "TestPlan",
                 name: "Command Line"
             });
         }
