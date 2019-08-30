@@ -34,7 +34,7 @@ VSS.ready(function() {
     VSS.require(["VSS/Service", "TFS/TestManagement/RestClient"], function (VSS_Service, TFS_Test_WebApi) {
         const testClient:TestHttpClient5 = VSS_Service.getCollectionClient(TFS_Test_WebApi.TestHttpClient5);
 
-        const processAttachmentZip = async function (buf: ArrayBuffer) {
+        const processAttachmentZip = function (buf: ArrayBuffer) {
             unzipper.Open.buffer(buf).then((dir)=> {
                 dir.files[0].buffer().then((contents) => {processAttachment(contents);});
             });
@@ -105,7 +105,11 @@ VSS.ready(function() {
         testClient.getTestResultById(extensionContext.viewContext.data.mainData.project.id, extensionContext.runId, extensionContext.resultId).then(
             function(result){
                 testCaseName = result.automatedTestName;
-                testClient.getTestRunAttachments(extensionContext.viewContext.data.mainData.project.id, extensionContext.runId).then(scopeAttachments);
+                try {
+                    testClient.getTestRunAttachments(extensionContext.viewContext.data.mainData.project.id, extensionContext.runId).then(scopeAttachments);
+                } catch (e){
+                    showError("Failed loading test attachments : " + e);
+                }
             }
         );
     });
