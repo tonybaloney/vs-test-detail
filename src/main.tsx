@@ -29,6 +29,7 @@ VSS.ready(function() {
 
     let extensionContext: any = VSS.getConfiguration();
     let testCaseName: string = "";
+    let projectId: string = VSS.getWebContext().project.id;
 
     VSS.require(["VSS/Service", "TFS/TestManagement/RestClient"], function (VSS_Service, TFS_Test_WebApi) {
         const testClient:TestHttpClient5 = VSS_Service.getCollectionClient(TFS_Test_WebApi.TestHttpClient5);
@@ -82,7 +83,7 @@ VSS.ready(function() {
             let foundAttachment = false;
             for (let i = 0; i < attachments.length; i++) {
                 if (attachments[i].fileName.endsWith(".xml")) {
-                    testClient.getTestRunAttachmentContent(extensionContext.viewContext.data.mainData.project.id, extensionContext.runId, attachments[i].id).then(processAttachment);
+                    testClient.getTestRunAttachmentContent(projectId, extensionContext.runId, attachments[i].id).then(processAttachment);
                     foundAttachment = true;
                 }
             }
@@ -91,10 +92,10 @@ VSS.ready(function() {
             }
         };
 
-        testClient.getTestResultById(extensionContext.viewContext.data.mainData.project.id, extensionContext.runId, extensionContext.resultId).then(
+        testClient.getTestResultById(projectId, extensionContext.runId, extensionContext.resultId).then(
             function(result){
                 testCaseName = result.automatedTestName;
-                testClient.getTestRunAttachments(extensionContext.viewContext.data.mainData.project.id, extensionContext.runId).then(scopeAttachments);
+                testClient.getTestRunAttachments(projectId, extensionContext.runId).then(scopeAttachments);
             }
         );
     });
