@@ -22,8 +22,8 @@
     "azure-devops-extension-api": "^1.158.0",
     "azure-devops-extension-sdk": "^2.0.11",
     "azure-devops-ui": "^1.160.4",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "vss-web-extension-sdk": "^5.141.0"
   },
   "devDependencies": {
